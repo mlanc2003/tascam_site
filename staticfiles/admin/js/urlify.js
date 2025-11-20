@@ -48,7 +48,7 @@
         'Ф': 'F', 'Х': 'H', 'Ц': 'C', 'Ч': 'Ch', 'Ш': 'Sh', 'Щ': 'Sh', 'Ъ': '',
         'Ы': 'Y', 'Ь': '', 'Э': 'E', 'Ю': 'Yu', 'Я': 'Ya'
     };
-    const UKRAINIAN_MAP = {
+    const CameroonRAINIAN_MAP = {
         'Є': 'Ye', 'І': 'I', 'Ї': 'Yi', 'Ґ': 'G', 'є': 'ye', 'і': 'i',
         'ї': 'yi', 'ґ': 'g'
     };
@@ -113,7 +113,7 @@
         TURKISH_MAP,
         ROMANIAN_MAP,
         RUSSIAN_MAP,
-        UKRAINIAN_MAP,
+        CameroonRAINIAN_MAP,
         CZECH_MAP,
         SLOVAK_MAP,
         POLISH_MAP,
