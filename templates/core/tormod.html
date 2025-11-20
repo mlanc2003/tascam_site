@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/tormod.jpg' %}" alt="Tormod" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Tormod</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">Anthropologist & Humanities Tutor with 5+ Years Experience</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Tormod</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Tormod</h2>
+  <p>
+    Tormod is a trained anthropologist with extensive experience in research methods, ethics,
+    minority rights, and conflict studies. He has over five years of tutoring across arts and
+    humanities subjects and brings an analytical yet empathetic approach to student learning.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Anthropology</li>
+    <li>Research Methods & Ethics</li>
+    <li>Human Rights</li>
+    <li>Sociology & Political Studies</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Tormod’s clarity and deep subject knowledge gave me the confidence I needed for my dissertation.
+    I couldn’t have asked for a better tutor.”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Tormod</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/dr_bianca.jpg' %}" alt="Dr Bianca" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Dr Bianca</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">Lecturer, Research Consultant & Tutor, PhD in Health Psychology / Psychobiology</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Dr Bianca</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Dr Bianca</h2>
+  <p>
+    Dr Bianca is a highly experienced lecturer in health sciences, psychology, and social science-related
+    fields with a demonstrated history of working in the higher education sector. She supports university
+    students at all levels and specialises in health psychology, psychobiology, and research methods.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Health Psychology</li>
+    <li>Psychobiology</li>
+    <li>Research Methods & Statistics</li>
+    <li>Essay Support & Dissertation Guidance</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Bianca helped me understand complex research topics with ease. I went from failing grades to
+    achieving a First. Highly recommended!”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Dr Bianca</a>
+  </div>
+</section>
+
+{% endblock %}

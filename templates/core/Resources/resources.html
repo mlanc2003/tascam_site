@@ -1,0 +1,369 @@
+{# templates/core/resouces.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Student Resourcs | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+<section class="hero hero--subject">
+  <div class="container">
+    <h1 class="page-title">Student Resources</h1>
+    <p class="subtitle">Looking for something?</p>
+
+    <form class="search-bar" action="#" method="get" role="search" aria-label="Search student resources">
+      <label for="resource-search" class="sr-only">Search resources</label>
+      <input id="resource-search" name="q" type="search" placeholder="Search articles, topics, and FAQs…" />
+      <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+  </div>
+</section>
+
+<section class="section"> 
+  <div class="container">
+
+    <!-- Tutor Resources -->
+    <h2 class="section-title highlight">Tutor Resources:</h2>
+    <div class="blogs-grid">
+
+      <!-- Ethics Training -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/ethics-training.jpg' %}" alt="Tutor Ethics Training">
+        <div class="blog-info">
+          <h3>Ethics & Academic Integrity Training</h3>
+          <p class="topic">Category: <span>Tutor Guidelines</span></p>
+          <a href="{% url 'tutor_ethics' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Lesson Planning -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/lesson-planning.jpg' %}" alt="Lesson Planning Resources">
+        <div class="blog-info">
+          <h3>Lesson Planning & Teaching Frameworks</h3>
+          <p class="topic">Category: <span>Teaching Skills</span></p>
+          <a href="{% url 'tutor_lesson_planning' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Platform Guidelines -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/platform-guidelines.jpg' %}" alt="Platform Guidelines">
+        <div class="blog-info">
+          <h3>Using the TASCAM Platform</h3>
+          <p class="topic">Category: <span>Platform Training</span></p>
+          <a href="{% url 'tutor_platform' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Assessment Standards -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/assessment-standards.jpg' %}" alt="Assessment Standards">
+        <div class="blog-info">
+          <h3>Assessment & Marking Standards</h3>
+          <p class="topic">Category: <span>University Standards</span></p>
+          <a href="{% url 'tutor_assessment_standards' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Latest Blogs -->
+    <h2 class="section-title highlight">Latest Blogs:</h2>
+    <div class="blogs-grid">
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/ucl-economics.jpg' %}" alt="How to get into UCL for Economics">
+        <div class="blog-info">
+          <h3>How to get into UCL for Economics</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'ucl_economics' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-finance.jpg' %}" alt="How to get into Economics, Finance and Data Science at Imperial">
+        <div class="blog-info">
+          <h3>How to get into Economics, Finance and Data Science at Imperial</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'imperial_economics_finance' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-management.jpg' %}" alt="How to get into Imperial for MSc Management and International Management">
+        <div class="blog-info">
+          <h3>How to get into Imperial for MSc Management and International Management</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'imperial_management' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/lbs-mba.jpg' %}" alt="How to get into the London Business School MBA">
+        <div class="blog-info">
+          <h3>How to get into the London Business School MBA</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'lbs_mba' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+    </div>
+
+    <!-- Popular Blogs -->
+    <h2 class="section-title highlight">Popular Blogs:</h2>
+    <div class="blogs-grid">
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/cambridge.jpg' %}" alt="How to Get Into Cambridge">
+        <div class="blog-info">
+          <h3>How to Get Into Cambridge</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'cambridge' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-college.jpg' %}" alt="How to Get Into Imperial College London">
+        <div class="blog-info">
+          <h3>How to Get Into Imperial College London</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'imperial_college_london' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/lse.jpg' %}" alt="How to Get Into LSE">
+        <div class="blog-info">
+          <h3>How to Get Into LSE</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'lse' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/ucl.jpg' %}" alt="How to Get Into UCL">
+        <div class="blog-info">
+          <h3>How to Get Into UCL</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'ucl' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+    </div>
+
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <h2 class="section-title">All Categories:</h2>
+
+    <div class="categories-grid">
+
+      <!-- A -->
+      <a href="{% url 'aca_tutors' %}" class="category-card">ACA Tutors</a>
+      <a href="{% url 'acca_tutors' %}" class="category-card">ACCA Tutors</a>
+      <a href="{% url 'accounting_tutors' %}" class="category-card">Accounting Tutors</a>
+      <a href="{% url 'a_level_tutors' %}" class="category-card">A Level Tutors</a>
+      <a href="{% url 'a_level_accounting_tutors' %}" class="category-card">A Level Accounting Tutors</a>
+      <a href="{% url 'a_level_biology_tutors' %}" class="category-card">A Level Biology Tutors</a>
+      <a href="{% url 'a_level_chemistry_tutors' %}" class="category-card">A Level Chemistry Tutors</a>
+      <a href="{% url 'a_level_economics_tutors' %}" class="category-card">A Level Economics Tutors</a>
+      <a href="{% url 'a_level_english_tutors' %}" class="category-card">A Level English Tutors</a>
+      <a href="{% url 'a_level_further_maths_tutors' %}" class="category-card">A Level Further Maths Tutors</a>
+      <a href="{% url 'a_level_history_tutors' %}" class="category-card">A Level History Tutors</a>
+      <a href="{% url 'a_level_maths_tutors' %}" class="category-card">A Level Maths Tutors</a>
+      <a href="{% url 'a_level_physics_tutors' %}" class="category-card">A Level Physics Tutors</a>
+      <a href="{% url 'a_level_psychology_tutors' %}" class="category-card">A Level Psychology Tutors</a>
+      <a href="{% url 'academic_writing_tutors' %}" class="category-card">Academic Writing Tutors</a>
+      <a href="{% url 'architecture_tutors' %}" class="category-card">Architecture Tutors</a>
+
+      <!-- B -->
+      <a href="{% url 'biology_tutors' %}" class="category-card">Biology Tutors</a>
+
+      <!-- C -->
+      <a href="{% url 'cambridge_dissertation_tutors' %}" class="category-card">Cambridge Dissertation Tutors</a>
+      <a href="{% url 'cambridge_ib_tutors' %}" class="category-card">Cambridge IB Tutors</a>
+      <a href="{% url 'chemistry_tutors' %}" class="category-card">Chemistry Tutors</a>
+      <a href="{% url 'computer_science_tutors' %}" class="category-card">Computer Science Tutors</a>
+
+      <!-- D -->
+      <a href="{% url 'dissertation_tutors' %}" class="category-card">Dissertation Tutors</a>
+
+      <!-- E -->
+      <a href="{% url 'econometrics_tutors' %}" class="category-card">Econometrics Tutors</a>
+      <a href="{% url 'economics_tutors' %}" class="category-card">Economics Tutors</a>
+      <a href="{% url 'engineering_tutors' %}" class="category-card">Engineering Tutors</a>
+      <a href="{% url 'english_tutors' %}" class="category-card">English Tutors</a>
+      <a href="{% url 'essay_tutors' %}" class="category-card">Essay Tutors</a>
+
+      <!-- F -->
+      <a href="{% url 'finance_tutors' %}" class="category-card">Finance Tutors</a>
+
+      <!-- G -->
+      <a href="{% url 'gcse_tutors' %}" class="category-card">GCSE Tutors</a>
+      <a href="{% url 'gcse_biology_tutors' %}" class="category-card">GCSE Biology Tutors</a>
+      <a href="{% url 'gcse_chemistry_tutors' %}" class="category-card">GCSE Chemistry Tutors</a>
+      <a href="{% url 'gcse_computer_science_tutors' %}" class="category-card">GCSE Computer Science Tutors</a>
+      <a href="{% url 'gcse_english_language_tutors' %}" class="category-card">GCSE English Language Tutors</a>
+      <a href="{% url 'gcse_geography_tutors' %}" class="category-card">GCSE Geography Tutors</a>
+      <a href="{% url 'gcse_history_tutors' %}" class="category-card">GCSE History Tutors</a>
+      <a href="{% url 'gcse_maths_tutors' %}" class="category-card">GCSE Maths Tutors</a>
+      <a href="{% url 'gcse_physics_tutors' %}" class="category-card">GCSE Physics Tutors</a>
+      <a href="{% url 'gcse_science_tutors' %}" class="category-card">GCSE Science Tutors</a>
+      <a href="{% url 'gcse_spanish_tutors' %}" class="category-card">GCSE Spanish Tutors</a>
+
+      <!-- I -->
+      <a href="{% url 'ib_tutors' %}" class="category-card">IB Tutors</a>
+      <a href="{% url 'ib_biology_tutors' %}" class="category-card">IB Biology Tutors</a>
+      <a href="{% url 'ib_chemistry_tutors' %}" class="category-card">IB Chemistry Tutors</a>
+      <a href="{% url 'ib_economics_tutors' %}" class="category-card">IB Economics Tutors</a>
+      <a href="{% url 'ib_english_language_tutors' %}" class="category-card">IB English Language Tutors</a>
+      <a href="{% url 'ib_maths_tutors' %}" class="category-card">IB Maths Tutors</a>
+      <a href="{% url 'ib_physics_tutors' %}" class="category-card">IB Physics Tutors</a>
+
+      <!-- L -->
+      <a href="{% url 'law_tutors' %}" class="category-card">Law Tutors</a>
+      <a href="{% url 'london_dissertation_tutors' %}" class="category-card">London Dissertation Tutors</a>
+      <a href="{% url 'london_ib_tutors' %}" class="category-card">London IB Tutors</a>
+
+      <!-- M -->
+      <a href="{% url 'manchester_dissertation_tutors' %}" class="category-card">Manchester Dissertation Tutors</a>
+      <a href="{% url 'manchester_ib_tutors' %}" class="category-card">Manchester IB Tutors</a>
+
+      <!-- O -->
+      <a href="{% url 'online_tutors' %}" class="category-card">Online Tutors</a>
+      <a href="{% url 'oxford_dissertation_tutors' %}" class="category-card">Oxford Dissertation Tutors</a>
+      <a href="{% url 'oxford_ib_tutors' %}" class="category-card">Oxford IB Tutors</a>
+
+      <!-- P -->
+      <a href="{% url 'physics_tutors' %}" class="category-card">Physics Tutors</a>
+      <a href="{% url 'politics_tutors' %}" class="category-card">Politics Tutors</a>
+      <a href="{% url 'psychology_tutors' %}" class="category-card">Psychology Tutors</a>
+
+      <!-- R -->
+      <a href="{% url 'r_tutors' %}" class="category-card">R Tutors</a>
+      <a href="{% url 'research_methods_tutors' %}" class="category-card">Research Methods Tutors</a>
+
+      <!-- S -->
+      <a href="{% url 'spss_tutors' %}" class="category-card">SPSS Tutors</a>
+      <a href="{% url 'stata_tutors' %}" class="category-card">Stata Tutors</a>
+      <a href="{% url 'statistics_tutors' %}" class="category-card">Statistics Tutors</a>
+      <a href="{% url 'study_skills_tutors' %}" class="category-card">Study Skills Tutors</a>
+
+      <!-- W -->
+      <a href="{% url 'writing_tutors' %}" class="category-card">Writing Tutors</a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Featured Logos -->
+<section class="section">
+  <div class="container">
+    <h2 class="section-title">TASCAM Co Ltd Featured In</h2>
+    <ul class="logo-row">
+      <li><img src="{% static 'img/logos/telegraph.svg' %}" alt="The Telegraph logo" loading="lazy"></li>
+      <li><img src="{% static 'img/logos/guardian.svg' %}" alt="The Guardian logo" loading="lazy"></li>
+      <li><img src="{% static 'img/logos/financial-times.svg' %}" alt="Financial Times logo" loading="lazy"></li>
+      <li><img src="{% static 'img/logos/times.svg' %}" alt="The Times logo" loading="lazy"></li>
+      <li><img src="{% static 'img/logos/evening-standard.svg' %}" alt="Evening Standard logo" loading="lazy"></li>
+      <li><img src="{% static 'img/logos/fe-news.svg' %}" alt="FE News logo" loading="lazy"></li>
+    </ul>
+
+    <div class="trustpilot card">
+      <div class="card-content">
+        <div class="trustpilot__badge">
+          <img src="{% static 'img/badges/trustpilot.svg' %}" alt="Trustpilot badge" loading="lazy">
+        </div>
+        <p class="trustpilot__text">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+
+/* HERO WRAPPER */
+.hero--subject {
+  padding: 80px 0;
+  background: #f7f9fc;
+  text-align: center;
+}
+
+/* Title */
+.hero--subject .page-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #1d2340;
+  margin-bottom: 25px;
+}
+
+/* Subtitle */
+.hero--subject .subtitle {
+  font-size: 20px;
+  color: #6b7280;
+  margin-bottom: 30px;
+}
+
+/* SEARCH BAR CONTAINER */
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f1f2f4;
+  padding: 40px;
+  border-radius: 40px;
+  width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
+  gap: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* INPUT */
+.search-bar input {
+  flex: 1;
+  padding: 14px 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  font-size: 18px;
+  background: #fff;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-bar input:focus {
+  border-color: #8b9cf9;
+  box-shadow: 0 0 0 3px rgba(139, 156, 249, 0.3);
+}
+
+/* BUTTON */
+.search-bar .btn-primary {
+  background: #7287fd;
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-bar .btn-primary:hover {
+  background: #8595ff;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .search-bar {
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .search-bar .btn-primary {
+    width: 100%;
+  }
+}
+
+</style>
+
+{% endblock %}

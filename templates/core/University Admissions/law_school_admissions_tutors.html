@@ -1,0 +1,250 @@
+{# templates/core/law_school_admissions_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Law School Admissions | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO SECTION -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Find Expert Law School Admissions Tutors</h1>
+        <p>Secure a world-class university offer with guidance from Cameroon’s leading admissions specialists.</p>
+        <p>Our team of over 400 tutors will maximise your chances of success.</p>
+      </div>
+      <div class="hero-cta hero-cta--inline">
+          <a href="/find-tutors/" class="btn btn-accent btn-large">
+            Find A Tutor
+          </a>
+          <a href="/request-tutor/" class="btn btn-accent btn-large">
+            Contact Us
+          </a>
+        </div>
+
+      </div>
+      <div class="hero-image">
+        <img src="{% static 'img/admissions/hero-banner.jpg' %}" alt="Law School Admissions">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STATS -->
+<section class="section">
+  <div class="container">
+    <h2>Improve your admissions chances with the help of TASCAM Co Ltd</h2>
+    <div class="grid grid-2 comparison">
+      <div class="card">
+        <h4>Without our support</h4>
+        <p class="big">25%</p>
+      </div>
+      <div class="card highlight">
+        <h4>With our support</h4>
+        <p class="big">90%</p>
+      </div>
+    </div>
+    <p class="mt-4 text-center">90% of our students obtain offers from their first or second choice universities.</p>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section section--muted">
+  <div class="container">
+    <h2>Award-Winning Institution and Services</h2>
+    <ul class="award-logos">
+      <li><img src="{% static 'img/awards/nta-2025.png' %}" alt="NTA 2025"> Private Tutoring Provider of the Year 2025</li>
+      <li><img src="{% static 'img/awards/nta-2023.png' %}" alt="NTA 2023"> Best Tuition Law and Delivery 2023</li>
+      <li><img src="{% static 'img/awards/nta-2022.png' %}" alt="NTA 2022"> Best Customer Service of the Year 2022</li>
+    </ul>
+    <div class="trustpilot text-center">
+      <h3>The highest-rated tutoring company on TrustPilot since 2016</h3>
+      <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+      
+
+<!-- ASSISTANCE PROCESS -->
+<section class="section">
+  <div class="container">
+    <h2>Get Assistance With Every Stage Of The Law School Admissions Process</h2>
+    <div class="grid grid-2">
+      <div class="process-step">
+        <h4>Course Selection</h4>
+        <p>Our consultancy team will review your application and advise on which course and college selection will give you the greatest chance of success.</p>
+      </div>
+      <div class="process-step">
+        <h4>Personal Statement Development</h4>
+        <p>Your tutor will help you craft a standout personal statement that appeals to top universities.</p>
+      </div>
+      <div class="process-step">
+        <h4>Profile & Experience</h4>
+        <p>We’ll guide you on further reading, research, and experiences to showcase your subject knowledge beyond school level.</p>
+      </div>
+      <div class="process-step">
+        <h4>Admissions Test Preparation</h4>
+        <p>Our tutors train you in time management and knowledge application skills needed for interview-worthy marks.</p>
+      </div>
+      <div class="process-step">
+        <h4>Interview Support</h4>
+        <p>We’ll test you with a rigorous mock interview and feedback to ensure you’re fully prepared for challenging questions.</p>
+      </div>
+    </div>
+    <p class="mt-3 text-center"><strong>90% of our students receive an offer from their first or second choice university.</strong></p>
+  </div>
+</section>
+
+<!-- WHAT SETS US APART -->
+<section class="section section--muted">
+  <div class="container">
+    <h2>What Sets Us Apart?</h2>
+    <div class="grid grid-3 cards-simple">
+      <div class="card">
+        <h4>Expertly Vetted</h4>
+        <p>TASCAM Co Ltd has one of the most competitive vetting processes in Cameroon. Only 3% of tutors are accepted. You can feel confident knowing you’re working with the best!</p>
+      </div>
+      <div class="card">
+        <h4>Related Experience</h4>
+        <p>Your tutor will be a Law School Admissions expert who knows exactly what top universities are looking for in successful candidates.</p>
+      </div>
+      <div class="card">
+        <h4>No Junior Tutors</h4>
+        <p>We only work with the best tutors — all are experienced graduates with advanced degrees.</p>
+      </div>
+      <div class="card">
+        <h4>Insider Knowledge</h4>
+        <p>Many of our tutors are former admissions tutors or have supported the process — they know what top universities seek in applicants.</p>
+      </div>
+      <div class="card">
+        <h4>Proven Track Record</h4>
+        <p>Our tutors have helped students successfully apply to the same courses you’re pursuing.</p>
+      </div>
+      <div class="card">
+        <h4>Progress Tracking</h4>
+        <p>Our in-office team provides regular updates, reports, and progress tracking so you always understand what’s going on.</p>
+      </div>
+    </div>
+    <div class="text-center mt-5">
+      <h3>Get Started Today</h3>
+      <p>Our team of Law School Admissions experts are available 24/7 to help you maximise your success.</p>
+      <a href="#find-tutor" class="btn btn-primary">Talk to us</a>
+    </div>
+  </div>
+</section>
+
+<!-- TOP TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top Law School Admissions Tutors</h2>
+    <div class="tutor-cards grid grid-3">
+
+      <!-- Don -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/don.jpg' %}" alt="Dr Don">
+        <h3>Dr Don</h3>
+        <span>5081 Hours Taught</span>
+        <p>Cambridge and UCL graduate with more than 11 years’ experience tutoring Economics, Mathematics, Philosophy, and Psychology.</p>
+        <h4>Attended:</h4>
+        <ul><li>University of Cambridge</li><li>University College London</li></ul>
+      </article>
+
+      <!-- Jack -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/jack.jpg' %}" alt="Dr Jack">
+        <h3>Dr Jack</h3>
+        <span>2944 Hours Taught</span>
+        <p>Cambridge and QMUL graduate and highly experienced Mathematics, Oxbridge admissions and STEP tutor.</p>
+        <h4>Attended:</h4>
+        <ul><li>Queen Mary, University of London</li><li>University of Cambridge</li></ul>
+      </article>
+
+      <!-- Claire -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/claire.jpg' %}" alt="Claire">
+        <h3>Claire</h3>
+        <span>2106 Hours Taught</span>
+        <p>Oxford graduate and qualified Science teacher with a PhD in Molecular Biochemistry and Chemical Biology.</p>
+        <h4>Attended:</h4>
+        <ul><li>Cardiff University</li><li>University of Oxford</li></ul>
+      </article>
+
+      <!-- Joshua -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/joshua.jpg' %}" alt="Joshua">
+        <h3>Joshua</h3>
+        <span>1705 Hours Taught</span>
+        <p>Masters of Physics from the University of Manchester and specialist STEM subject and university admissions tutor.</p>
+        <h4>Attended:</h4>
+        <ul><li>University of Manchester</li></ul>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <h3>Testimonial</h3>
+    <blockquote>
+      <p><strong>Nima Nima:</strong> I went from 43% in first year to receiving a Masters offer at the Law School! Thanks to TASCAM Co Ltd tutors I achieved a 1st and received an offer for the Law School Masters in Management.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section class="section">
+  <div class="container">
+    <h2>Popular Blogs</h2>
+    <div class="grid grid-4">
+      <a href="#" class="card"><h4>How to Get Into Cambridge</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into Imperial College London</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into Law School</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into UCL</h4><p>Topic: Undergraduate</p></a>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="section section--muted">
+  <div class="container">
+
+    <h2>We Cover All Subjects</h2>
+    <p>We’ve got your back. From Anthropology to Zoology, we have it covered.</p>
+
+    <div class="subject-grid mt-2">
+
+      <a href="{% url 'gcse_tutors' %}" class="subject-card">GCSE Tutors</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics Tutors</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering Tutors</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics Tutors</a>
+
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology Tutors</a>
+      <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting Tutors</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English Literature Tutors</a>
+      <a href="{% url 'finance_tutors' %}" class="subject-card">Finance Tutors</a>
+
+      
+      <a href="{% url 'architecture_tutors' %}" class="subject-card">Architecture Tutors</a>
+      <a href="{% url 'essay_tutors' %}" class="subject-card">Essay Tutors</a>
+      
+
+      <a href="{% url 'admissions_tutors' %}" class="subject-card">University Admission Tutors</a>
+      
+      <a href="{% url 'step_tutors' %}" class="subject-card">STEP Mathematics Tutors</a>
+
+    </div>
+
+    <p class="mt-2">
+      TASCAM Co Ltd prides itself on covering all subjects. Don’t believe us?
+      <a href="#find-tutor">click here</a> and give us a call!
+    </p>
+
+  </div>
+</section>
+
+{% endblock content %}

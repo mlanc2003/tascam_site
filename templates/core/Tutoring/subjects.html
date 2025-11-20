@@ -1,0 +1,218 @@
+{# templates/core/subjects.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Subjects A-Z | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+<section class="subjects-hero container">
+  <h1>Select Your Subject</h1>
+  <p>
+    From Anthropology to Zoology, TASCAM Co Ltd’s University Tutors have you covered. We have hundreds of tutors and 
+    below are some of our most popular tuition subjects. Please contact us to hear more about our full subject availability.
+  </p>
+</section>
+
+<section class="alphabet-nav container">
+  <h2>Jump to:</h2>
+  <div class="letters">
+    <a href="#num">1</a>
+    {% for letter in "ABCDEFGHIJKLMNOPQRSTUVWXYZ" %}
+      <a href="#{{ letter|lower }}">{{ letter }}</a>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- Subjects List -->
+<section class="subjects-list container">
+
+  <!-- 1 -->
+  <div id="num" class="subject-group">
+    <div class="group-title">1</div>
+    <div class="subject-items">
+      <div class="subject-card">11+ (General) Tutors</div>
+    </div>
+  </div>
+
+  <!-- A -->
+  <div id="a" class="subject-group">
+    <div class="group-title">A</div>
+    <div class="subject-items">
+      <a href="{% url 'aca_tutors' %}" class="subject-card">ACA Tutors</a>
+      <a href="{% url 'acca_tutors' %}" class="subject-card">ACCA Tutors</a>
+      <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting Tutors</a>
+      <a href="{% url 'a_level_tutors' %}" class="subject-card">A Level Tutors</a>
+      <a href="{% url 'a_level_accounting_tutors' %}" class="subject-card">A Level Accounting Tutors</a>
+      <a href="{% url 'a_level_biology_tutors' %}" class="subject-card">A Level Biology Tutors</a>
+      <a href="{% url 'a_level_chemistry_tutors' %}" class="subject-card">A Level Chemistry Tutors</a>
+      <a href="{% url 'a_level_economics_tutors' %}" class="subject-card">A Level Economics Tutors</a>
+      <a href="{% url 'a_level_english_tutors' %}" class="subject-card">A Level English Tutors</a>
+      <a href="{% url 'a_level_further_maths_tutors' %}" class="subject-card">A Level Further Maths Tutors</a>
+      <a href="{% url 'a_level_history_tutors' %}" class="subject-card">A Level History Tutors</a>
+      <a href="{% url 'a_level_maths_tutors' %}" class="subject-card">A Level Maths Tutors</a>
+      <a href="{% url 'a_level_physics_tutors' %}" class="subject-card">A Level Physics Tutors</a>
+      <a href="{% url 'a_level_psychology_tutors' %}" class="subject-card">A Level Psychology Tutors</a>
+      <a href="{% url 'academic_writing_tutors' %}" class="subject-card">Academic Writing Tutors</a>
+      <a href="{% url 'architecture_tutors' %}" class="subject-card">Architecture Tutors</a>
+    </div>
+  </div>
+
+  <!-- B -->
+  <div id="b" class="subject-group">
+    <div class="group-title">B</div>
+    <div class="subject-items">
+      <a href="{% url 'biology_tutors' %}" class="subject-card">Biology Tutors</a>
+    </div>
+  </div>
+
+  <!-- C -->
+  <div id="c" class="subject-group">
+    <div class="group-title">C</div>
+    <div class="subject-items">
+      <a href="{% url 'cambridge_dissertation_tutors' %}" class="subject-card">Cambridge Dissertation Tutors</a>
+      <a href="{% url 'cambridge_ib_tutors' %}" class="subject-card">Cambridge IB Tutors</a>
+      <a href="{% url 'chemistry_tutors' %}" class="subject-card">Chemistry Tutors</a>
+      <a href="{% url 'computer_science_tutors' %}" class="subject-card">Computer Science Tutors</a>
+    </div>
+  </div>
+
+  <!-- D -->
+  <div id="d" class="subject-group">
+    <div class="group-title">D</div>
+    <div class="subject-items">
+      <a href="{% url 'dissertation_tutors' %}" class="subject-card">Dissertation Tutors</a>
+    </div>
+  </div>
+
+  <!-- E -->
+  <div id="e" class="subject-group">
+    <div class="group-title">E</div>
+    <div class="subject-items">
+      <a href="{% url 'econometrics_tutors' %}" class="subject-card">Econometrics Tutors</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics Tutors</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering Tutors</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English Tutors</a>
+      <a href="{% url 'essay_tutors' %}" class="subject-card">Essay Tutors</a>
+    </div>
+  </div>
+
+  <!-- F -->
+  <div id="f" class="subject-group">
+    <div class="group-title">F</div>
+    <div class="subject-items">
+      <a href="{% url 'finance_tutors' %}" class="subject-card">Finance Tutors</a>
+    </div>
+  </div>
+
+  <!-- G -->
+  <div id="g" class="subject-group">
+    <div class="group-title">G</div>
+    <div class="subject-items">
+      <a href="{% url 'gcse_tutors' %}" class="subject-card">GCSE Tutors</a>
+      <a href="{% url 'gcse_biology_tutors' %}" class="subject-card">GCSE Biology Tutors</a>
+      <a href="{% url 'gcse_chemistry_tutors' %}" class="subject-card">GCSE Chemistry Tutors</a>
+      <a href="{% url 'gcse_computer_science_tutors' %}" class="subject-card">GCSE Computer Science Tutors</a>
+      <a href="{% url 'gcse_english_language_tutors' %}" class="subject-card">GCSE English Language Tutors</a>
+      <a href="{% url 'gcse_geography_tutors' %}" class="subject-card">GCSE Geography Tutors</a>
+      <a href="{% url 'gcse_history_tutors' %}" class="subject-card">GCSE History Tutors</a>
+      <a href="{% url 'gcse_maths_tutors' %}" class="subject-card">GCSE Maths Tutors</a>
+      <a href="{% url 'gcse_physics_tutors' %}" class="subject-card">GCSE Physics Tutors</a>
+      <a href="{% url 'gcse_science_tutors' %}" class="subject-card">GCSE Science Tutors</a>
+      <a href="{% url 'gcse_spanish_tutors' %}" class="subject-card">GCSE Spanish Tutors</a>
+    </div>
+  </div>
+
+  <!-- I -->
+  <div id="i" class="subject-group">
+    <div class="group-title">I</div>
+    <div class="subject-items">
+      <a href="{% url 'ib_tutors' %}" class="subject-card">IB Tutors</a>
+      <a href="{% url 'ib_biology_tutors' %}" class="subject-card">IB Biology Tutors</a>
+      <a href="{% url 'ib_chemistry_tutors' %}" class="subject-card">IB Chemistry Tutors</a>
+      <a href="{% url 'ib_economics_tutors' %}" class="subject-card">IB Economics Tutors</a>
+      <a href="{% url 'ib_english_language_tutors' %}" class="subject-card">IB English Language Tutors</a>
+      <a href="{% url 'ib_maths_tutors' %}" class="subject-card">IB Maths Tutors</a>
+      <a href="{% url 'ib_physics_tutors' %}" class="subject-card">IB Physics Tutors</a>
+    </div>
+  </div>
+
+  <!-- L -->
+  <div id="l" class="subject-group">
+    <div class="group-title">L</div>
+    <div class="subject-items">
+      <a href="{% url 'law_tutors' %}" class="subject-card">Law Tutors</a>
+      <a href="{% url 'london_dissertation_tutors' %}" class="subject-card">London Dissertation Tutors</a>
+      <a href="{% url 'london_ib_tutors' %}" class="subject-card">London IB Tutors</a>
+    </div>
+  </div>
+
+  <!-- M -->
+  <div id="m" class="subject-group">
+    <div class="group-title">M</div>
+    <div class="subject-items">
+      <a href="{% url 'manchester_dissertation_tutors' %}" class="subject-card">Manchester Dissertation Tutors</a>
+      <a href="{% url 'manchester_ib_tutors' %}" class="subject-card">Manchester IB Tutors</a>
+    </div>
+  </div>
+
+  <!-- O -->
+  <div id="o" class="subject-group">
+    <div class="group-title">O</div>
+    <div class="subject-items">
+      <a href="{% url 'online_tutors' %}" class="subject-card">Online Tutors</a>
+      <a href="{% url 'oxford_dissertation_tutors' %}" class="subject-card">Oxford Dissertation Tutors</a>
+      <a href="{% url 'oxford_ib_tutors' %}" class="subject-card">Oxford IB Tutors</a>
+    </div>
+  </div>
+
+  <!-- P -->
+  <div id="p" class="subject-group">
+    <div class="group-title">P</div>
+    <div class="subject-items">
+      <a href="{% url 'physics_tutors' %}" class="subject-card">Physics Tutors</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics Tutors</a>
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology Tutors</a>
+    </div>
+  </div>
+
+  <!-- R -->
+  <div id="r" class="subject-group">
+    <div class="group-title">R</div>
+    <div class="subject-items">
+      <a href="{% url 'r_tutors' %}" class="subject-card">R Tutors</a>
+      <a href="{% url 'research_methods_tutors' %}" class="subject-card">Research Methods Tutors</a>
+    </div>
+  </div>
+
+  <!-- S -->
+  <div id="s" class="subject-group">
+    <div class="group-title">S</div>
+    <div class="subject-items">
+      <a href="{% url 'spss_tutors' %}" class="subject-card">SPSS Tutors</a>
+      <a href="{% url 'stata_tutors' %}" class="subject-card">Stata Tutors</a>
+      <a href="{% url 'statistics_tutors' %}" class="subject-card">Statistics Tutors</a>
+      <a href="{% url 'study_skills_tutors' %}" class="subject-card">Study Skills Tutors</a>
+    </div>
+  </div>
+
+  <!-- W -->
+  <div id="w" class="subject-group">
+    <div class="group-title">W</div>
+    <div class="subject-items">
+      <a href="{% url 'writing_tutors' %}" class="subject-card">Writing Tutors</a>
+    </div>
+  </div>
+</section>
+
+<section class="contact-promo container">
+  <h2>Not what you’re looking for?</h2>
+  <p>
+    TASCAM Co Ltd prides itself on finding tutors where other companies cannot. 
+    <a href="{% url 'request_tutor' %}">Contact us</a> and we’ll search our extended network of tutors for you.
+  </p>
+</section>
+
+<section class="trust container">
+  <p>Cameroon’s highest rated tuition company since 2016 on Trustpilot.</p>
+</section>
+{% endblock %}

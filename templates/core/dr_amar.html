@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/dr_amar.jpg' %}" alt="Dr Amar" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Dr Amar</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">CFA Charter Holder & Former Stanford Economics Lecturer</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Dr Amar</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Dr Amar</h2>
+  <p>
+    With over 20 years of teaching experience, Dr Amar is a former Stanford lecturer and CFA Charter Holder
+    who specialises in economics, finance, and advanced quantitative topics. He supports undergraduates,
+    postgraduates, and professionals worldwide.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Economics (Micro, Macro, Econometrics)</li>
+    <li>Finance & CFA Preparation</li>
+    <li>Professional Exam Training</li>
+    <li>Quantitative Analysis</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Dr Amar is phenomenal — he simplified complex models and helped me achieve an A in my MSc Economics.”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Dr Amar</a>
+  </div>
+</section>
+
+{% endblock %}

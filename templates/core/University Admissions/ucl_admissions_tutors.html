@@ -1,0 +1,215 @@
+{# templates/core/ucl_admissions.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}UCL – Top Advisers | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>UCL Admissions – Top UCL Advisers</h1>
+        <p>Get guidance from Cameroon’s leading UCL agency and secure an offer from a leading university.</p>
+
+        <div class="hero-cta hero-cta--inline">
+          <a href="/find-tutors/" class="btn btn-accent btn-large">
+            Find A Tutor
+          </a>
+          <a href="/request-tutor/" class="btn btn-accent btn-large">
+            Contact Us
+          </a>
+        </div>
+
+      </div>
+      <div class="hero-image">
+        <img src="{% static 'img/admissions/hero-banner.jpg' %}" alt="UCL">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Success Rates Speak For Themselves</h2>
+    <p>Over 90% of our postgraduate applicants receive an offer from their first or second choice universities.</p>
+
+    <div class="grid grid-2 comparison">
+      <div class="card">
+        <img src="{% static 'img/admissions/without-profs.png' %}" alt="Without support">
+        <h4>Without our support</h4>
+        <span class="big">25%</span>
+      </div>
+      <div class="card highlight">
+        <img src="{% static 'img/admissions/with-profs.png' %}" alt="With support">
+        <h4>With TASCAM Co Ltd</h4>
+        <span class="big">90%</span>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <h3>A Track Record of Success</h3>
+      <p>Our education consulting team works with students for university admissions at all levels. We have a proven track record of success, with over 90% of our students obtaining offers from their first or second choice universities.</p>
+      <h4>Here are just a few of our recent successes:</h4>
+      <ul class="checklist grid grid-2">
+        <li>Oxford – PPE</li><li>Oxford – Economics and Management</li>
+        <li>Cambridge – Mathematics</li><li>Cambridge – HSPS</li>
+        <li>Cambridge – Natural Sciences</li><li>Imperial College – Medicine</li>
+        <li>LSE – LLB Law</li><li>Oxford – Geography</li>
+        <li>LBS – Masters in Management</li><li>LSE – MSc Finance</li>
+        <li>KCL – MA War Studies</li><li>Cambridge – MBA</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<!-- ADVISERS -->
+<section class="section advisers">
+  <div class="container">
+    <h2>Our Top UCL Advisers</h2>
+
+    <div class="tutor-cards grid grid-3">
+
+      <!-- Dr Jack -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/jack.jpg' %}" alt="Dr Jack">
+        <h3>Dr Jack</h3>
+        <p>PhD in Mathematics from Queen Mary University of London, with over 2,000 Hours Experience Tutoring</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-outline">View Profile</a>
+          <a href="#" class="btn btn-primary">Hire Dr Jack</a>
+        </div>
+      </article>
+
+      <!-- Dr Don -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/don.jpg' %}" alt="Dr Don">
+        <h3>Dr Don</h3>
+        <p>Over 12 Years’ Experience as a Full-time Tutor, PhD in Philosophy of Maths, BA and MA Mathematics from University of Cambridge</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-outline">View Profile</a>
+          <a href="#" class="btn btn-primary">Hire Dr Don</a>
+        </div>
+      </article>
+
+      <!-- Zaneta -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/zaneta.jpg' %}" alt="Zaneta">
+        <h3>Zaneta</h3>
+        <p>Four Years Law Tutoring Experience, Masters of Law from Cambridge, LPC from BBP University</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-outline">View Profile</a>
+          <a href="#" class="btn btn-primary">Hire Zaneta</a>
+        </div>
+      </article>
+
+      <!-- Benjamin -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/benjamin.jpg' %}" alt="Benjamin">
+        <h3>Benjamin</h3>
+        <p>PhD candidate in Aerodynamics with a Master’s of Engineering from the University of Cambridge.</p>
+        <div class="buttons">
+          <a href="#" class="btn btn-outline">View Profile</a>
+          <a href="#" class="btn btn-primary">Hire Benjamin</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section section--muted">
+  <div class="container">
+    <h2>Are TASCAM Co Ltd UCL Advisers right for you?</h2>
+    <p>TASCAM Co Ltd provides leading application consulting services for top Cameroon universities. Our expert consultants deliver bespoke guidance to assist you with your degree support. We boast a 90% success rate with students receiving an offer from their first or second choice universities.</p>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="section">
+  <div class="container">
+    <h2>What sets our online UCL programs apart?</h2>
+    <div class="grid grid-3 cards-simple">
+      <div class="card">
+        <h4>Carefully Screened</h4>
+        <p>We only accept the best 3% of tutors that apply. This ensures our students receive first-class service from elite educators.</p>
+      </div>
+      <div class="card">
+        <h4>Highly Experienced</h4>
+        <p>Our tutors are more than recent graduates — most have postgraduate degrees or PhDs.</p>
+      </div>
+      <div class="card">
+        <h4>Inside Information</h4>
+        <p>Many of our tutors are academics with university admissions experience, giving insider knowledge on what universities seek.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="section section--muted">
+  <div class="container">
+    
+    <h2>Popular Subjects</h2>
+
+    <div class="subject-grid mt-2">
+      <a href="{% url 'law_tutors' %}" class="subject-card">Law</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics</a>
+      <a href="{% url 'computer_science_tutors' %}" class="subject-card">Computer Science</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English</a>
+      <a href="{% url 'physics_tutors' %}" class="subject-card">Physics</a>
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics</a>
+      <a href="{% url 'chemistry_tutors' %}" class="subject-card">Chemistry</a>
+    </div>
+
+    <h3 class="mt-4">Other Tuition Requests</h3>
+
+    <div class="subject-grid mt-2">
+      <a href="{% url 'admission_test_tutors' %}" class="subject-card">Admissions Tests Support</a>
+      <a href="{% url 'undergraduate_admissions' %}" class="subject-card">Undergraduate</a>
+      <a href="{% url 'postgraduate_admissions' %}" class="subject-card">Postgraduate</a>
+      <a href="{% url 'mba_admissions_tutors' %}" class="subject-card">MBA</a>
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA TEAM -->
+<section class="cta cta--accent">
+  <div class="container">
+    <div class="team-grid grid grid-3 text-center">
+      <div>
+        <img src="{% static 'img/team/rebecca.jpg' %}" alt="Rebecca Thompson">
+        <h4>Rebecca Thompson</h4>
+        <p>Senior Client Manager</p>
+      </div>
+      <div>
+        <img src="{% static 'img/team/joe.jpg' %}" alt="Joe Robbins">
+        <h4>Joe Robbins</h4>
+        <p>Head of Consulting</p>
+      </div>
+      <div>
+        <img src="{% static 'img/team/richard.jpg' %}" alt="Richard Evans">
+        <h4>Richard Evans</h4>
+        <p>Founder & Education Expert</p>
+      </div>
+    </div>
+
+    <div class="cta-text mt-5">
+      <h2>Get Started with our Admissions Consulting Services Today</h2>
+      <p>Our team is available to speak with you 24/7 and can give you more information on how to maximise your chances of success.</p>
+      <a href="#contact" class="btn btn-primary mt-3">Talk to an Expert</a>
+      <p class="trustpilot-note mt-3">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+    </div>
+  </div>
+</section>
+
+{% endblock content %}

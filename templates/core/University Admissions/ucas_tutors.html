@@ -1,0 +1,267 @@
+{# templates/core/ucas_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}UCAS Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Our Online UCAS Tutors Get Results</h1>
+        <p>TASCAM Co Ltd find expert tutors in any subject and for all levels of study. <strong>94%</strong> of our surveyed students achieve their target grade.</p>
+        <div class="hero-cta hero-cta--inline">
+  <a href="/find-tutors/" class="btn btn-accent btn-large">
+    Find A Tutor
+  </a>
+  <a href="/request-tutor/" class="btn btn-accent btn-large">
+    Contact Us
+  </a>
+</div>
+        
+        
+      </div>
+      <div class="hero-card">
+        <div class="tutor-mini card">
+          <div class="tutor-mini__media">
+            <img src="{% static 'img/tutors/kelly.jpg' %}" alt="TASCAM Co Ltd tutor - Kelly" loading="lazy">
+          </div>
+          <div class="tutor-mini__body">
+            <h3>Kelly</h3>
+            <div class="tutor-mini__meta">
+              <span class="stars" aria-label="5 out of 5">5</span>
+              <span>1364 Hours Taught</span>
+            </div>
+            <p>Highly experienced tutor specialising in Law tutoring f...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat card">
+        <h4>Achieve a grade increase with the help of TASCAM Co Ltd</h4>
+        <p><strong>83%</strong> of our surveyed students achieve a grade increase</p>
+        <p>We’ve helped over <strong>13,000</strong> students boost their grades by an average of <strong>13%</strong> in their final examinations.</p>
+      </div>
+      <div class="stat card">
+        <h4>Work with the best UCAS Tutors in the world</h4>
+        <ul class="checklist">
+          <li>40% of our tutors have PhDs</li>
+          <li>90% are postgrads</li>
+          <li>100% have over two years tutoring experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS + TRUST -->
+<section class="awards">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Top quality tutoring at TASCAM Co Ltd</h3>
+        <img src="{% static 'img/the-profs-team.jpg' %}" alt="TASCAM Co Ltd team" loading="lazy" class="mb-4">
+        <h4 class="mt-2">Award-Winning Services</h4>
+        <ul class="award-logos">
+          <li>
+            <img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025 logo" loading="lazy">
+            <span>Private Tutoring Provider of the Year 2025.</span>
+          </li>
+          <li>
+            <img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023 logo" loading="lazy">
+            <span>Tutoring Company of the Year 2023.</span>
+          </li>
+          <li>
+            <img src="{% static 'img/awards/nta-2022.png' %}" alt="National Tutoring Awards 2022 logo" loading="lazy">
+            <span>Best Customer Service 2022.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The highest-rated tutoring company on TrustPilot since 2016</h3>
+        <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+        <img src="{% static 'img/trustpilot-strip.png' %}" alt="Trustpilot rating" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA + CONTACT FORM -->
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<!-- TOP TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top Tutors</h2>
+
+    <div class="tutor-cards grid grid-3">
+
+      <!-- Kelly -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/kelly.jpg' %}" alt="Kelly" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Kelly</h3>
+          <div class="tutor__meta">
+            <span class="hours">1364 Hours Taught</span>
+            <span class="badge">Background Checked</span>
+            <span class="badge">Face to Face or online</span>
+            <span class="badge">Fast Response Time</span>
+          </div>
+          <p>Highly experienced tutor specialising in Law tutoring for LLB, LLM, GDL, BPTC and LPC courses</p>
+          <p>Kelly is an experienced professional tutor who was called to the Bar of England and Wales in 2016. She has an LLB from Queen Mary University of London, as well as a BPTC and LLM from BPP University. Kelly offers tutoring for students ranging from school-level to postgraduate-level, though she specialises in Law tutoring for LLB, LLM, GDL, BPTC and LPC courses. She has also successfully supported GCSE, A level and IB students with university applications, work experience and academic writing skills, as well as non-Law students on university courses including English, Business Studies, Philosophy, and more.</p>
+          <div class="tutor__schools">
+            <h4>Attended:</h4>
+            <ul>
+              <li>BPP University</li>
+              <li>Queen Mary, University of London (University of London)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Jenny -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/jenny.jpg' %}" alt="Jenny" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Jenny</h3>
+          <div class="tutor__meta">
+            <span class="hours">685 Hours Taught</span>
+            <span class="badge">Background Checked</span>
+            <span class="badge">Face to Face or online</span>
+            <span class="badge">Fast Response Time</span>
+          </div>
+          <p>Multidisciplinary teacher and tutor with a Master’s in Linguistics and a PhD in Ancient Greek</p>
+          <p>Dr Jenny is a highly qualified and experienced teacher and private tutor. She has a rich and multidisciplinary education, including a Bachelor’s degree in French and English, a Master’s in Linguistics, a PhD in Ancient Greek, and a postdoctoral diploma in Religious Studies. Dr Jenny has over 40 years’ teaching experience in schools and universities across Cameroon and abroad, specialising in Ancient and Modern Languages, English, and Religious Studies/Theology. She has a track record of helping all of her students improve their grades and achieve success in their exams.</p>
+          <div class="tutor__schools">
+            <h4>Attended:</h4>
+            <ul>
+              <li>Royal Holloway and Bedford New College (University of London)</li>
+              <li>Brunel University</li>
+              <li>Bangor University (University of Wales)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- Benjamin -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/benjamin.jpg' %}" alt="Benjamin" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Benjamin</h3>
+          <div class="tutor__meta">
+            <span class="hours">559 Hours Taught</span>
+            <span class="badge">Background Checked</span>
+            <span class="badge">Face to Face or online</span>
+            <span class="badge">Fast Response Time</span>
+          </div>
+          <p>Cambridge and UCL graduate specialising in English, Creative Writing and Philosophy tuition</p>
+          <p>Benjamin is a specialist English Literature and admissions tutor. He has a Bachelor’s degree in English from the University of Cambridge and a Master’s in English from UCL, and is currently studying a PhD in English at the University of Cambridge. Benjamin not only specialises in English Literature, Creative Writing and Philosophy tuition at all levels, but also entrance test preparation and university admissions support. He has successfully prepared students for the SAT/ACT as well as admissions tests, personal statements and interviews at top universities, including Oxbridge.</p>
+          <div class="tutor__schools">
+            <h4>Attended:</h4>
+            <ul>
+              <li>University of Cambridge</li>
+              <li>Ilford County High School</li>
+              <li>University College London (University of London)</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+      <!-- George -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/george.jpg' %}" alt="George" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>George</h3>
+          <div class="tutor__meta">
+            <span class="hours">359 Hours Taught</span>
+            <span class="badge">Background Checked</span>
+            <span class="badge">Face to Face or online</span>
+            <span class="badge">Fast Response Time</span>
+          </div>
+          <p>Expert Classics, Latin and Greek tutor with a degree in Classics from Trinity College, Oxford</p>
+          <p>George is an experienced Classical Studies and Classical Languages tutor. He has a Bachelor’s degree in Classics from Oxford University and nearly half a decade of tutoring experience. His tutoring subject specialisms are Latin, Ancient Greek and Classical Civilisation. George also works with younger students on preparation for the 11+ and 13+ examinations, tutoring verbal and non-verbal reasoning, and with older students for Maths, English and Sciences at GCSE level.</p>
+          <div class="tutor__schools">
+            <h4>Attended:</h4>
+            <ul>
+              <li>University of Oxford</li>
+              <li>Oundle School</li>
+            </ul>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <div class="testimonial card">
+      <h3>Testimonial</h3>
+      <p class="eyebrow">We Can make the difference</p>
+      <blockquote>
+        <p><strong>Nima Nima</strong><br>
+        I went from 43% in first year to receiving a masters offer at the LSE! Having almost failed my first year I decided to get tutoring from TASCAM Co Ltd in my second year. Thanks to the brilliant quality of the tutors I managed to score a 1st in my second year and receive an offer for the LSE Masters in Management. A big thank you to TASCAM Co Ltd.</p>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+<!-- TUTORING AWARDS MARQUEE -->
+<section class="awards-strip">
+  <div class="container">
+    <h3>Tutoring Awards</h3>
+    <p>An award winning company</p>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/awards/department-of-education.png' %}" alt="Department of Education" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/forbes-30u30.png' %}" alt="Forbes Under 30 Europe Awards" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/education-investor-2024.png' %}" alt="Education Investor Awards 2024" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/telegraph-trade.png' %}" alt="The Telegraph Trade Awards" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023" loading="lazy"></li>
+      <li><img src="{% static 'img/awards/education-investor-2017.png' %}" alt="Education Investor Awards 2017" loading="lazy"></li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- SUBJECTS -->
+
+
+<!-- PRESS LOGOS -->
+<section class="press">
+  <div class="container">
+    <h3>TASCAM Co Ltd Featured In</h3>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/press/the-telegraph.png' %}" alt="The Telegraph logo" loading="lazy"></li>
+      <li><img src="{% static 'img/press/the-guardian.png' %}" alt="The Guardian logo" loading="lazy"></li>
+      <li><img src="{% static 'img/press/financial-times.png' %}" alt="Financial Times logo" loading="lazy"></li>
+      <li><img src="{% static 'img/press/the-times.png' %}" alt="The Times logo" loading="lazy"></li>
+      <li><img src="{% static 'img/press/evening-standard.png' %}" alt="Evening Standard logo" loading="lazy"></li>
+      <li><img src="{% static 'img/press/fe-news.png' %}" alt="FE News logo" loading="lazy"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="trustpilot-note mt-3">
+      <p>Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+    </div>
+</section>
+
+{% endblock content %}

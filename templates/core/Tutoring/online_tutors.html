@@ -1,0 +1,289 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Online Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<section class="hero online-hero">
+  <div class="container hero-wrap">
+    <div class="hero-text">
+      <h1>Professional Online Tutors</h1>
+      <p>
+        TASCAM Ltd is a world leading online tutoring company and our online tutors teach students
+        at all levels around the globe. See some examples below of how easy and convenient it is 
+        to learn from home.
+      </p>
+    </div>
+</section>
+
+<section class="tutor-showcase container">
+  <h2>Meet Some of Our Top Online Tutors</h2>
+  <div class="tutor-grid">
+    <article class="tutor-card">
+      <img src="{% static 'images/tutors/tutor1.jpg' %}" alt="Dr. Sarah Lewis">
+      <div class="tutor-info">
+        <h3>Dr. Sarah Lewis</h3>
+        <p class="subject">Economics, Finance</p>
+        <p class="bio">PhD in Economics (LSE). 8+ years of tutoring experience in micro and macroeconomics.</p>
+        <div class="rating">★★★★★ 4.9/5</div>
+      </div>
+    </article>
+
+    <article class="tutor-card">
+      <img src="{% static 'images/tutors/tutor2.jpg' %}" alt="Mark Johnson">
+      <div class="tutor-info">
+        <h3>Mark Johnson</h3>
+        <p class="subject">Engineering, Maths</p>
+        <p class="bio">MEng from Imperial College London. Specialises in mechanics and thermodynamics.</p>
+        <div class="rating">★★★★★ 4.8/5</div>
+      </div>
+    </article>
+
+    <article class="tutor-card">
+      <img src="{% static 'images/tutors/tutor3.jpg' %}" alt="Amelia Roberts">
+      <div class="tutor-info">
+        <h3>Amelia Roberts</h3>
+        <p class="subject">Law, Politics</p>
+        <p class="bio">Law graduate from Oxford. Experienced in constitutional law and essay preparation.</p>
+        <div class="rating">★★★★★ 5.0/5</div>
+      </div>
+    </article>
+
+    <article class="tutor-card">
+      <img src="{% static 'images/tutors/tutor4.jpg' %}" alt="James Patel">
+      <div class="tutor-info">
+        <h3>James Patel</h3>
+        <p class="subject">Computer Science</p>
+        <p class="bio">Software engineer and data science mentor. Expert in Python, Java, and algorithms.</p>
+        <div class="rating">★★★★★ 4.9/5</div>
+      </div>
+    </article>
+  </div>
+
+  <div class="tutor-cta">
+    <a href="{% url 'request_tutor' %}" class="btn btn-accent">Find Your Tutor</a>
+  </div>
+</section>
+
+<section class="section section--muted">
+  <div class="container">
+
+    <div class="subject-grid mt-2">
+
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering</a>
+      <a href="{% url 'finance_tutors' %}" class="subject-card">Finance</a>
+      <a href="{% url 'maths_tutors' %}" class="subject-card">Maths</a>
+      <a href="{% url 'statistics_tutors' %}" class="subject-card">Statistics</a>
+      <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting</a>
+      <a href="{% url 'computer_science_tutors' %}" class="subject-card">Computer Science</a>
+      <a href="{% url 'law_tutors' %}" class="subject-card">Law</a>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="benefits container">
+  <h2>Benefits of Online Tutoring</h2>
+  <p>
+    Online tutoring allows students to learn from highly specialised tutors from the comfort
+    of home. Other benefits include:
+  </p>
+
+  <div class="benefit-grid">
+    <div class="benefit-card">
+      <img src="{% static 'images/icons/flexibility.png' %}" alt="Flexibility">
+      <h3>Flexibility</h3>
+      <p>
+        Without the need to travel, online tutors are more flexible with their schedule.
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <img src="{% static 'images/icons/quality.png' %}" alt="Quality">
+      <h3>Quality</h3>
+      <p>
+        Many of our best tutors only teach online. The demand for their services is international.
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <img src="{% static 'images/icons/reach.png' %}" alt="Reach">
+      <h3>Reach</h3>
+      <p>
+        Top tutors are very hard to find. By choosing to go online, you’ll have access to more
+        specialist tutors.
+      </p>
+    </div>
+
+    <div class="benefit-card">
+      <img src="{% static 'images/icons/recording.png' %}" alt="Recording">
+      <h3>Recording</h3>
+      <p>
+        Our tutors can record your classes and share handwritten notes using online whiteboard
+        software like BitPaper.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="requirements container">
+  <h2>Requirements For Online Tutoring</h2>
+  <p>
+    Many companies offer “online tutoring,” but TASCAM Co Ltd goes much further. Many of our tutors
+    complete training to teach online professionally. See our requirements below:
+  </p>
+
+  <div class="requirements-columns">
+    <div class="req-col">
+      <h3>General Requirements</h3>
+      <ul>
+        <li>Good Internet Connection</li>
+        <li>Decent Computer</li>
+        <li>Headphones</li>
+      </ul>
+    </div>
+
+    <div class="req-col">
+      <h3>Software</h3>
+      <ul>
+        <li>Skype™ / Zoom™ (Web Conferencing)</li>
+        <li>BitPaper (Online Whiteboard)</li>
+      </ul>
+    </div>
+
+    <div class="req-col">
+      <h3>Hardware (Optional)</h3>
+      <ul>
+        <li>Graphics Tablet (Writing Tools)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="team container">
+  <h2>Talk to us to find out how we can help</h2>
+  <div class="team-grid">
+    <div class="member">
+      <img src="{% static 'images/team/rebecca.jpg' %}" alt="Rebecca Thompson">
+      <h4>Rebecca Thompson</h4>
+      <p>Senior Client Manager</p>
+    </div>
+    <div class="member">
+      <img src="{% static 'images/team/joe.jpg' %}" alt="Joe Robbins">
+      <h4>Joe Robbins</h4>
+      <p>Head of Consulting</p>
+    </div>
+    <div class="member">
+      <img src="{% static 'images/team/richard.jpg' %}" alt="Richard Evans">
+      <h4>Richard Evans</h4>
+      <p>Founder & Education Expert</p>
+    </div>
+  </div>
+</section>
+
+<section class="cta container">
+  <h2>Get Started Today</h2>
+  <p>
+    Our team is available to speak with you 24/7 and will be able to give you more information
+    on how to maximise your chances of success.
+  </p>
+  <a href="{% url 'request_tutor' %}" class="btn btn-accent">Request Tutor</a>
+</section>
+
+<section class="subjects container">
+  <h2>We Cover All Subjects</h2>
+  <p>From Anthropology to Zoology, we have it covered.</p>
+
+  <div class="subject-grid">
+    <a href="{% url 'gcse_tutors' %}" class="subject-card">GCSE Tutors</a>
+    <a href="{% url 'aca_tutors' %}" class="subject-card">ACA Tutors</a>
+    <a href="{% url 'econometrics_tutors' %}" class="subject-card">Econometrics Tutors</a>
+    <a href="{% url 'acca_tutors' %}" class="subject-card">ACCA Tutors</a>
+    <a href="{% url 'economics_tutors' %}" class="subject-card">Economics Tutors</a>
+    <a href="{% url 'politics_tutors' %}" class="subject-card">Politics Tutors</a>
+    <a href="{% url 'a_level_tutors' %}" class="subject-card">A-Level Tutors</a>
+    <a href="{% url 'academic_writing_tutors' %}" class="subject-card">Academic Writing Tutors</a>
+    <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering Tutors</a>
+    <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology Tutors</a>
+    <a href="{% url 'ib_tutors' %}" class="subject-card">IB Tutors</a>
+    <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting Tutors</a>
+    <a href="{% url 'english_tutors' %}" class="subject-card">English Literature Tutors</a>
+    <a href="{% url 'architecture_tutors' %}" class="subject-card">Architecture Tutors</a>
+    <a href="{% url 'essay_tutors' %}" class="subject-card">Essay Tutors</a>
+    <a href="{% url 'sat_tutors' %}" class="subject-card">SAT Tutors</a>
+    <a href="{% url 'finance_tutors' %}" class="subject-card">Finance Tutors</a>
+    <a href="{% url 'spss_tutors' %}" class="subject-card">SPSS Tutors</a>
+    <a href="{% url 'admissions_tutors' %}" class="subject-card">University Admission Tutors</a>
+    <a href="{% url 'step_tutors' %}" class="subject-card">STEP Mathematics Tutors</a>
+  </div>
+
+  <p class="show-more">
+    The TASCAM Co Ltd covers all subjects. 
+    <a href="{% url 'find_tutors' %}">Click here</a> or 
+    <a href="{% url 'request_tutor' %}">Call us!</a>
+  </p>
+</section>
+
+<section class="trust container">
+  <p>Cameroon’s highest rated tuition company since 2016 on Trustpilot.</p>
+</section>
+
+<style>
+.subject-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 25px;
+}
+
+.subject-card {
+  display: block;
+  padding: 16px 20px;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  font-weight: 600;
+  color: #2a2946;
+  text-decoration: none;
+  border: 1px solid #eaeaea;
+  transition: all 0.25s ease;
+}
+
+.subject-card:hover {
+  border-color: #ff7a00;
+  box-shadow: 0 5px 14px rgba(255, 122, 0, 0.25);
+  transform: translateY(-3px);
+  color: #ff7a00;
+}
+
+.cta {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.cta p {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 25px auto; /* centers + reduces vertical spacing */
+  line-height: 1.6;
+}
+
+.cta .btn {
+  display: inline-block;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  border-radius: 40px;
+  margin-top: 10px;
+}
+</style>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/dr_don.jpg' %}" alt="Dr Don" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Dr Don</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">PhD in Philosophy of Maths, 12+ Years Tutoring</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Dr Don</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Dr Don</h2>
+  <p>
+    Dr Don is a highly experienced mathematics, economics, and philosophy tutor with over
+    12 years of full-time teaching. His academic background in the philosophy of mathematics
+    gives him a unique perspective in helping students understand abstract concepts.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Mathematics (All Levels)</li>
+    <li>Economics</li>
+    <li>Philosophy</li>
+    <li>Quantitative Reasoning</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Don transformed the way I think about maths — I finally enjoy the subject.”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Dr Don</a>
+  </div>
+</section>
+
+{% endblock %}

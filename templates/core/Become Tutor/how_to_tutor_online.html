@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}How To Tutor Online | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<section class="resource-page">
+  <div class="resource-container">
+
+    <h1 class="resource-title">How To Tutor Online</h1>
+
+    <p class="resource-intro">
+      Online tutoring allows you to reach students anywhere, but it also requires
+      proper setup and digital teaching techniques to succeed.
+    </p>
+
+    <!-- Section 1 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">1. Set Up the Right Equipment</h2>
+      <div class="online-tip">
+        <div class="online-tip-icon">🎧</div>
+        <p class="resource-text">
+          Invest in a good microphone and webcam for clear communication.
+          A stable internet connection is essential for smooth lessons.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">2. Choose Effective Online Tools</h2>
+      <p class="resource-text">
+        Use whiteboard platforms and video tools that support easy collaboration.
+      </p>
+
+      <div class="online-platforms">
+        <h4>Recommended Platforms:</h4>
+        <ul class="resource-list">
+          <li>Zoom / Google Meet</li>
+          <li>Miro / BitPaper whiteboards</li>
+          <li>Google Docs for real-time writing</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">3. Share Materials Digitally</h2>
+      <div class="online-tip">
+        <div class="online-tip-icon">📄</div>
+        <p class="resource-text">
+          Screen sharing, cloud documents, and digital worksheets make learning
+          more interactive and accessible.
+        </p>
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">4. Keep Students Engaged</h2>
+      <div class="online-tip">
+        <div class="online-tip-icon">⚡</div>
+        <p class="resource-text">
+          Ask frequent questions, use quick activities, and encourage students to
+          explain their reasoning aloud.
+        </p>
+      </div>
+      <div class="resource-highlight">
+        Engagement is the key to successful online tutoring sessions.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* -----------------------------------
+   HOW TO TUTOR ONLINE PAGE
+----------------------------------- */
+
+.online-tip {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  border: 1px solid #e0e0f5;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-bottom: 25px;
+}
+
+.online-tip-icon {
+  font-size: 32px;
+  color: #ff7a00;
+}
+
+.online-platforms {
+  background: #fff7ed;
+  border: 1px solid #ffe1c5;
+  padding: 20px;
+  border-radius: 14px;
+  margin-top: 20px;
+}
+
+.online-platforms h4 {
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #333;
+}
+</style>
+
+{% endblock %}

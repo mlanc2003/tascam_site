@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="success-message">
+  <div class="container">
+    <h1>Thank you!</h1>
+    <p>Your tutor request has been successfully submitted. Our team will contact you shortly.</p>
+  </div>
+</section>
+
+<style>
+
+/* SUCCESS MESSAGE PAGE */
+.success-message {
+  padding: 80px 20px;
+  background: #f6f5ff;
+  text-align: center;
+}
+
+.success-message .container {
+  max-width: 700px;
+  margin: 0 auto;
+  background: #ffffff;
+  padding: 40px 50px;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+}
+
+.success-message h1 {
+  font-size: 32px;
+  color: #2a2946;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.success-message p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2f2f5a;
+  margin-bottom: 0;
+}
+
+</style>
+
+{% endblock %}

@@ -1,0 +1,223 @@
+{% extends "base.html" %}
+{% block title %}Consultancy Login | TASCAM Co Ltd{% endblock %}
+{% block content %}
+{% load static %}
+
+<section class="consultancy-login">
+  <div class="consultancy-container">
+    <div class="consultancy-box">
+
+      <h1 class="consultancy-title">Login</h1>
+      <hr class="consultancy-line">
+
+      <img src="{% static 'images/tascam_logo.png' %}" alt="TASCAM Logo" class="consultancy-logo">
+
+      <h2 class="consultancy-subtitle">Welcome to TASCAM Consultancy</h2>
+
+      <!-- Display messages -->
+      {% if messages %}
+        <div class="message-container">
+          {% for message in messages %}
+            <div class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      <form class="consultancy-form" method="post" action="{% url 'consultancy_login' %}">
+        {% csrf_token %}
+        <input type="email" name="email" placeholder="Email Address" required>
+        <input type="password" name="password" placeholder="Password" required>
+
+        <div class="consultancy-links">
+          <a href="{% url 'consultancy_reset_password' %}" class="consultancy-link">Reset Password</a>
+          <a href="{% url 'consultancy_login_help' %}" class="consultancy-link">Login Help</a>
+        </div>
+
+        <button type="submit" class="consultancy-btn">Sign in</button>
+      </form>
+
+      <div class="divider">
+        <span>OR</span>
+      </div>
+
+      <a href="{% url 'consultancy_signup' %}" class="signup-btn">Sign up as a Tutor</a>
+
+      <footer class="consultancy-footer">
+        <p>© 2025 TASCAM Co Ltd</p>
+      </footer>
+
+    </div>
+  </div>
+</section>
+
+{% if redirect_home %}
+<script>
+  setTimeout(function() {
+    window.location.href = "{% url 'home' %}";
+  }, 2000); // Redirect after 2 seconds
+</script>
+{% endif %}
+
+<style>
+body {
+  background-color: #fff;
+}
+
+.consultancy-login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+  background-color: #fafafa;
+}
+
+.consultancy-container {
+  text-align: center;
+}
+
+.consultancy-box {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  padding: 40px 60px;
+  max-width: 480px;
+  margin: auto;
+}
+
+.consultancy-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2f2f5a;
+  margin-bottom: 10px;
+}
+
+.consultancy-line {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 0 auto 25px;
+  width: 100%;
+}
+
+.consultancy-logo {
+  width: 220px;
+  margin-bottom: 20px;
+}
+
+.consultancy-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 25px;
+}
+
+.message-container {
+  margin-bottom: 15px;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.alert.success {
+  background-color: #e7f9ed;
+  color: #207a40;
+  border: 1px solid #a5d6b1;
+}
+
+.alert.error {
+  background-color: #fdeaea;
+  color: #d62f2f;
+  border: 1px solid #f2b2b2;
+}
+
+.consultancy-form input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.consultancy-links {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 15px;
+}
+
+.consultancy-link {
+  color: #2a6ec6;
+  font-size: 0.9rem;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+.consultancy-link:hover {
+  text-decoration: underline;
+}
+
+.consultancy-btn {
+  background-color: #0047a3;
+  color: #fff;
+  font-weight: 700;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.consultancy-btn:hover {
+  background-color: #00367d;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+  color: #777;
+  font-weight: 600;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+  margin: 0 10px;
+}
+
+.signup-btn {
+  display: inline-block;
+  text-align: center;
+  background: transparent;
+  border: 2px solid #0047a3;
+  color: #0047a3;
+  font-weight: 700;
+  padding: 10px;
+  border-radius: 6px;
+  width: 100%;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+  background: #0047a3;
+  color: #fff;
+}
+
+.consultancy-footer {
+  margin-top: 30px;
+  color: #777;
+  font-size: 0.9rem;
+}
+</style>
+
+{% endblock %}

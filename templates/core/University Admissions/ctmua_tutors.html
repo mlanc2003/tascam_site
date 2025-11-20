@@ -1,0 +1,232 @@
+{# templates/core/ctmua_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}CTMUA Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Our Online CTMUA Tutors Get Results</h1>
+        <p>TASCAM Co Ltd finds expert tutors in any subject and for all levels of study. <strong>94%</strong> of our surveyed students achieve their target grade.</p>
+        <div class="hero-cta hero-cta--inline">
+  <a href="/find-tutors/" class="btn btn-accent btn-large">
+    Find A Tutor
+  </a>
+  <a href="/request-tutor/" class="btn btn-accent btn-large">
+    Contact Us
+  </a>
+</div>
+        
+        <div class="hero-logos">
+          <img src="{% static 'img/tascam-tutoring-1.jpg' %}" alt="TASCAM Co Ltd tutoring" loading="lazy">
+          <img src="{% static 'img/tascam-tutoring-2.jpg' %}" alt="TASCAM Co Ltd tutoring" loading="lazy">
+          <img src="{% static 'img/tascam-tutoring-3.jpg' %}" alt="TASCAM Co Ltd tutoring" loading="lazy">
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="tutor-mini card">
+          <div class="tutor-mini__media">
+            <img src="{% static 'img/tutors/chris.jpg' %}" alt="TASCAM Co Ltd tutor - Chris" loading="lazy">
+          </div>
+          <div class="tutor-mini__body">
+            <h3>Chris</h3>
+            <div class="tutor-mini__meta">
+              <span class="stars" aria-label="5 out of 5">5</span>
+              <span>361 Hours Taught</span>
+            </div>
+            <p>Politics and International Relations Lecturer with PhD ...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat card">
+        <h4>Achieve a grade increase with the help of TASCAM Co Ltd</h4>
+        <p><strong>83%</strong> of our surveyed students achieve a grade increase</p>
+        <p>We’ve helped over <strong>13,000</strong> students boost their grades by an average of <strong>13%</strong> in their final examinations.</p>
+      </div>
+      <div class="stat card">
+        <h4>Work with the best CTMUA Tutors in the world</h4>
+        <ul class="checklist">
+          <li>40% of our tutors have PhDs</li>
+          <li>90% are postgrads</li>
+          <li>100% have over two years tutoring experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS + TRUST -->
+<section class="awards">
+  <div class="container">
+    <div class="grid grid-2">
+      <div class="card">
+        <h3>Top quality tutoring at TASCAM Co Ltd</h3>
+        <img src="{% static 'img/tascam-team.jpg' %}" alt="TASCAM Co Ltd team" loading="lazy" class="mb-4">
+        <h4 class="mt-2">Award-Winning Services</h4>
+        <ul class="award-logos">
+          <li>
+            <img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025 logo">
+            <span>Private Tutoring Provider of the Year 2025.</span>
+          </li>
+          <li>
+            <img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023 logo">
+            <span>Tutoring Company of the Year 2023.</span>
+          </li>
+          <li>
+            <img src="{% static 'img/awards/nta-2022.png' %}" alt="National Tutoring Awards 2022 logo">
+            <span>Best Customer Service 2022.</span>
+          </li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>The highest-rated tutoring company on TrustPilot since 2016</h3>
+        <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+        <img src="{% static 'img/trustpilot-strip.png' %}" alt="Trustpilot rating">
+      </div>
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<!-- TOP TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top CTMUA Tutors</h2>
+
+    <div class="tutor-cards grid grid-3">
+      <!-- Tormod -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/tormod.jpg' %}" alt="Tormod">
+        </div>
+        <div class="tutor__body">
+          <h3>Tormod</h3>
+          <span>5357 Hours Taught</span>
+          <ul class="tutor__tags">
+            <li>Background Checked</li>
+            <li>Face to Face or Online</li>
+            <li>Fast Response Time</li>
+          </ul>
+          <p>Trained Anthropologist, EU-funded researcher and highly experienced Humanities tutor</p>
+          <p>Tormod has been a professional private tutor for over 7 years. He’s a trained anthropologist and lecturer at Roehampton University with over a decade of experience. He helps students excel in Anthropology, Sociology, Psychology, Geography, Political Science, and more.</p>
+          <h4>Attended:</h4>
+          <ul><li>Roehampton University</li></ul>
+        </div>
+      </article>
+
+      <!-- Chris -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/chris.jpg' %}" alt="Chris">
+        </div>
+        <div class="tutor__body">
+          <h3>Chris</h3>
+          <span>361 Hours Taught</span>
+          <ul class="tutor__tags">
+            <li>Background Checked</li>
+            <li>Face to Face or Online</li>
+            <li>Fast Response Time</li>
+          </ul>
+          <p>Politics and International Relations Lecturer with PhD from LSE</p>
+          <p>Chris is a Lecturer in Politics and International Relations at a London university. He holds a PhD in International Relations from LSE, distinction-grade master’s degrees from SOAS and LSE, and a first-class degree from Cambridge. He specialises in IR theory and East Asian politics.</p>
+          <h4>Attended:</h4>
+          <ul>
+            <li>School of Oriental and African Studies (University of London)</li>
+            <li>London School of Economics and Political Science (University of London)</li>
+            <li>University of Cambridge</li>
+          </ul>
+        </div>
+      </article>
+
+      <!-- Christian -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/christian.jpg' %}" alt="Christian">
+        </div>
+        <div class="tutor__body">
+          <h3>Christian</h3>
+          <span>131 Hours Taught</span>
+          <ul class="tutor__tags">
+            <li>Background Checked</li>
+            <li>Face to Face or Online</li>
+            <li>Fast Response Time</li>
+          </ul>
+          <p>Experienced Humanities tutor and Oxford graduate</p>
+          <p>Christian is a first-class Oxford graduate specialising in English, History, Politics, Religious Studies and Philosophy. He has helped many students gain admission to Oxbridge and other top Cameroon universities.</p>
+          <h4>Attended:</h4>
+          <ul>
+            <li>The Skinners' School</li>
+            <li>University of Oxford</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <h3>Testimonial</h3>
+    <blockquote>
+      <p><strong>Nima Nima</strong><br>I went from 43% in first year to receiving a masters offer at the LSE! Thanks to the brilliant quality of TASCAM Co Ltd tutors I managed to score a 1st in my second year and receive an offer for the LSE Masters in Management.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- AWARDS STRIP -->
+<section class="awards-strip">
+  <div class="container">
+    <h3>Tutoring Awards</h3>
+    <p>An award-winning company</p>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/awards/department-of-education.png' %}" alt="Department of Education"></li>
+      <li><img src="{% static 'img/awards/forbes-30u30.png' %}" alt="Forbes Under 30 Europe Awards"></li>
+      <li><img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025"></li>
+      <li><img src="{% static 'img/awards/education-investor-2024.png' %}" alt="Education Investor Awards 2024"></li>
+      <li><img src="{% static 'img/awards/telegraph-trade.png' %}" alt="The Telegraph Trade Awards"></li>
+      <li><img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023"></li>
+      <li><img src="{% static 'img/awards/education-investor-2017.png' %}" alt="Education Investor Awards 2017"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- BLOGS -->
+<section class="section">
+  <div class="container">
+    <h2>Popular Blogs</h2>
+    <p class="eyebrow">Student Resources</p>
+    <div class="grid grid-4 cards-simple">
+      <a href="#" class="card"><h4>How to Get Into Cambridge</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into Imperial College London</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into LSE</h4><p>Topic: Undergraduate</p></a>
+      <a href="#" class="card"><h4>How to Get Into UCL</h4><p>Topic: Undergraduate</p></a>
+    </div>
+  </div>
+</section>
+
+
+<!-- PRESS -->
+<section class="press">
+  <div class="container">
+    <h3>TASCAM Co Ltd Featured In</h3>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/press/the-telegraph.png' %}" alt="The Telegraph"></li>
+      <li><img src="{% static 'img/press/the-guardian.png' %}" alt="The Guardian"></li>
+      <li><img src="{% static 'img/press/financial-times.png' %}" alt="Financial Times"></li>
+      <li><img src="{% static 'img/press/the-times.png' %}" alt="The Times"></li>
+      <li><img src="{% static 'img/press/evening-standard.png' %}" alt="Evening Standard"></li>
+      <li><img src="{% static 'img/press/fe-news.png' %}" alt="FE News"></li>
+    </ul>
+  </div>
+</section>
+
+{% endblock content %}

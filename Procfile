@@ -1,0 +1,1 @@
+web: gunicorn profs_site.wsgi

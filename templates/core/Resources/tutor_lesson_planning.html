@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Lesson Planning for Tutors | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="/tutor-resources/">Tutor Resources</a>
+    <span> &gt; </span>
+    <span>Lesson Planning</span>
+  </div>
+</nav>
+
+<header class="hero hero--article">
+  <div class="container">
+    <h1>Professional Lesson Planning & Teaching Frameworks</h1>
+    <p class="meta">Updated January 2026 · TASCAM Teaching Division</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid grid--2col">
+
+    <article class="prose">
+
+      <p>Effective lesson planning helps students achieve significant and measurable progress. At TASCAM Co Ltd, we follow a structured teaching framework used by leading educational organisations worldwide.</p>
+
+      <h2>1. The TASCAM Lesson Framework</h2>
+      <ol>
+        <li>Learning objectives</li>
+        <li>Diagnostic assessment</li>
+        <li>Guided explanation</li>
+        <li>Student practice</li>
+        <li>Feedback & correction</li>
+        <li>Homework strategy</li>
+      </ol>
+
+      <h2>2. Setting SMART Learning Goals</h2>
+      <ul>
+        <li>Specific</li>
+        <li>Measurable</li>
+        <li>Achievable</li>
+        <li>Relevant</li>
+        <li>Time-Bound</li>
+      </ul>
+
+      <h2>3. Creating Long-Term Student Progress Plans</h2>
+      <p>Every student should have a progress roadmap created during Week 1. This ensures structure, accountability, and measurable improvement.</p>
+
+      <h2>4. Delivering High-Impact Online Lessons</h2>
+      <ul>
+        <li>Use visual aids wherever possible.</li>
+        <li>Check understanding at each stage.</li>
+        <li>Encourage active student participation.</li>
+      </ul>
+
+    </article>
+
+    <section class="section section--light">
+    <div class="container">
+        <div class="support-panel card card--soft">
+        <div class="card-body">
+            <div class="grid grid--2 sm:grid--1 gap-lg">
+            <div>
+                <h3>24/7 support</h3>
+                <h2 class="mt-xs">We're Here To help</h2>
+                <p>We know our tutors personally, meaning we can find the perfect tutor for you.</p>
+                <div class="btn-row">
+                <a href="{% url 'request_tutor' %}" class="btn contact-btn-orange">Contact Us</a>
+                </div>
+            </div>
+            <div class="trust-banner align-center">
+                <img src="{% static 'images/badges/trustpilot.svg' %}" alt="Trustpilot" class="trustpilot-logo">
+                <p class="muted">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+  </div>
+</section>
+
+{% endblock %}

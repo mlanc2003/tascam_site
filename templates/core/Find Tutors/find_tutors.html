@@ -1,0 +1,419 @@
+{% extends "base.html" %}
+{% block title %}Find Tutors | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<section class="hero hero--subject">
+  <div class="container">
+    <h1>Find A Tutor</h1>
+    <p>A small showcase of some of our thousands of professional online tutors</p>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+
+    <!-- Dropdown Filters -->
+    <form action="{% url 'find_tutors_results' %}" method="get" class="filters-wrapper">
+
+      <!-- Level Filter -->
+      <div class="filter-box">
+        <label for="level">All Levels</label>
+        <select id="level" name="level">
+          <option value="">Select Level</option>
+          <option value="undergraduate">Undergraduate</option>
+          <option value="masters">Master's</option>
+          <option value="phd">PhD</option>
+          <option value="lecturer">Lecturer</option>
+          <option value="professional">Professional Qualification</option>
+          <option value="ib">International Baccalaureate</option>
+          <option value="alevel">A Level</option>
+          <option value="gcse">GCSE</option>
+          <option value="ks3">Key Stage 3</option>
+          <option value="common">Common Entrance</option>
+        </select>
+      </div>
+
+      <!-- Subject Filter -->
+      <div class="filter-box">
+        <label for="subject">All Subjects</label>
+        <select id="subject" name="subject">
+          <option value="">Select Subject</option>
+
+          <!-- 🧮 General & Academic Tutors -->
+          <optgroup label="General & Academic Tutors">
+            <option value="aca">ACA Tutors</option>
+            <option value="acca">ACCA Tutors</option>
+            <option value="accounting">Accounting Tutors</option>
+            <option value="academic_writing">Academic Writing Tutors</option>
+            <option value="architecture">Architecture Tutors</option>
+            <option value="biology">Biology Tutors</option>
+            <option value="chemistry">Chemistry Tutors</option>
+            <option value="computer_science">Computer Science Tutors</option>
+            <option value="dissertation">Dissertation Tutors</option>
+            <option value="econometrics">Econometrics Tutors</option>
+            <option value="economics">Economics Tutors</option>
+            <option value="engineering">Engineering Tutors</option>
+            <option value="english">English Tutors</option>
+            <option value="essay">Essay Tutors</option>
+            <option value="finance">Finance Tutors</option>
+            <option value="law">Law Tutors</option>
+            <option value="physics">Physics Tutors</option>
+            <option value="politics">Politics Tutors</option>
+            <option value="psychology">Psychology Tutors</option>
+            <option value="r">R Tutors</option>
+            <option value="research_methods">Research Methods Tutors</option>
+            <option value="spss">SPSS Tutors</option>
+            <option value="stata">Stata Tutors</option>
+            <option value="statistics">Statistics Tutors</option>
+            <option value="study_skills">Study Skills Tutors</option>
+            <option value="writing">Writing Tutors</option>
+          </optgroup>
+
+          <!-- 📘 A Level Tutors -->
+          <optgroup label="A Level Tutors">
+            <option value="a_level">A Level Tutors</option>
+            <option value="a_level_accounting">A Level Accounting Tutors</option>
+            <option value="a_level_biology">A Level Biology Tutors</option>
+            <option value="a_level_chemistry">A Level Chemistry Tutors</option>
+            <option value="a_level_economics">A Level Economics Tutors</option>
+            <option value="a_level_english">A Level English Tutors</option>
+            <option value="a_level_further_maths">A Level Further Maths Tutors</option>
+            <option value="a_level_history">A Level History Tutors</option>
+            <option value="a_level_maths">A Level Maths Tutors</option>
+            <option value="a_level_physics">A Level Physics Tutors</option>
+            <option value="a_level_psychology">A Level Psychology Tutors</option>
+          </optgroup>
+
+          <!-- 🎓 GCSE Tutors -->
+          <optgroup label="GCSE Tutors">
+            <option value="gcse">GCSE Tutors</option>
+            <option value="gcse_biology">GCSE Biology Tutors</option>
+            <option value="gcse_chemistry">GCSE Chemistry Tutors</option>
+            <option value="gcse_computer_science">GCSE Computer Science Tutors</option>
+            <option value="gcse_english_language">GCSE English Language Tutors</option>
+            <option value="gcse_geography">GCSE Geography Tutors</option>
+            <option value="gcse_history">GCSE History Tutors</option>
+            <option value="gcse_maths">GCSE Maths Tutors</option>
+            <option value="gcse_physics">GCSE Physics Tutors</option>
+            <option value="gcse_science">GCSE Science Tutors</option>
+            <option value="gcse_spanish">GCSE Spanish Tutors</option>
+          </optgroup>
+
+          <!-- 🌍 IB & International Tutors -->
+          <optgroup label="IB & International Tutors">
+            <option value="ib">IB Tutors</option>
+            <option value="ib_biology">IB Biology Tutors</option>
+            <option value="ib_chemistry">IB Chemistry Tutors</option>
+            <option value="ib_economics">IB Economics Tutors</option>
+            <option value="ib_english_language">IB English Language Tutors</option>
+            <option value="ib_maths">IB Maths Tutors</option>
+            <option value="ib_physics">IB Physics Tutors</option>
+            <option value="cambridge_ib">Cambridge IB Tutors</option>
+            <option value="london_ib">London IB Tutors</option>
+            <option value="manchester_ib">Manchester IB Tutors</option>
+            <option value="oxford_ib">Oxford IB Tutors</option>
+          </optgroup>
+
+          <!-- 🏛 Dissertation & University Tutors -->
+          <optgroup label="Dissertation & University Tutors">
+            <option value="cambridge_dissertation">Cambridge Dissertation Tutors</option>
+            <option value="london_dissertation">London Dissertation Tutors</option>
+            <option value="manchester_dissertation">Manchester Dissertation Tutors</option>
+            <option value="oxford_dissertation">Oxford Dissertation Tutors</option>
+            <option value="online">Online Tutors</option>
+          </optgroup>
+
+          <!-- 🏫 Admissions Tutors -->
+          <optgroup label="Admissions Tutors">
+            <option value="11plus">11 Plus Tutors</option>
+            <option value="common_entrance">Common Entrance Tutors</option>
+            <option value="admission_test">Admission Test Tutors</option>
+            <option value="ucas">UCAS Tutors</option>
+            <option value="personal_statement">Personal Statement Tutors</option>
+            <option value="university_admission">University Admission</option>
+            <option value="cambridge_admission">Cambridge Admission Tutors</option>
+            <option value="edinburgh_admission">Edinburgh Admission Tutors</option>
+            <option value="oxford_admission">Oxford Admission Tutors</option>
+            <option value="ucl_admission">UCL Admission Tutors</option>
+          </optgroup>
+
+          <!-- 🎓 Oxbridge Admissions -->
+          <optgroup label="Oxbridge Admissions">
+            <option value="ahaa">AHAA Tutors</option>
+            <option value="bmat">BMAT Tutors</option>
+            <option value="cat">CAT Tutors</option>
+            <option value="ctmua">CTMUA Tutors</option>
+            <option value="elat">ELAT Tutors</option>
+            <option value="engaa">ENGAA Tutors</option>
+            <option value="gat">GAT Tutors</option>
+            <option value="hat">HAT Tutors</option>
+            <option value="hspsaa">HSPSAA Tutors</option>
+            <option value="lnat">LNAT Tutors</option>
+            <option value="mat">MAT Tutors</option>
+            <option value="mlat">MLAT Tutors</option>
+            <option value="pat">PAT Tutors</option>
+            <option value="step">STEP Tutors</option>
+            <option value="tsa">TSA Tutors</option>
+          </optgroup>
+
+          <!-- 🎓 Undergraduate Admissions -->
+          <optgroup label="Undergraduate Admissions">
+            <option value="cambridge_admissions">Cambridge Admissions Tutors</option>
+            <option value="durham_admissions">Durham Admissions Tutors</option>
+            <option value="edinburgh_admissions">Edinburgh Admissions Tutors</option>
+            <option value="imperial_admissions">Imperial Admissions Tutors</option>
+            <option value="kings_admissions">King's College Admissions Tutors</option>
+            <option value="lse_admissions">LSE Admissions Tutors</option>
+            <option value="oxford_admissions">Oxford Admissions Tutors</option>
+            <option value="st_andrews_admissions">St Andrews Admissions Tutors</option>
+            <option value="ucl_admissions">UCL Admissions Tutors</option>
+            <option value="warwick_admissions">Warwick Admissions Tutors</option>
+          </optgroup>
+
+          <!-- 🎓 Postgraduate Admissions -->
+          <optgroup label="Postgraduate Admissions">
+            <option value="bcl">BCL Tutors</option>
+            <option value="business_school">Business School Admissions Tutors</option>
+            <option value="emba">EMBA Tutors</option>
+            <option value="gat_postgrad">GAT Tutors</option>
+            <option value="gdl">GDL Tutors</option>
+            <option value="gmat_postgrad">GMAT Tutors</option>
+            <option value="law_school">Law School Admissions Tutors</option>
+            <option value="masters">Master's Tutors</option>
+            <option value="mba">MBA Admissions Tutors</option>
+          </optgroup>
+
+          <!-- 🩺 Medical Admissions -->
+          <optgroup label="Medical Admissions">
+            <option value="bmat_medical">BMAT Tutors</option>
+            <option value="bmsat">BMSAT Tutors</option>
+            <option value="gamsat">GAMSAT Tutors</option>
+            <option value="hpat">HPAT Tutors</option>
+            <option value="imat">IMAT Tutors</option>
+            <option value="mcat_medical">MCAT Tutors</option>
+            <option value="ucat">UCAT Tutors</option>
+            <option value="cambridge_medical">Cambridge Admissions Tutors</option>
+            <option value="oxford_medical">Oxford Admissions Tutors</option>
+            <option value="ucl_medical">UCL Admissions Tutors</option>
+          </optgroup>
+
+          <!-- 🇺🇸 US Admissions -->
+          <optgroup label="US Admissions">
+            <option value="act">ACT Tutors</option>
+            <option value="ap">AP Tutors</option>
+            <option value="college_applications">College Application Tutors</option>
+            <option value="gmat_us">GMAT Tutors</option>
+            <option value="gre">GRE Tutors</option>
+            <option value="isee">ISEE Tutors</option>
+            <option value="lsat">LSAT Tutors</option>
+            <option value="mcat_us">MCAT Tutors</option>
+            <option value="sat">SAT Tutors</option>
+            <option value="ssat">SSAT Tutors</option>
+          </optgroup>
+
+        </select>
+      </div>
+    </form>
+  </div>
+
+    <!-- Level Tabs -->
+    <h2 class="section-title">Or Select By Level</h2>
+
+    <div class="level-tabs">
+      <div class="tab active" data-level="undergraduate">Undergraduate</div>
+      <div class="tab" data-level="masters">Master's</div>
+      <div class="tab" data-level="phd">PhD</div>
+      <div class="tab" data-level="lecturer">Lecturer</div>
+      <div class="tab" data-level="professional">Professional Qualification</div>
+      <div class="tab" data-level="ib">International Baccalaureate</div>
+      <div class="tab" data-level="alevel">A Level</div>
+      <div class="tab" data-level="gcse">GCSE</div>
+      <div class="tab" data-level="ks3">Key Stage 3</div>
+      <div class="tab" data-level="common">Common Entrance</div>
+    </div>
+    
+    <div id="tutors-results" class="tutors-results"></div>
+
+</section>
+
+<section class="section section--trust">
+  <div class="container trust-container">
+    <p>Cameroon’s highest rated tuition company since 2016 on <strong>Trustpilot</strong></p>
+  </div>
+</section>
+
+<!-- Script -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const tabs = document.querySelectorAll(".tab");
+  const resultsContainer = document.getElementById("tutors-results");
+
+  // load default level
+  loadTutors("undergraduate");
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function() {
+      const level = this.getAttribute("data-level");
+      tabs.forEach(t => t.classList.remove("active"));
+      this.classList.add("active");
+      loadTutors(level);
+    });
+  });
+
+  function loadTutors(level) {
+    fetch(`/find-tutors-results/?level=${level}`)
+      .then(res => res.text())
+      .then(html => {
+        resultsContainer.innerHTML = html;
+      })
+      .catch(err => {
+        resultsContainer.innerHTML = "<p>Could not load tutors.</p>";
+        console.error(err);
+      });
+  }
+});
+</script>
+
+<style>
+.hero--subject {
+  background:#2f2f5a;
+  color:#fff;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.section--light {
+  background: transparent !important;
+  padding-bottom: 0 !important;
+}
+
+.level-tabs {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:20px;
+  max-width: 1300px;
+  margin: 40px auto;
+}
+
+.tab {
+  background:#fff;
+  border-radius:12px;
+  padding:20px 10px;
+  font-weight:600;
+  color:#2f2f5a;
+  box-shadow:0 3px 8px rgba(0,0,0,0.1);
+  cursor:pointer;
+  transition:all 0.3s ease;
+  text-align:center;
+}
+
+.tab:hover, .tab.active {
+  background:#ff7a00;
+  color:#fff;
+  transform:translateY(-3px);
+}
+
+.filters-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 100px;
+  margin-top: 50px;
+  flex-wrap: nowrap;
+}
+
+.filter-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.filter-box select {
+  width: 340px;
+  height: 58px;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  background-color: #fff;
+}
+
+.tutors-results {
+  width: 100%;
+  max-width: 1300px;
+  margin: 40px auto;
+  display: block;
+  position: relative;
+  overflow: visible;
+}
+
+/* Tutor List + Cards remain unchanged */
+.tutors-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.tutor-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 30px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  padding: 35px;
+  transition: all 0.3s ease;
+  height: auto !important; /* 🔥 Prevent collapse */
+}
+
+.tutor-photo {
+  width: 160px;
+  height: 160px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.tutor-info { flex: 1; }
+
+/* Mobile */
+@media (max-width: 992px) {
+  .filters-wrapper { flex-wrap: wrap; gap: 40px; }
+  .tutor-card { flex-direction: column; text-align:center; }
+}
+
+/* FORCE correct desktop layout */
+.tutor-card {
+  display: grid !important;
+  grid-template-columns: 180px 1fr !important;
+  align-items: flex-start !important;
+  width: 100% !important;
+}
+
+/* FORCE image to show on desktop */
+.tutor-photo {
+  width: 180px !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  display: block !important;
+  flex-shrink: 0 !important;
+}
+
+.profile-btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #ff7a00;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.profile-btn:hover {
+  background: #e56e00;
+}
+</style>
+
+{% endblock %}

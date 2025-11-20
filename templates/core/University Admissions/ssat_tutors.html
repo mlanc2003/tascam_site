@@ -1,0 +1,204 @@
+{# templates/core/SSAT_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}SSAT Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Our Online SSAT Tutors Get Results</h1>
+        <p>TASCAM Co Ltd finds expert tutors in any subject and for all levels of study. <strong>94%</strong> of our surveyed students achieve their target grade.</p>
+        <div class="hero-cta hero-cta--inline">
+  <a href="/find-tutors/" class="btn btn-accent btn-large">
+    Find A Tutor
+  </a>
+  <a href="/request-tutor/" class="btn btn-accent btn-large">
+    Contact Us
+  </a>
+</div>
+        
+        <div class="hero-logos">
+          <img src="{% static 'img/tascam-tutoring-1.jpg' %}" alt="TASCAM Co Ltd tutoring">
+          <img src="{% static 'img/tascam-tutoring-2.jpg' %}" alt="TASCAM Co Ltd tutoring">
+          <img src="{% static 'img/tascam-tutoring-3.jpg' %}" alt="TASCAM Co Ltd tutoring">
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="tutor-mini card">
+          <div class="tutor-mini__media">
+            <img src="{% static 'img/tutors/ramsay.jpg' %}" alt="TASCAM Co Ltd tutor - Ramsay">
+          </div>
+          <div class="tutor-mini__body">
+            <h3>Ramsay</h3>
+            <div class="tutor-mini__meta">
+              <span class="stars">5</span>
+              <span>2020 Hours Taught</span>
+            </div>
+            <p>Highly experienced Medicine tutor with a PhD in Cancer Therapeutics</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat card">
+        <h4>Achieve a grade increase with the help of TASCAM Co Ltd</h4>
+        <p><strong>83%</strong> of our surveyed students achieve a grade increase</p>
+        <p>We’ve helped over <strong>13,000</strong> students boost their grades by an average of <strong>13%</strong> in their final examinations.</p>
+      </div>
+      <div class="stat card">
+        <h4>Work with the best SSAT Tutors in the world</h4>
+        <ul class="checklist">
+          <li>40% of our tutors have PhDs</li>
+          <li>90% are postgraduates</li>
+          <li>100% have over two years tutoring experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="section section--muted">
+  <div class="container">
+    <h2>Award-Winning Services</h2>
+    <ul class="award-logos">
+      <li><img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025"> Private Tutoring Provider of the Year 2025.</li>
+      <li><img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023"> Tutoring Company of the Year 2023.</li>
+      <li><img src="{% static 'img/awards/nta-2022.png' %}" alt="National Tutoring Awards 2022"> Best Customer Service 2022.</li>
+    </ul>
+    <div class="trustpilot text-center">
+      <h3>The highest-rated tutoring company on TrustPilot since 2016</h3>
+      <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+
+<!-- TOP TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top SSAT Tutors</h2>
+
+    <div class="tutor-cards grid grid-3">
+      <!-- Ramsay -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/ramsay.jpg' %}" alt="Ramsay">
+        </div>
+        <div class="tutor__body">
+          <h3>Amar</h3>
+          <span>2531 Hours Taught</span>
+          <ul class="tutor__tags">
+            <li>Background Checked</li>
+            <li>Face to Face or Online</li>
+            <li>Fast Response Time</li>
+          </ul>
+          <p>Economics, Finance and CFA tutor with degrees from Prin...</p>
+          <h4>Attended:</h4>
+          <ul>
+            <li>Queen Mary, University of London (University of London)</li>
+            <li>Queen Margaret University</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <h3>Testimonial</h3>
+    <blockquote>
+      <p><strong>Nima Nima:</strong> I went from 43% in first year to receiving a masters offer at the LSE! Thanks to the brilliant quality of TASCAM Co Ltd tutors, I achieved a 1st and received my LSE Masters in Management offer.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- AWARDS STRIP -->
+<section class="section">
+  <div class="container">
+    <h2>Tutoring Awards</h2>
+    <p>An award-winning company</p>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/awards/department-of-edSSATion.png' %}" alt="Department of EdSSATion"></li>
+      <li><img src="{% static 'img/awards/forbes-30u30.png' %}" alt="Forbes Under 30 Europe"></li>
+      <li><img src="{% static 'img/awards/nta-2025.png' %}" alt="NTA 2025"></li>
+      <li><img src="{% static 'img/awards/edSSATion-investor-2024.png' %}" alt="EdSSATion Investor 2024"></li>
+      <li><img src="{% static 'img/awards/telegraph-trade.png' %}" alt="Telegraph Trade Awards"></li>
+      <li><img src="{% static 'img/awards/nta-2023.png' %}" alt="NTA 2023"></li>
+      <li><img src="{% static 'img/awards/edSSATion-investor-2017.png' %}" alt="EdSSATion Investor 2017"></li>
+    </ul>
+  </div>
+</section>
+
+
+
+<!-- SUBJECTS -->
+<section class="section section--muted">
+  <div class="container">
+
+    <h2>We Cover All Subjects</h2>
+    <p>We’ve got your back. From Anthropology to Zoology, we have it covered.</p>
+
+    <div class="subject-grid mt-2">
+
+      <a href="{% url 'gcse_tutors' %}" class="subject-card">GCSE Tutors</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics Tutors</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering Tutors</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics Tutors</a>
+
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology Tutors</a>
+      <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting Tutors</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English Literature Tutors</a>
+      <a href="{% url 'finance_tutors' %}" class="subject-card">Finance Tutors</a>
+
+      
+      <a href="{% url 'architecture_tutors' %}" class="subject-card">Architecture Tutors</a>
+      <a href="{% url 'essay_tutors' %}" class="subject-card">Essay Tutors</a>
+      
+
+      <a href="{% url 'admissions_tutors' %}" class="subject-card">University Admission Tutors</a>
+      
+      <a href="{% url 'step_tutors' %}" class="subject-card">STEP Mathematics Tutors</a>
+
+    </div>
+
+    <p class="mt-2">
+      TASCAM Co Ltd prides itself on covering all subjects. Don’t believe us?
+      <a href="#find-tutor">click here</a> and give us a call!
+    </p>
+
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press">
+  <div class="container">
+    <h3>TASCAM Co Ltd Featured In</h3>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/press/the-telegraph.png' %}" alt="The Telegraph"></li>
+      <li><img src="{% static 'img/press/the-guardian.png' %}" alt="The Guardian"></li>
+      <li><img src="{% static 'img/press/financial-times.png' %}" alt="Financial Times"></li>
+      <li><img src="{% static 'img/press/the-times.png' %}" alt="The Times"></li>
+      <li><img src="{% static 'img/press/evening-standard.png' %}" alt="Evening Standard"></li>
+      <li><img src="{% static 'img/press/fe-news.png' %}" alt="FE News"></li>
+    </ul>
+  </div>
+</section>
+
+<!-- FOOTER NOTE -->
+<section class="section text-center">
+  <div class="container">
+    <p>Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+  </div>
+</section>
+
+{% endblock content %}

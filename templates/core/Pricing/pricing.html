@@ -1,0 +1,371 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Pricing - TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<header class="hero hero--subject hero--pricing">
+  <div class="container">
+    <h1>Pricing</h1>
+    <p class="intro">
+      Prices depend on your subject, level of study, and our tutors’ experience.
+    </p>
+  </div>
+</header>
+
+<section class="section section--light"> 
+  <div class="container">
+    <div class="price-grid">
+
+      <!-- School Tutoring -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>School</strong> <span>Tutoring</span></h2>
+          <p>Professional help from a tutor for those who need to achieve better grades at school.</p>
+          <span class="from">From</span>
+          <span class="amount">£60</span><span class="per">/hour</span><br>
+          <span class="fee">+ £70 Registration fee</span>
+        </div>
+      </a>
+
+      <!-- Undergraduate -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>Undergraduate</strong> <span>Tutoring</span></h2>
+          <p>An expert tutor with many years of experience in the university system.</p>
+          <span class="from">From</span>
+          <span class="amount">£75</span><span class="per">/hour</span><br>
+          <span class="fee">+ £70 Registration fee</span>
+        </div>
+      </a>
+
+      <!-- Postgraduate -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>Postgraduate</strong> <span>Tutoring</span></h2>
+          <p>A veteran tutor who is a true authority in their subject.</p>
+          <span class="from">From</span>
+          <span class="amount">£90</span><span class="per">/hour</span><br>
+          <span class="fee">+ £70 Registration fee</span>
+        </div>
+      </a>
+
+      <!-- Professional -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>Professional</strong> <span>Tutoring</span></h2>
+          <p>A field-leading tutor with experience in helping students pass professional qualifications.</p>
+          <span class="from">From</span>
+          <span class="amount">£105</span><span class="per">/hour</span><br>
+          <span class="fee">+ £70 Registration fee</span>
+        </div>
+      </a>
+
+      <!-- Specialist -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>Specialist</strong> <span>Tutoring</span></h2>
+          <p>Tutors with an exemplary track record of helping students get outstanding results. These tutors come from the world's most prestigious universities.</p>
+          <span class="from">From</span>
+          <span class="amount">£120</span><span class="per">/hour</span><br>
+          <span class="fee">+ £70 Registration fee</span>
+        </div>
+      </a>
+
+      <!-- Applications Support -->
+      <a href="{% url 'request_tutor' %}" class="price-card-link">
+        <div class="price-card">
+          <h2><strong>Applications</strong> <span>Support</span></h2>
+          <p>Our admissions tutors have a proven track record of helping students receive offers from top universities. They have typically worked in university admissions themselves.</p>
+          <span class="from">From</span>
+          <span class="amount">£150</span><span class="per">/hour</span>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--brand-accent">
+  <div class="container">
+    <h2 class="section-title">We Offer Discounts</h2>
+
+    <div class="grid grid--3 md:grid--2 sm:grid--1 gap-lg">
+      <!-- Block Bookings -->
+      <article class="card card--soft">
+        <div class="card-body discount-card">
+          <div class="discount-card__icon">
+            <img src="{% static 'images/icons/book.svg' %}" alt="" aria-hidden="true">
+          </div>
+          <h3 class="discount-card__title">Block Bookings</h3>
+          <p class="discount-card__text">
+            We offer discounts for block bookings. <strong>5% off</strong> for 10 hours and <strong>10% off</strong> for 20 hours of tutoring paid upfront.
+          </p>
+        </div>
+      </article>
+
+      <!-- Group Discounts -->
+      <article class="card card--soft">
+        <div class="card-body discount-card">
+          <div class="discount-card__icon">
+            <img src="{% static 'images/icons/users.svg' %}" alt="" aria-hidden="true">
+          </div>
+          <h3 class="discount-card__title">Group Discounts</h3>
+          <p class="discount-card__text">
+            Pair up with friends and learn together for less. Each additional student will only need to pay <strong>50%</strong> of the rate.
+          </p>
+        </div>
+      </article>
+
+      <!-- Get £50 -->
+      <article class="card card--soft">
+        <div class="card-body discount-card">
+          <div class="discount-card__icon">
+            <img src="{% static 'images/icons/thumb.svg' %}" alt="" aria-hidden="true">
+          </div>
+          <h3 class="discount-card__title">Get £50</h3>
+          <p class="discount-card__text">
+            Get £50 transferred to your bank account when you refer a friend or family member who we hire as a tutor. There is no limit to how many you can recommend! <em>*T&amp;Cs apply</em>
+          </p>
+        </div>
+      </article>
+    </div>
+
+    <div class="callout callout--info mt-lg">
+      <div class="callout__icon">
+        <img src="{% static 'images/icons/info-circle.svg' %}" alt="" aria-hidden="true">
+      </div>
+      <div class="callout__content">
+        <p><strong>Call us to find out more</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light faq-section">
+  <div class="container">
+    <h2 class="faq-title">General FAQs</h2>
+    <p class="faq-subtitle">SOME OUR MOST FREQUENTLY ASKED QUESTIONS</p>
+
+    <!-- Tabs -->
+    <ul class="faq-tabs">
+      <li class="active" data-tab="all">All</li>
+      <li data-tab="pricing">Pricing</li>
+      <li data-tab="subject">Tutor Prices By Subject</li>
+      <li data-tab="delivery">Tuition Delivery Method</li>
+      <li data-tab="level">Tutoring Level</li>
+    </ul>
+
+    <div class="faq-list">
+
+      <!-- LEVEL TAB -->
+      <div class="faq-item" data-tab="level">
+        <div class="faq-question"><h3>Private Tutor Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Our private tutor rates begin at £60 for school tutoring (GCSE, IB, and A Level) and go up to £120 for work with our specialists. These specialist teachers hold degrees from some of the world’s top universities.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="level">
+        <div class="faq-question"><h3>PhD Tutors Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>PhD tutoring rates start from £90/hour. Tutors are doctoral-level experts with extensive academic and research experience.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="level">
+        <div class="faq-question"><h3>University Tutor Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>University tutoring starts at £75/hour for undergraduates and £90/hour for postgraduates. Specialist modules include a £50 registration and £20 matching fee.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="level">
+        <div class="faq-question"><h3>A Level Tutor Rates</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>A Level tutoring starts from £60/hour. A £20 initial deposit and £50 placement fee apply for new students.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="level">
+        <div class="faq-question"><h3>GCSE Tutor Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>GCSE tutoring starts at £60/hour. Additional matching (£20) and placement (£50) fees apply. Tutors have excellent success rates with GCSE students.</p>
+        </div>
+      </div>
+
+      <!-- DELIVERY TAB -->
+      <div class="faq-item" data-tab="delivery">
+        <div class="faq-question"><h3>Private Tutors Rates</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>We provide private tutors at all levels and in all subjects. Prices start from £60/hour and go up to £150/hour for university admissions tutoring.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="delivery">
+        <div class="faq-question"><h3>Online Tutoring Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Online tutoring via Zoom or Teams starts from £60/hour for school-level support and £120/hour for specialist sessions. Admissions tutoring is £150/hour.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="delivery">
+        <div class="faq-question"><h3>Home Tutor Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Home tutoring starts from £60/hour for school students. Additional travel costs may apply. Homeschooling tutors offer custom study plans.</p>
+        </div>
+      </div>
+
+      <!-- SUBJECT TAB -->
+      <div class="faq-item" data-tab="subject">
+        <div class="faq-question"><h3>English Tutoring Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Rates per hour: £60 for school, £75 for undergraduate, £90 for postgraduate, £105 for professional, and £120 for specialist tuition. Admissions tutoring is £150/hour. Cameroon averages (£30/hour) are for early years and lack our tutors’ expertise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="subject">
+        <div class="faq-question"><h3>Maths Tutor Prices</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Maths tutor rates range from £60/hour (school level) to £120/hour (specialist topics). GCSE and A Level Maths are £60/hour. Cameroon average of £30/hour usually applies to primary-level tutors only.</p>
+        </div>
+      </div>
+
+      <!-- PRICING TAB -->
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much does home tuition cost?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>The tutors we work with set their own rates, but our pricing guide gives typical rates based on subject and tutor experience. All rates are per hour and agreed before lessons begin. TASCAM Co Ltd Market Place offers lower-budget matches.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much do tutors cost?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Tutors set their own rates, which generally range from £60 to £150/hour. The rate depends on subject, level, and tutor qualifications. We always confirm the exact rate before starting tuition.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much are group tutoring rates Cameroon?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>The first student pays the full hourly rate, while each additional student pays 50%. The rate varies based on subject and tutor experience.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much does a private tutor cost Cameroon?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Prices range from £60/hour for school tutoring to £150/hour for university admissions support. Most of our tutors and students are Cameroon-based, but we teach worldwide.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much is a tutor per hour?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Hourly rates are between £60 and £150 depending on level and subject. Book 10 hours for 5% off or 20 hours for 10% off upfront.</p>
+        </div>
+      </div>
+
+      <div class="faq-item" data-tab="pricing">
+        <div class="faq-question"><h3>How much does a tutor cost?</h3><span class="arrow">▾</span></div>
+        <div class="faq-answer">
+          <p>Rates depend on tutor experience and level. All hourly rates are confirmed before tuition begins. TASCAM Co Ltd Market Place allows students to find tutors for smaller budgets or urgent needs.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <h2 class="section-title center">Stop Your Search</h2>
+    <p class="section-subtitle center">We search hundreds of tutors for you, so you don’t have to!</p>
+
+    <div class="card-banner-grid">
+      <!-- Rebecca -->
+      <div class="card-banner">
+        <div class="card-banner__image">
+          <img src="{% static 'images/team/rebecca-thompson.jpg' %}" alt="Rebecca Thompson">
+        </div>
+        <div class="card-banner__body">
+          <h3>Rebecca Thompson</h3>
+          <p class="role">Senior Client Manager</p>
+          <p>Rebecca personally matches students with the right tutor to achieve the best results possible.</p>
+        </div>
+      </div>
+
+      <!-- Josh -->
+      <div class="card-banner">
+        <div class="card-banner__image">
+          <img src="{% static 'images/team/josh-bedford.jpg' %}" alt="Josh Bedford">
+        </div>
+        <div class="card-banner__body">
+          <h3>Josh Bedford</h3>
+          <p class="role">Client Manager</p>
+          <p>Josh helps students find expert tutors tailored to their academic goals and schedules.</p>
+        </div>
+      </div>
+
+      <!-- Richard -->
+      <div class="card-banner">
+        <div class="card-banner__image">
+          <img src="{% static 'images/team/richard-evans.jpg' %}" alt="Richard Evans">
+        </div>
+        <div class="card-banner__body">
+          <h3>Richard Evans</h3>
+          <p class="role">Founder &amp; Education Expert</p>
+          <p>Richard ensures the highest standards in tutoring and student experience across TASCAM Co Ltd.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--light">
+  <div class="container">
+    <div class="support-panel card card--soft">
+      <div class="card-body">
+        <div class="grid grid--2 sm:grid--1 gap-lg">
+          <div>
+            <h3>24/7 support</h3>
+            <h2 class="mt-xs">We're Here To help</h2>
+            <p>We know our tutors personally, meaning we can find the perfect tutor for you.</p>
+            <div class="btn-row">
+              <a href="{% url 'request_tutor' %}" class="btn contact-btn-orange">Contact Us</a>
+            </div>
+          </div>
+          <div class="trust-banner align-center">
+            <img src="{% static 'images/badges/trustpilot.svg' %}" alt="Trustpilot" class="trustpilot-logo">
+            <p class="muted">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+document.querySelectorAll('.faq-question').forEach(q => {
+  q.addEventListener('click', () => q.parentElement.classList.toggle('active'));
+});
+
+const tabs = document.querySelectorAll('.faq-tabs li');
+const faqItems = document.querySelectorAll('.faq-item');
+
+tabs.forEach(tab => {
+  tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const target = tab.getAttribute('data-tab');
+    faqItems.forEach(item => {
+      item.style.display = (target === 'all' || item.dataset.tab === target) ? 'block' : 'none';
+    });
+  });
+});
+</script>
+
+{% endblock %}

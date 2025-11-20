@@ -1,0 +1,95 @@
+{# templates/core/subject_template.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Dissertation Cambridge Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+<section class="hero hero--subject">
+  <div class="grid two">
+    <div>
+      <h1>Dissertation Tutors in Cambridge</h1>
+      <p>The TASCAM Co Ltd find expert tutors in any subject and for all levels of study. 94% of our surveyed students achieve their target grade.</p>
+      <div class="hero-cta hero-cta--inline">
+        <a href="/find-tutors/" class="btn btn-accent btn-large">
+          Find A Tutor
+        </a>
+        <a href="/request-tutor/" class="btn btn-accent btn-large">
+          Contact Us
+        </a>
+      </div>
+    </div>
+      <p><strong>Call us 24/7:</strong> +237 675 31 61 71<br>
+      <strong>Email:</strong> tascam.noreply@gmail.com</p>
+    </div>
+  <div>
+      <img src="{% static subject_image %}" alt="Dissertation Cambridge tutoring" class="responsive">
+    </div>
+  </div>
+</section>
+
+<section class="usp container">
+  <h2>Achieve a Grade Increase with TASCAM Co Ltd</h2>
+  <p>83% of our surveyed students achieve a grade increase. We’ve helped over 13,000 students boost their grades by an average of 13% in their final examinations.</p>
+
+  <div class="grid three">
+    <div class="card">
+      <h3>Bianca</h3>
+      <p><strong>5★</strong> | 2628 Hours Taught</p>
+      <p>Experienced UCL lecturer and tutor with a PhD in Health Sciences.</p>
+    </div>
+    <div class="card">
+      <h3>Work with the Best Tutors</h3>
+      <p>40% of our tutors have PhDs, 90% are postgraduates, and all have over two years of tutoring experience.</p>
+    </div>
+    <div class="card">
+      <h3>Award-Winning Tutors</h3>
+      <p>TASCAM Co Ltd tutoring team has been recognised for excellence in private education across Cameroon.</p>
+    </div>
+  </div>
+</section>
+
+<section class="awards container">
+  <h2>Award-Winning Institution and Services</h2>
+  <div class="grid three">
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2025.jpg' %}" alt="National Tutoring Awards 2025">
+      <p>Private Tutoring Provider of the Year 2025</p>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2023.jpg' %}" alt="National Tutoring Awards 2023">
+      <p>Best Tuition Business & Delivery to Private Clients 2023</p>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2022.jpg' %}" alt="National Tutoring Awards 2022">
+      <p>Best Customer Service of the Year 2022</p>
+    </div>
+  </div>
+  <p class="trustpilot">The highest-rated tutoring company on TrustPilot since 2016. 9 out of 10 customers said they would recommend us to a friend.</p>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<section class="testimonial container">
+  <h2>We Can Make the Difference</h2>
+  <blockquote class="card">
+    “I went from 43% in first year to receiving a master’s offer at the LSE! Thanks to TASCAM Co Ltd’ brilliant tutors…”  
+    <cite>— Nima Nima</cite>
+  </blockquote>
+</section>
+
+
+
+<section class="featured-in container">
+  <h2>TASCAM Co Ltd Featured In</h2>
+  <div class="logos">
+    <img src="{% static 'img/featured/the-telegraph.png' %}" alt="The Telegraph logo">
+    <img src="{% static 'img/featured/the-guardian.png' %}" alt="The Guardian logo">
+    <img src="{% static 'img/featured/financial-times.png' %}" alt="Financial Times logo">
+    <img src="{% static 'img/featured/the-times.png' %}" alt="The Times logo">
+    <img src="{% static 'img/featured/evening-standard.png' %}" alt="Evening Standard logo">
+    <img src="{% static 'img/featured/fe-news.png' %}" alt="FE News logo">
+  </div>
+</section>
+
+{% endblock %}

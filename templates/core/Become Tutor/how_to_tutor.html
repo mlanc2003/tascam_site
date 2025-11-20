@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}How To Tutor | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<section class="resource-page">
+  <div class="resource-container">
+
+    <h1 class="resource-title">How To Tutor</h1>
+
+    <p class="resource-intro">
+      Tutoring is more than explaining topics—it's about communication, structure,
+      and helping students grow into independent learners.
+    </p>
+
+    <!-- Section 1 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">1. Understand the Student</h2>
+      <p class="resource-text">
+        Start each new tutoring relationship by learning about your student's goals,
+        struggles, and timelines.
+      </p>
+
+      <div class="ht-tips-box">
+        <span class="ht-check">✔</span>Ask them what they find most challenging  
+        <br>
+        <span class="ht-check">✔</span>Discuss upcoming exams or deadlines  
+        <br>
+        <span class="ht-check">✔</span>Evaluate their confidence level  
+      </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">2. Structure Your Lessons</h2>
+      <p class="resource-text">
+        Students learn best when lessons follow a predictable structure.
+      </p>
+
+      <div class="ht-example">
+        <strong>Suggested lesson structure:</strong>
+        <ul class="resource-list">
+          <li>Introduction and recap</li>
+          <li>Core concept explanation</li>
+          <li>Guided practice</li>
+          <li>Independent problem solving</li>
+          <li>Summary and homework</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">3. Use Effective Teaching Techniques</h2>
+      <p class="resource-text">
+        Break down complex ideas into smaller components. Ask guiding questions
+        that lead the student to the correct understanding.
+      </p>
+
+      <div class="ht-tips-box">
+        <span class="ht-check">✔</span>Use examples  
+        <br>
+        <span class="ht-check">✔</span>Ask “why” questions  
+        <br>
+        <span class="ht-check">✔</span>Link new concepts to previous knowledge  
+      </div>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="resource-card">
+      <h2 class="resource-section-title">4. Track Student Progress</h2>
+      <p class="resource-text">
+        After every lesson, jot down quick notes about what was covered and next steps.
+        This helps ensure consistent progress.
+      </p>
+      <div class="resource-highlight">
+        Students—and parents—value visible, documented improvement.
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* -----------------------------------
+   HOW TO TUTOR PAGE
+----------------------------------- */
+
+.ht-tips-box {
+  background: #f1f1fe;
+  padding: 25px;
+  border-radius: 14px;
+  border-left: 5px solid #5252d9;
+  margin: 25px 0;
+}
+
+.ht-check {
+  color: #5252d9;
+  font-weight: 700;
+  margin-right: 5px;
+}
+
+.ht-example {
+  background: #fff;
+  padding: 20px;
+  border-radius: 14px;
+  border: 1px solid #e1e1f3;
+  margin-top: 15px;
+} 
+</style>
+
+{% endblock %}

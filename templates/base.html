@@ -1,0 +1,507 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}TASCAM{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}?v={{ now|date:'YmdHis' }}">
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-wrap center">
+      <span>Call anytime: <strong>+237 675 31 61 71</strong></span>
+    </div>
+  </div>
+
+  <header class="main-header">
+    <div class="container nav-wrap">
+      <a href="/" class="brand">
+        <img src="{% static 'images/tascam_logo.png' %}" alt="TASCAM Co Ltd Logo" class="logo">
+      </a>
+
+      <div id="hamburgerBtn" class="mobile-hamburger">☰</div>
+
+      <nav class="nav">
+        <div class="dropdown">
+          <a href="/tutoring/" class="dropbtn">Tutoring ▾</a>
+          <div class="dropdown-content">
+            <a href="/subjects/">See Full Subjects List</a>
+
+            <div class="dropdown-submenu">
+              <a href="/university-tutors/" class="submenu-btn">University Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'biology_tutors' %}">Biology Tutors</a>
+                <a href="{% url 'chemistry_tutors' %}">Chemistry Tutors</a>
+                <a href="{% url 'computer_science_tutors' %}">Computer Science Tutors</a>
+                <a href="{% url 'economics_tutors' %}">Economics Tutors</a>
+                <a href="{% url 'engineering_tutors' %}">Engineering Tutors</a>
+                <a href="{% url 'finance_tutors' %}">Finance Tutors</a>
+                <a href="{% url 'law_tutors' %}">Law Tutors</a>
+                <a href="{% url 'physics_tutors' %}">Physics Tutors</a>
+                <a href="{% url 'politics_tutors' %}">Politics Tutors</a>
+                <a href="{% url 'psychology_tutors' %}">Psychology Tutors</a>
+              </div>
+            </div>
+
+            <div class="dropdown-submenu">
+              <a href="/dissertation-tutors/" class="submenu-btn">Dissertation Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'academic_writing_tutors' %}">Academic Writing Tutors</a>
+                <a href="{% url 'english_tutors' %}">English Tutors</a>
+                <a href="{% url 'essay_tutors' %}">Essay Tutors</a>
+                <a href="{% url 'research_methods_tutors' %}">Research Methods Tutors</a>
+                <a href="{% url 'study_skills_tutors' %}">Study Skills Tutors</a>
+                <a href="{% url 'writing_tutors' %}">Writing Tutors</a>
+                <a href="{% url 'london_dissertation_tutors' %}">London Dissertation Tutors</a>
+                <a href="{% url 'cambridge_dissertation_tutors' %}">Cambridge Dissertation Tutors</a>
+                <a href="{% url 'oxford_dissertation_tutors' %}">Oxford Dissertation Tutors</a>
+                <a href="{% url 'manchester_dissertation_tutors' %}">Manchester Dissertation Tutors</a>
+              </div>
+            </div>
+
+            <div class="dropdown-submenu">
+              <a href="{% url 'a_level_tutors' %}" class="submenu-btn">A-level Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'a_level_accounting_tutors' %}">A-level Accounting Tutors</a>
+                <a href="{% url 'a_level_biology_tutors' %}">A-level Biology Tutors</a>
+                <a href="{% url 'a_level_chemistry_tutors' %}">A-level Chemistry Tutors</a>
+                <a href="{% url 'a_level_economics_tutors' %}">A-level Economics Tutors</a>
+                <a href="{% url 'a_level_english_tutors' %}">A-level English Tutors</a>
+                <a href="{% url 'a_level_further_maths_tutors' %}">A-level Further Maths Tutors</a>
+                <a href="{% url 'a_level_history_tutors' %}">A-level History Tutors</a>
+                <a href="{% url 'a_level_maths_tutors' %}">A-level Maths Tutors</a>
+                <a href="{% url 'a_level_physics_tutors' %}">A-level Physics Tutors</a>
+                <a href="{% url 'a_level_psychology_tutors' %}">A-level Psychology Tutors</a>
+              </div>
+            </div>
+
+            <div class="dropdown-submenu">
+              <a href="{% url 'gcse_tutors' %}" class="submenu-btn">GCSE Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'gcse_biology_tutors' %}">GCSE Biology Tutors</a>
+                <a href="{% url 'gcse_chemistry_tutors' %}">GCSE Chemistry Tutors</a>
+                <a href="{% url 'gcse_computer_science_tutors' %}">GCSE Computer Science Tutors</a>
+                <a href="{% url 'gcse_english_language_tutors' %}">GCSE English Language Tutors</a>
+                <a href="{% url 'gcse_geography_tutors' %}">GCSE Geography Tutors</a>
+                <a href="{% url 'gcse_history_tutors' %}">GCSE History Tutors</a>
+                <a href="{% url 'gcse_maths_tutors' %}">GCSE Maths Tutors</a>
+                <a href="{% url 'gcse_physics_tutors' %}">GCSE Physics Tutors</a>
+                <a href="{% url 'gcse_science_tutors' %}">GCSE Science Tutors</a>
+                <a href="{% url 'gcse_spanish_tutors' %}">GCSE Spanish Tutors</a>
+              </div>
+            </div>
+
+            <div class="dropdown-submenu">
+              <a href="{% url 'ib_tutors' %}" class="submenu-btn">IB Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'ib_biology_tutors' %}">IB Biology Tutors</a>
+                <a href="{% url 'ib_chemistry_tutors' %}">IB Chemistry Tutors</a>
+                <a href="{% url 'ib_economics_tutors' %}">IB Economics Tutors</a>
+                <a href="{% url 'ib_english_language_tutors' %}">IB English Language Tutors</a>
+                <a href="{% url 'ib_maths_tutors' %}">IB Maths Tutors</a>
+                <a href="{% url 'ib_physics_tutors' %}">IB Physics Tutors</a>
+                <a href="{% url 'london_ib_tutors' %}">London IB Tutors</a>
+                <a href="{% url 'cambridge_ib_tutors' %}">Cambridge IB Tutors</a>
+                <a href="{% url 'oxford_ib_tutors' %}">Oxford IB Tutors</a>
+                <a href="{% url 'manchester_ib_tutors' %}">Manchester IB Tutors</a>
+              </div>
+            </div>
+
+            <div class="dropdown-submenu">
+              <a href="{% url 'online_tutors' %}" class="submenu-btn">Online Tutors ▸</a>
+              <div class="submenu-content">
+                <a href="{% url 'aca_tutors' %}">ACA Tutors</a>
+                <a href="{% url 'acca_tutors' %}">ACCA Tutors</a>
+                <a href="{% url 'accounting_tutors' %}">Accounting Tutors</a>
+                <a href="{% url 'architecture_tutors' %}">Architecture Tutors</a>
+                <a href="{% url 'econometrics_tutors' %}">Econometrics Tutors</a>
+                <a href="{% url 'engineering_tutors' %}">Engineering Tutors</a>
+                <a href="{% url 'r_tutors' %}">R Tutors</a>
+                <a href="{% url 'spss_tutors' %}">SPSS Tutors</a>
+                <a href="{% url 'stata_tutors' %}">Stata Tutors</a>
+                <a href="{% url 'statistics_tutors' %}">Statistics Tutors</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+<div class="dropdown">
+  <a href="/university-admissions/" class="dropbtn">University Admissions ▾</a>
+  <div class="dropdown-content">
+
+    <div class="sub-dropdown">
+      <a href="/admissions-tutors/">Admissions Tutors ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/11-plus-tutors/">11 Plus Tutors</a>
+        <a href="/common-entrance-tutors/">Common Entrance Tutors</a>
+        <a href="/admission-test-tutors/">Admission Test Tutors</a>
+        <a href="/ucas-tutors/">UCAS Tutors</a>
+        <a href="/personal-statement-tutors/">Personal Statement Tutors</a>
+        <a href="/university-admission/">University Admission</a>
+        <a href="/cambridge-admission-tutors/">Cambridge Admission Tutors</a>
+        <a href="/edinburgh-admission-tutors/">Edinburgh Admission Tutors</a>
+        <a href="/oxford-admission-tutors/">Oxford Admission Tutors</a>
+        <a href="/ucl-admission-tutors/">UCL Admission Tutors</a>
+      </div>
+    </div>
+
+    <div class="sub-dropdown">
+      <a href="/oxbridge-admissions/">Oxbridge Admissions ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/ahaa-tutors/">AHAA Tutors</a>
+        <a href="/bmat-tutors/">BMAT Tutors</a>
+        <a href="/cat-tutors/">CAT Tutors</a>
+        <a href="/ctmua-tutors/">CTMUA Tutors</a>
+        <a href="/elat-tutors/">ELAT Tutors</a>
+        <a href="/engaa-tutors/">ENGAA Tutors</a>
+        <a href="/gat-tutors/">GAT Tutors</a>
+        <a href="/hat-tutors/">HAT Tutors</a>
+        <a href="/hspsaa-tutors/">HSPSAA Tutors</a>
+        <a href="/lnat-tutors/">LNAT Tutors</a>
+        <a href="/mat-tutors/">MAT Tutors</a>
+        <a href="/mlat-tutors/">MLAT Tutors</a>
+        <a href="/pat-tutors/">PAT Tutors</a>
+        <a href="/step-tutors/">STEP Tutors</a>
+        <a href="/tsa-tutors/">TSA Tutors</a>
+      </div>
+    </div>
+
+    <div class="sub-dropdown">
+      <a href="/undergraduate-admissions/">Undergraduate Admissions ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/cambridge-admissions-tutors/">Cambridge Admissions Tutors</a>
+        <a href="/durham-admissions-tutors/">Durham Admissions Tutors</a>
+        <a href="/edinburgh-admissions-tutors/">Edinburgh Admissions Tutors</a>
+        <a href="/imperial-admissions-tutors/">Imperial Admissions Tutors</a>
+        <a href="/kings-college-admissions-tutors/">King's College Admissions Tutors</a>
+        <a href="/lse-admissions-tutors/">LSE Admissions Tutors</a>
+        <a href="/oxford-admissions-tutors/">Oxford Admissions Tutors</a>
+        <a href="/st-andrews-admissions-tutors/">St Andrews Admissions Tutors</a>
+        <a href="/ucl-admissions-tutors/">UCL Admissions Tutors</a>
+        <a href="/warwick-admissions-tutors/">Warwick Admissions Tutors</a>
+      </div>
+    </div>
+
+    <div class="sub-dropdown">
+      <a href="/postgraduate-admissions/">Postgraduate Admissions ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/bcl-tutors/">BCL Tutors</a>
+        <a href="/business-school-admissions-tutors/">Business School Admissions Tutors</a>
+        <a href="/emba-tutors/">EMBA Tutors</a>
+        <a href="/gat-tutors/">GAT Tutors</a>
+        <a href="/gdl-tutors/">GDL Tutors</a>
+        <a href="/gmat-tutors/">GMAT Tutors</a>
+        <a href="/law-school-admissions-tutors/">Law School Admissions Tutors</a>
+        <a href="/masters-tutors/">Master's Tutors</a>
+        <a href="/mba-admissions-tutors/">MBA Admissions Tutors</a>
+      </div>
+    </div>
+
+    <div class="sub-dropdown">
+      <a href="/medical-admissions/">Medical Admissions ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/bmat-tutors/">BMAT Tutors</a>
+        <a href="/bmsat-tutors/">BMSAT Tutors</a>
+        <a href="/gamsat-tutors/">GAMSAT Tutors</a>
+        <a href="/hpat-tutors/">HPAT Tutors</a>
+        <a href="/imat-tutors/">IMAT Tutors</a>
+        <a href="/mcat-tutors/">MCAT Tutors</a>
+        <a href="/ucat-tutors/">UCAT Tutors</a>
+        <a href="/cambridge-admissions-tutors/">Cambridge Admissions Tutors</a>
+        <a href="/oxford-admissions-tutors/">Oxford Admissions Tutors</a>
+        <a href="/ucl-admissions-tutors/">UCL Admissions Tutors</a>
+      </div>
+    </div>
+
+    <div class="sub-dropdown">
+      <a href="/us-admissions/">US Admissions ▸</a>
+      <div class="sub-dropdown-content">
+        <a href="/act-tutors/">ACT Tutors</a>
+        <a href="/ap-tutors/">AP Tutors</a>
+        <a href="/college-application-tutors/">College Application Tutors</a>
+        <a href="/gmat-tutors/">GMAT Tutors</a>
+        <a href="/gre-tutors/">GRE Tutors</a>
+        <a href="/isee-tutors/">ISEE Tutors</a>
+        <a href="/lsat-tutors/">LSAT Tutors</a>
+        <a href="/mcat-tutors/">MCAT Tutors</a>
+        <a href="/sat-tutors/">SAT Tutors</a>
+        <a href="/ssat-tutors/">SSAT Tutors</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+        <a href="/resources/">Resources</a>
+        <a href="/find-tutors/">Find Tutors</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/login/">Log In</a>
+        <a href="/become-a-tutor/">Become a Tutor</a>
+      </nav>
+
+      <a href="/request-tutor/" class="btn btn-accent">Request Tutor</a>
+    </div>
+  </header>
+
+  <div class="sub-header">
+    <div class="container">
+      Our customers say <strong>Excellent</strong> ★★★★★ 4.9 / 5 based on 1,838 reviews
+    </div>
+  </div>
+
+  <div id="mobileSidebar" class="mobile-sidebar">
+  <div class="sidebar-header">
+    <img src="{% static 'images/tascam_logo.png' %}" alt="TASCAM Logo">
+    <button id="closeSidebar">×</button>
+  </div>
+
+  <ul class="mobile-menu">
+
+    <!-- =========================-->
+    <!--       TUTORING           -->
+    <!-- =========================-->
+    <li>
+      <button class="accordion">Tutoring ▾</button>
+      <div class="panel">
+
+        <a href="/subjects/">See Full Subjects List</a>
+
+        <!-- UNIVERSITY TUTORS -->
+        <button class="accordion sub">University Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'biology_tutors' %}">Biology Tutors</a>
+          <a href="{% url 'chemistry_tutors' %}">Chemistry Tutors</a>
+          <a href="{% url 'computer_science_tutors' %}">Computer Science Tutors</a>
+          <a href="{% url 'economics_tutors' %}">Economics Tutors</a>
+          <a href="{% url 'engineering_tutors' %}">Engineering Tutors</a>
+          <a href="{% url 'finance_tutors' %}">Finance Tutors</a>
+          <a href="{% url 'law_tutors' %}">Law Tutors</a>
+          <a href="{% url 'physics_tutors' %}">Physics Tutors</a>
+          <a href="{% url 'politics_tutors' %}">Politics Tutors</a>
+          <a href="{% url 'psychology_tutors' %}">Psychology Tutors</a>
+        </div>
+
+        <!-- DISSERTATION TUTORS -->
+        <button class="accordion sub">Dissertation Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'academic_writing_tutors' %}">Academic Writing Tutors</a>
+          <a href="{% url 'english_tutors' %}">English Tutors</a>
+          <a href="{% url 'essay_tutors' %}">Essay Tutors</a>
+          <a href="{% url 'research_methods_tutors' %}">Research Methods Tutors</a>
+          <a href="{% url 'study_skills_tutors' %}">Study Skills Tutors</a>
+          <a href="{% url 'writing_tutors' %}">Writing Tutors</a>
+          <a href="{% url 'london_dissertation_tutors' %}">London Dissertation Tutors</a>
+          <a href="{% url 'cambridge_dissertation_tutors' %}">Cambridge Dissertation Tutors</a>
+          <a href="{% url 'oxford_dissertation_tutors' %}">Oxford Dissertation Tutors</a>
+          <a href="{% url 'manchester_dissertation_tutors' %}">Manchester Dissertation Tutors</a>
+        </div>
+
+        <!-- A-LEVEL -->
+        <button class="accordion sub">A-level Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'a_level_accounting_tutors' %}">A-level Accounting Tutors</a>
+          <a href="{% url 'a_level_biology_tutors' %}">A-level Biology Tutors</a>
+          <a href="{% url 'a_level_chemistry_tutors' %}">A-level Chemistry Tutors</a>
+          <a href="{% url 'a_level_economics_tutors' %}">A-level Economics Tutors</a>
+          <a href="{% url 'a_level_english_tutors' %}">A-level English Tutors</a>
+          <a href="{% url 'a_level_further_maths_tutors' %}">A-level Further Maths Tutors</a>
+          <a href="{% url 'a_level_history_tutors' %}">A-level History Tutors</a>
+          <a href="{% url 'a_level_maths_tutors' %}">A-level Maths Tutors</a>
+          <a href="{% url 'a_level_physics_tutors' %}">A-level Physics Tutors</a>
+          <a href="{% url 'a_level_psychology_tutors' %}">A-level Psychology Tutors</a>
+        </div>
+
+        <!-- GCSE -->
+        <button class="accordion sub">GCSE Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'gcse_biology_tutors' %}">GCSE Biology Tutors</a>
+          <a href="{% url 'gcse_chemistry_tutors' %}">GCSE Chemistry Tutors</a>
+          <a href="{% url 'gcse_computer_science_tutors' %}">GCSE Computer Science Tutors</a>
+          <a href="{% url 'gcse_english_language_tutors' %}">GCSE English Language Tutors</a>
+          <a href="{% url 'gcse_geography_tutors' %}">GCSE Geography Tutors</a>
+          <a href="{% url 'gcse_history_tutors' %}">GCSE History Tutors</a>
+          <a href="{% url 'gcse_maths_tutors' %}">GCSE Maths Tutors</a>
+          <a href="{% url 'gcse_physics_tutors' %}">GCSE Physics Tutors</a>
+          <a href="{% url 'gcse_science_tutors' %}">GCSE Science Tutors</a>
+          <a href="{% url 'gcse_spanish_tutors' %}">GCSE Spanish Tutors</a>
+        </div>
+
+        <!-- IB -->
+        <button class="accordion sub">IB Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'ib_biology_tutors' %}">IB Biology Tutors</a>
+          <a href="{% url 'ib_chemistry_tutors' %}">IB Chemistry Tutors</a>
+          <a href="{% url 'ib_economics_tutors' %}">IB Economics Tutors</a>
+          <a href="{% url 'ib_english_language_tutors' %}">IB English Language Tutors</a>
+          <a href="{% url 'ib_maths_tutors' %}">IB Maths Tutors</a>
+          <a href="{% url 'ib_physics_tutors' %}">IB Physics Tutors</a>
+          <a href="{% url 'london_ib_tutors' %}">London IB Tutors</a>
+          <a href="{% url 'cambridge_ib_tutors' %}">Cambridge IB Tutors</a>
+          <a href="{% url 'oxford_ib_tutors' %}">Oxford IB Tutors</a>
+          <a href="{% url 'manchester_ib_tutors' %}">Manchester IB Tutors</a>
+        </div>
+
+        <!-- ONLINE TUTORS -->
+        <button class="accordion sub">Online Tutors ▾</button>
+        <div class="panel">
+          <a href="{% url 'aca_tutors' %}">ACA Tutors</a>
+          <a href="{% url 'acca_tutors' %}">ACCA Tutors</a>
+          <a href="{% url 'accounting_tutors' %}">Accounting Tutors</a>
+          <a href="{% url 'architecture_tutors' %}">Architecture Tutors</a>
+          <a href="{% url 'econometrics_tutors' %}">Econometrics Tutors</a>
+          <a href="{% url 'engineering_tutors' %}">Engineering Tutors</a>
+          <a href="{% url 'r_tutors' %}">R Tutors</a>
+          <a href="{% url 'spss_tutors' %}">SPSS Tutors</a>
+          <a href="{% url 'stata_tutors' %}">Stata Tutors</a>
+          <a href="{% url 'statistics_tutors' %}">Statistics Tutors</a>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- =========================-->
+    <!-- UNIVERSITY ADMISSIONS    -->
+    <!-- =========================-->
+    <li>
+      <button class="accordion">University Admissions ▾</button>
+      <div class="panel">
+
+        <!-- ADMISSIONS TUTORS -->
+        <button class="accordion sub">Admissions Tutors ▾</button>
+        <div class="panel">
+          <a href="/11-plus-tutors/">11 Plus Tutors</a>
+          <a href="/common-entrance-tutors/">Common Entrance Tutors</a>
+          <a href="/admission-test-tutors/">Admission Test Tutors</a>
+          <a href="/ucas-tutors/">UCAS Tutors</a>
+          <a href="/personal-statement-tutors/">Personal Statement Tutors</a>
+          <a href="/university-admission/">University Admission</a>
+          <a href="/cambridge-admission-tutors/">Cambridge Admission Tutors</a>
+          <a href="/edinburgh-admission-tutors/">Edinburgh Admission Tutors</a>
+          <a href="/oxford-admission-tutors/">Oxford Admission Tutors</a>
+          <a href="/ucl-admission-tutors/">UCL Admission Tutors</a>
+        </div>
+
+        <!-- OXBRIDGE -->
+        <button class="accordion sub">Oxbridge Admissions ▾</button>
+        <div class="panel">
+          <a href="/ahaa-tutors/">AHAA Tutors</a>
+          <a href="/bmat-tutors/">BMAT Tutors</a>
+          <a href="/cat-tutors/">CAT Tutors</a>
+          <a href="/ctmua-tutors/">CTMUA Tutors</a>
+          <a href="/elat-tutors/">ELAT Tutors</a>
+          <a href="/engaa-tutors/">ENGAA Tutors</a>
+          <a href="/gat-tutors/">GAT Tutors</a>
+          <a href="/hat-tutors/">HAT Tutors</a>
+          <a href="/hspsaa-tutors/">HSPSAA Tutors</a>
+          <a href="/lnat-tutors/">LNAT Tutors</a>
+          <a href="/mat-tutors/">MAT Tutors</a>
+          <a href="/mlat-tutors/">MLAT Tutors</a>
+          <a href="/pat-tutors/">PAT Tutors</a>
+          <a href="/step-tutors/">STEP Tutors</a>
+          <a href="/tsa-tutors/">TSA Tutors</a>
+        </div>
+
+        <!-- UNDERGRADUATE -->
+        <button class="accordion sub">Undergraduate Admissions ▾</button>
+        <div class="panel">
+          <a href="/cambridge-admissions-tutors/">Cambridge Admissions Tutors</a>
+          <a href="/durham-admissions-tutors/">Durham Admissions Tutors</a>
+          <a href="/edinburgh-admissions-tutors/">Edinburgh Admissions Tutors</a>
+          <a href="/imperial-admissions-tutors/">Imperial Admissions Tutors</a>
+          <a href="/kings-college-admissions-tutors/">King's College Admissions Tutors</a>
+          <a href="/lse-admissions-tutors/">LSE Admissions Tutors</a>
+          <a href="/oxford-admissions-tutors/">Oxford Admissions Tutors</a>
+          <a href="/st-andrews-admissions-tutors/">St Andrews Admissions Tutors</a>
+          <a href="/ucl-admissions-tutors/">UCL Admissions Tutors</a>
+          <a href="/warwick-admissions-tutors/">Warwick Admissions Tutors</a>
+        </div>
+
+        <!-- POSTGRAD -->
+        <button class="accordion sub">Postgraduate Admissions ▾</button>
+        <div class="panel">
+          <a href="/bcl-tutors/">BCL Tutors</a>
+          <a href="/business-school-admissions-tutors/">Business School Admissions Tutors</a>
+          <a href="/emba-tutors/">EMBA Tutors</a>
+          <a href="/gat-tutors/">GAT Tutors</a>
+          <a href="/gdl-tutors/">GDL Tutors</a>
+          <a href="/gmat-tutors/">GMAT Tutors</a>
+          <a href="/law-school-admissions-tutors/">Law School Admissions Tutors</a>
+          <a href="/masters-tutors/">Master's Tutors</a>
+          <a href="/mba-admissions-tutors/">MBA Admissions Tutors</a>
+        </div>
+
+        <!-- MEDICAL -->
+        <button class="accordion sub">Medical Admissions ▾</button>
+        <div class="panel">
+          <a href="/bmat-tutors/">BMAT Tutors</a>
+          <a href="/bmsat-tutors/">BMSAT Tutors</a>
+          <a href="/gamsat-tutors/">GAMSAT Tutors</a>
+          <a href="/hpat-tutors/">HPAT Tutors</a>
+          <a href="/imat-tutors/">IMAT Tutors</a>
+          <a href="/mcat-tutors/">MCAT Tutors</a>
+          <a href="/ucat-tutors/">UCAT Tutors</a>
+          <a href="/cambridge-admissions-tutors/">Cambridge Admissions Tutors</a>
+          <a href="/oxford-admissions-tutors/">Oxford Admissions Tutors</a>
+          <a href="/ucl-admissions-tutors/">UCL Admissions Tutors</a>
+        </div>
+
+        <!-- US ADMISSIONS -->
+        <button class="accordion sub">US Admissions ▾</button>
+        <div class="panel">
+          <a href="/act-tutors/">ACT Tutors</a>
+          <a href="/ap-tutors/">AP Tutors</a>
+          <a href="/college-application-tutors/">College Application Tutors</a>
+          <a href="/gmat-tutors/">GMAT Tutors</a>
+          <a href="/gre-tutors/">GRE Tutors</a>
+          <a href="/isee-tutors/">ISEE Tutors</a>
+          <a href="/lsat-tutors/">LSAT Tutors</a>
+          <a href="/mcat-tutors/">MCAT Tutors</a>
+          <a href="/sat-tutors/">SAT Tutors</a>
+          <a href="/ssat-tutors/">SSAT Tutors</a>
+        </div>
+
+      </div>
+    </li>
+
+    <!-- =========================-->
+    <!-- SINGLE LINKS             -->
+    <!-- =========================-->
+    <li><a href="/resources/">Resources</a></li>
+    <li><a href="/find-tutors/">Find Tutors</a></li>
+    <li><a href="/pricing/">Pricing</a></li>
+    <li><a href="/login/">Log In</a></li>
+    <li><a href="/become-a-tutor/">Become a Tutor</a></li>
+    <li><a href="/request-tutor/" class="mobile-request-btn">Request Tutor</a></li>
+
+  </ul>
+</div>
+
+  <main class="container">
+    {% block content %}{% endblock %}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container small">
+      © {{ now|date:"Y" }} TASCAM Co Ltd — Tutors After School Cameroon
+    </div>
+  </footer>
+
+<script>
+    const sidebar = document.getElementById("mobileSidebar");
+    document.getElementById("hamburgerBtn").onclick = () => sidebar.classList.add("active");
+    document.getElementById("closeSidebar").onclick = () => sidebar.classList.remove("active");
+
+    // accordion logic
+    const acc = document.getElementsByClassName("accordion");
+    for (let i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        let panel = this.nextElementSibling;
+        panel.style.display = (panel.style.display === "block") ? "none" : "block";
+      });
+    }
+  </script>
+
+</body>
+</html>

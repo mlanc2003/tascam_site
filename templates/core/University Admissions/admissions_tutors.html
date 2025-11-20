@@ -1,0 +1,261 @@
+{# templates/core/admissions_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}University Admissions Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Find Expert University Admissions Tutors</h1>
+        <p>Secure a world class university offer with guidance from Cameroon’s leading admissions specialists.</p>
+        <p>Our team of over 400 tutors will maximise your chances of success.</p>
+
+        <div class="hero-cta hero-cta--inline">
+          <a href="/find-tutors/" class="btn btn-accent btn-large">
+            Find A Tutor
+          </a>
+          <a href="/request-tutor/" class="btn btn-accent btn-large">
+            Contact Us
+          </a>
+        </div>
+        
+      </div>
+      <div class="hero-image">
+        <img src="{% static 'img/admissions/cambridge.jpg' %}" alt="Cambridge University" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS STATS -->
+<section class="section">
+  <div class="container stats-grid">
+    <div class="card">
+      <h3>90% of our students obtain offers from their first or second choice universities</h3>
+      <div class="comparison">
+        <div class="stat-box">
+          <h4>With our support</h4>
+          <span class="big">90%</span>
+        </div>
+        <div class="stat-box">
+          <h4>Without our support</h4>
+          <span class="big">25%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <div class="container">
+    <h2>The award-winning TASCAM Co Ltd tutoring team</h2>
+    <h3>Award-Winning Institution and Services</h3>
+    <ul class="award-logos">
+      <li>
+        <img src="{% static 'img/awards/nta-2025.png' %}" alt="National Tutoring Awards 2025" loading="lazy">
+        <p>Private Tutoring Provider of the Year 2025.</p>
+      </li>
+      <li>
+        <img src="{% static 'img/awards/nta-2023.png' %}" alt="National Tutoring Awards 2023" loading="lazy">
+        <p>Best Tuition Business and Best Tuition Delivery to Private Clients of the Year 2023.</p>
+      </li>
+      <li>
+        <img src="{% static 'img/awards/nta-2022.png' %}" alt="National Tutoring Awards 2022" loading="lazy">
+        <p>Best Customer Service of the Year 2022.</p>
+      </li>
+    </ul>
+    <div class="trustpilot">
+      <p>The highest-rated tutoring company on TrustPilot since 2016</p>
+      <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+      <img src="{% static 'img/trustpilot-strip.png' %}" alt="Trustpilot" loading="lazy">
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<!-- UNIVERSITY APPLICATION PROCESS -->
+<section class="section process">
+  <div class="container">
+    <h2>Get Assistance With Every Stage Of The University Application Process</h2>
+    <ol class="process-list">
+      <li><strong>Course Selection:</strong> Our University consultancy team will review your application and advise on which course and college selection will give you the greatest chance of success.</li>
+      <li><strong>University Personal Statement Development:</strong> Your tutor will work closely with you to create a standout personal statement that appeals to top universities.</li>
+      <li><strong>Profile & Experience:</strong> We advise on further reading, research, and experiences to strengthen your university application profile.</li>
+      <li><strong>University Admission Test Preparation:</strong> Learn the time management and knowledge application skills needed to score interview-worthy marks.</li>
+      <li><strong>University Interview Support:</strong> We conduct mock interviews and provide feedback so you can confidently showcase your passion for your chosen subject.</li>
+    </ol>
+    <div class="highlight mt-4">
+      <p><strong>90% of our students receive an offer</strong> from their first or second choice university.</p>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATORS -->
+<section class="section section--muted">
+  <div class="container">
+    <h2>What sets us apart?</h2>
+    <div class="grid grid-3 cards-simple">
+      <div class="card"><h4>Expertly Vetted</h4><p>Only 3% of tutors are accepted. You’re working with the best.</p></div>
+      <div class="card"><h4>Related Experience</h4><p>Your tutor is a University Admissions expert who knows exactly what top universities expect.</p></div>
+      <div class="card"><h4>No Junior Tutors</h4><p>All our tutors are graduates with advanced degrees and extensive experience.</p></div>
+      <div class="card"><h4>Insider Knowledge</h4><p>We have tutors who are former admissions tutors — giving you insider insight.</p></div>
+      <div class="card"><h4>Proven Track Record</h4><p>Our tutors consistently help students secure offers from their target universities.</p></div>
+      <div class="card"><h4>Progress Tracking</h4><p>Our in-office team provides quantitative progress reports throughout your journey.</p></div>
+      <div class="card"><h4>Get Started Today</h4><p>Our experts are available 24/7 to maximise your chances of success.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP ADMISSIONS TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top University Admissions Tutors</h2>
+    <div class="grid grid-3 tutor-cards">
+
+      <!-- Arjun -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/arjun.jpg' %}" alt="Arjun" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Arjun</h3>
+          <p>6890 Hours Taught • Award Winning Tutor</p>
+          <ul class="tutor__tags">
+            <li>Background Checked</li><li>Face to Face or Online</li><li>Fast Response Time</li>
+          </ul>
+          <p>Highly experienced Mathematics, Statistics and admissions test tutor with a PhD from the University of Sheffield.</p>
+          <p>Dr Arjun has a Master’s in Mathematics from the University of Bath and a PhD from the University of Sheffield. He supports students in admissions tests including SAT, GMAT, and GRE, and tutors Mathematics and Statistics at top universities.</p>
+          <h4>Attended:</h4>
+          <ul><li>University of Sheffield</li><li>University of Bath</li></ul>
+        </div>
+      </article>
+
+      <!-- Don -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/don.jpg' %}" alt="Don" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Don</h3>
+          <p>5081 Hours Taught</p>
+          <ul class="tutor__tags">
+            <li>Background Checked</li><li>Face to Face or Online</li><li>Fast Response Time</li>
+          </ul>
+          <p>Cambridge and UCL graduate with 11+ years’ experience tutoring Economics, Mathematics, Philosophy, and Psychology.</p>
+          <h4>Attended:</h4>
+          <ul><li>University of Cambridge</li><li>University College London (University of London)</li></ul>
+        </div>
+      </article>
+
+      <!-- Jack -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/jack.jpg' %}" alt="Jack" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Jack</h3>
+          <p>2944 Hours Taught • Award Winning Tutor</p>
+          <ul class="tutor__tags">
+            <li>Background Checked</li><li>Face to Face or Online</li><li>Fast Response Time</li>
+          </ul>
+          <p>Cambridge and QMUL graduate and highly experienced Mathematics, Oxbridge admissions and STEP tutor.</p>
+          <h4>Attended:</h4>
+          <ul><li>Queen Mary, University of London (University of London)</li><li>Prior Pursglove College</li><li>University of Cambridge</li></ul>
+        </div>
+      </article>
+
+      <!-- Claire -->
+      <article class="tutor card">
+        <div class="tutor__media">
+          <img src="{% static 'img/tutors/claire.jpg' %}" alt="Claire" loading="lazy">
+        </div>
+        <div class="tutor__body">
+          <h3>Claire</h3>
+          <p>2106 Hours Taught • Award Winning Tutor</p>
+          <ul class="tutor__tags">
+            <li>Background Checked</li><li>Face to Face or Online</li><li>Fast Response Time</li>
+          </ul>
+          <p>Oxford graduate and qualified Science teacher with a PhD in Molecular Biochemistry and Chemical Biology.</p>
+          <h4>Attended:</h4>
+          <ul><li>Cardiff University</li><li>University of Oxford</li></ul>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <h3>Testimonial</h3>
+    <blockquote>
+      <p><strong>Nima Nima:</strong> I went from 43% in first year to receiving a Masters offer at the LSE! Thanks to TASCAM Co Ltd’ tutors I managed to score a 1st in my second year and receive an offer for the LSE Masters in Management.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ADMISSIONS TESTS -->
+<section class="section">
+  <div class="container">
+    <h2>Popular Admissions Tutoring Requests</h2>
+    <div class="bullet-columns">
+      <p>11+ (general), Admission Test, BMAT, CAT, CSAT, ELAT, GMAT, GRE, LNAT, LSAT, MAT, MLAT, PAT, SAT, TSA, UCAT, TOEFL, IELTS, Oxford, Cambridge, Undergraduate, Postgraduate, MBA, and more.</p>
+    </div>
+    <p class="mt-2">These are just a few of the tests we help with. For more, visit the highlighted subject pages.</p>
+  </div>
+</section>
+
+<!-- SUBJECTS -->
+<section class="section section--muted">
+  <div class="container">
+    
+    <h2>Popular Subjects</h2>
+
+    <div class="subject-grid mt-2">
+      <a href="{% url 'law_tutors' %}" class="subject-card">Law</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics</a>
+      <a href="{% url 'computer_science_tutors' %}" class="subject-card">Computer Science</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English</a>
+      <a href="{% url 'physics_tutors' %}" class="subject-card">Physics</a>
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics</a>
+      <a href="{% url 'chemistry_tutors' %}" class="subject-card">Chemistry</a>
+    </div>
+
+    <h3 class="mt-4">Other Tuition Requests</h3>
+
+    <div class="subject-grid mt-2">
+      <a href="{% url 'admission_test_tutors' %}" class="subject-card">Admissions Tests Support</a>
+      <a href="{% url 'undergraduate_admissions' %}" class="subject-card">Undergraduate</a>
+      <a href="{% url 'postgraduate_admissions' %}" class="subject-card">Postgraduate</a>
+      <a href="{% url 'mba_admissions_tutors' %}" class="subject-card">MBA</a>
+      
+    </div>
+
+  </div>
+</section>
+
+<!-- PRESS LOGOS -->
+<section class="press">
+  <div class="container">
+    <h3>TASCAM Co Ltd Featured In</h3>
+    <ul class="logo-strip">
+      <li><img src="{% static 'img/press/the-telegraph.png' %}" alt="The Telegraph"></li>
+      <li><img src="{% static 'img/press/the-guardian.png' %}" alt="The Guardian"></li>
+      <li><img src="{% static 'img/press/financial-times.png' %}" alt="Financial Times"></li>
+      <li><img src="{% static 'img/press/the-times.png' %}" alt="The Times"></li>
+      <li><img src="{% static 'img/press/evening-standard.png' %}" alt="Evening Standard"></li>
+      <li><img src="{% static 'img/press/fe-news.png' %}" alt="FE News"></li>
+    </ul>
+  </div>
+</section>
+
+{% endblock content %}

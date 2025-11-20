@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/dr_claire.jpg' %}" alt="Dr Claire" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Dr Claire</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">DPhil in Biochemistry from Oxford, 10+ Years Experience</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Dr Claire</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Dr Claire</h2>
+  <p>
+    Dr Claire is an Oxford-trained biochemist and full-time tutor with over a decade of teaching
+    experience. She specialises in biology, chemistry, physics, and mathematics across school,
+    university, and professional levels.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Biology</li>
+    <li>Chemistry</li>
+    <li>Physics</li>
+    <li>Mathematics</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Claire is by far the most supportive tutor I’ve had — she made every topic easy.”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Dr Claire</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="profile-card">
+
+    <h2>Complete Your Tutor Profile</h2>
+    <p class="subtext">Tell us about your background so we can process your application.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label for="bio">Bio</label>
+        <textarea id="bio" name="bio" placeholder="A short overview about you..." required></textarea>
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" type="text" name="phone" placeholder="+237 675 00 00 00">
+
+        <label for="location">Location</label>
+        <input id="location" type="text" name="location" placeholder="City, Country">
+
+        <label for="highest_degree">Highest Degree</label>
+        <input id="highest_degree" type="text" name="highest_degree" placeholder="e.g., MSc Computer Science">
+
+        <label for="university">University</label>
+        <input id="university" type="text" name="university" placeholder="e.g., University of Buea">
+
+        <label for="subjects">Subjects You Teach</label>
+        <input id="subjects" type="text" name="subjects" placeholder="e.g., Mathematics, Physics">
+
+        <button type="submit">Continue to Job Application →</button>
+    </form>
+
+</div>
+
+<style>
+/* ---- PAGE WRAPPER ---- */
+.profile-card {
+    max-width: 520px;
+    margin: 60px auto;
+    background: #ffffff;
+    padding: 45px 55px;
+    border-radius: 14px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.07);
+    border: 1px solid #eee;
+}
+
+/* ---- HEADINGS ---- */
+.profile-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1d3b;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.profile-card p.subtext {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* ---- FORM ---- */
+.profile-card label {
+    display: block;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: #1e1d3b;
+}
+
+.profile-card input,
+.profile-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 2px solid #dcdcdc;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.profile-card input:focus,
+.profile-card textarea:focus {
+    border-color: #ff7a00;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,122,0,0.2);
+}
+
+.profile-card textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+/* ---- BUTTON ---- */
+.profile-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 35px;
+    background: #ff7a00;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.profile-card button:hover {
+    background: #e56d00;
+    transform: translateY(-1px);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 600px) {
+    .profile-card {
+        padding: 35px 25px;
+    }
+}
+</style>
+
+{% endblock %}

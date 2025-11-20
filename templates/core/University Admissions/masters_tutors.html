@@ -1,0 +1,187 @@
+{# templates/core/masters_tutors.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Masters Tutors | TASCAM Co Ltd{% endblock %}
+
+{% block content %}
+
+<!-- HERO -->
+<section class="hero hero--subject"> 
+  <div class="grid two hero-grid">
+    <div class="hero-text">
+        <h1>Our Online Masters Tutors Get Results</h1>
+        <p>TASCAM Co Ltd finds expert tutors in any subject and for all levels of study. <strong>94%</strong> of our surveyed students achieve their target grade.</p>
+        <div class="hero-cta hero-cta--inline">
+  <a href="/find-tutors/" class="btn btn-accent btn-large">
+    Find A Tutor
+  </a>
+  <a href="/request-tutor/" class="btn btn-accent btn-large">
+    Contact Us
+  </a>
+</div>
+        
+        <div class="hero-logos">
+          <img src="{% static 'img/tascam-tutoring-1.jpg' %}" alt="TASCAM Co Ltd tutoring">
+          <img src="{% static 'img/tascam-tutoring-2.jpg' %}" alt="TASCAM Co Ltd tutoring">
+          <img src="{% static 'img/tascam-tutoring-3.jpg' %}" alt="TASCAM Co Ltd tutoring">
+        </div>
+      </div>
+      <div class="hero-card">
+        <div class="tutor-mini card">
+          <div class="tutor-mini__media">
+            <img src="{% static 'img/tutors/chris.jpg' %}" alt="TASCAM Co Ltd tutor - Chris">
+          </div>
+          <div class="tutor-mini__body">
+            <h3>Chris</h3>
+            <div class="tutor-mini__meta">
+              <span class="stars">5</span>
+              <span>361 Hours Taught</span>
+            </div>
+            <p>Politics and International Relations Lecturer with PhD ...</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat card">
+        <h4>Achieve a grade increase with the help of TASCAM Co Ltd</h4>
+        <p><strong>83%</strong> of our surveyed students achieve a grade increase</p>
+        <p>We’ve helped over <strong>13,000</strong> students boost their grades by an average of <strong>13%</strong> in their final examinations.</p>
+      </div>
+      <div class="stat card">
+        <h4>Work with the best Masters Tutors in the world</h4>
+        <ul class="checklist">
+          <li>40% of our tutors have PhDs</li>
+          <li>90% are postgrads</li>
+          <li>100% have over two years tutoring experience</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section class="awards">
+  <div class="container grid grid-2">
+    <div class="card">
+      <h3>Top quality tutoring at TASCAM Co Ltd</h3>
+      <img src="{% static 'img/tascam-team.jpg' %}" alt="TASCAM Co Ltd team">
+      <h4>Award-Winning Services</h4>
+      <ul class="award-logos">
+        <li><img src="{% static 'img/awards/nta-2025.png' %}" alt=""> Private Tutoring Provider of the Year 2025.</li>
+        <li><img src="{% static 'img/awards/nta-2023.png' %}" alt=""> Tutoring Company of the Year 2023.</li>
+        <li><img src="{% static 'img/awards/nta-2022.png' %}" alt=""> Best Customer Service 2022.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The highest-rated tutoring company on TrustPilot since 2016</h3>
+      <p>9 out of 10 customers said they would recommend us to a friend (and they do!)</p>
+      <img src="{% static 'img/trustpilot-strip.png' %}" alt="Trustpilot">
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+ 
+      
+
+<!-- TUTORS -->
+<section class="section">
+  <div class="container">
+    <h2>Our Top Masters Tutors</h2>
+
+    <div class="tutor-cards grid grid-3">
+      <!-- Tutor 1 -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/tormod.jpg' %}" alt="Tormod">
+        <h3>Tormod</h3>
+        <span>5357 Hours Taught</span>
+        <p>Trained Anthropologist, EU-funded researcher and highly experienced Humanities tutor</p>
+        <p>Tormod has been a professional private tutor for 7+ years and lectures at Roehampton University.</p>
+        <h4>Attended:</h4><ul><li>Roehampton University</li></ul>
+      </article>
+
+      <!-- Tutor 2 -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/chris.jpg' %}" alt="Chris">
+        <h3>Chris</h3>
+        <span>361 Hours Taught</span>
+        <p>Politics and International Relations Lecturer with PhD from LSE</p>
+        <h4>Attended:</h4>
+        <ul>
+          <li>SOAS (University of London)</li>
+          <li>LSE (University of London)</li>
+          <li>University of Cambridge</li>
+        </ul>
+      </article>
+
+      <!-- Tutor 3 -->
+      <article class="tutor card">
+        <img src="{% static 'img/tutors/christian.jpg' %}" alt="Christian">
+        <h3>Christian</h3>
+        <span>131 Hours Taught</span>
+        <p>Experienced Humanities tutor and Oxford graduate</p>
+        <h4>Attended:</h4>
+        <ul>
+          <li>The Skinners' School</li>
+          <li>University of Oxford</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIAL -->
+<section class="section section--muted">
+  <div class="container">
+    <h3>Testimonial</h3>
+    <blockquote>
+      <p><strong>Nima Nima:</strong> I went from 43% in first year to receiving a masters offer at the LSE! Thanks to TASCAM Co Ltd tutors I achieved a 1st and secured my LSE Masters offer.</p>
+    </blockquote>
+  </div>
+</section>
+
+<!-- BLOGS -->
+
+
+<!-- SUBJECTS -->
+<section class="section section--muted">
+  <div class="container">
+
+    <h2>We Cover All Subjects</h2>
+    <p>We’ve got your back. From Anthropology to Zoology, we have it covered.</p>
+
+    <div class="subject-grid mt-2">
+
+      <a href="{% url 'gcse_tutors' %}" class="subject-card">GCSE Tutors</a>
+      <a href="{% url 'economics_tutors' %}" class="subject-card">Economics Tutors</a>
+      <a href="{% url 'engineering_tutors' %}" class="subject-card">Engineering Tutors</a>
+      <a href="{% url 'politics_tutors' %}" class="subject-card">Politics Tutors</a>
+
+      <a href="{% url 'psychology_tutors' %}" class="subject-card">Psychology Tutors</a>
+      <a href="{% url 'accounting_tutors' %}" class="subject-card">Accounting Tutors</a>
+      <a href="{% url 'english_tutors' %}" class="subject-card">English Literature Tutors</a>
+      <a href="{% url 'finance_tutors' %}" class="subject-card">Finance Tutors</a>
+
+      
+      <a href="{% url 'architecture_tutors' %}" class="subject-card">Architecture Tutors</a>
+      <a href="{% url 'essay_tutors' %}" class="subject-card">Essay Tutors</a>
+      
+
+      <a href="{% url 'admissions_tutors' %}" class="subject-card">University Admission Tutors</a>
+      
+      <a href="{% url 'step_tutors' %}" class="subject-card">STEP Mathematics Tutors</a>
+
+    </div>
+
+    <p class="mt-2">
+      TASCAM Co Ltd prides itself on covering all subjects. Don’t believe us?
+      <a href="#find-tutor">click here</a> and give us a call!
+    </p>
+
+  </div>
+</section>
+
+{% endblock content %}

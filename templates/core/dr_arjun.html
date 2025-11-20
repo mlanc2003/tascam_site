@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+<section class="tutor-hero">
+  <div class="container tutor-hero-inner">
+    <img src="{% static 'images/tutors/dr_arjun.jpg' %}" alt="Dr Arjun" class="tutor-hero-img">
+
+    <div class="tutor-hero-text">
+      <h1>Dr Arjun</h1>
+      <p class="rating">⭐ 5.0</p>
+      <p class="tagline">PhD in Mathematics, Tutors All Levels</p>
+      <a href="/request-tutor/" class="btn btn-accent btn-large">Request Dr Arjun</a>
+    </div>
+  </div>
+</section>
+
+<section class="tutor-profile container">
+  <h2>About Dr Arjun</h2>
+  <p>
+    Dr Arjun holds a PhD in Mathematics and tutors students from GCSE all the way to postgraduate level.
+    He specialises in helping students develop confidence, problem-solving skills, and true enjoyment
+    of mathematics.
+  </p>
+
+  <h2>Areas of Expertise</h2>
+  <ul>
+    <li>Mathematics (GCSE → PhD Level)</li>
+    <li>Applied Mathematics</li>
+    <li>Pure Mathematics</li>
+    <li>Problem Solving & Exam Preparation</li>
+  </ul>
+
+  <h2>Student Feedback</h2>
+  <blockquote>
+    “Arjun made maths exciting. I went from hating it to scoring top marks.”
+  </blockquote>
+
+  <div class="cta-center">
+    <a href="/request-tutor/" class="btn btn-accent btn-large">Work With Dr Arjun</a>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,720 @@
+{% extends "base.html" %}
+{% block title %}Request a Tutor | TASCAM Co Ltd{% endblock %}
+{% block content %}
+{% load static %}
+
+<!-- HERO -->
+<section class="contact-hero">
+  <div class="contact-container">
+    <h1 class="contact-title">Contact TASCAM Co Ltd</h1>
+
+    <p class="contact-sub">
+      Call us 24/7:
+      <span class="contact-phone">+237 675 31 61 71</span>
+    </p>
+
+    <p class="contact-sub">Or fill in the form below and we will call you:</p>
+  </div>
+</section>
+
+<!-- FORM CONTAINER -->
+<section class="contact-white-card">
+  <div class="contact-card-inner">
+
+    <!-- Progress Bar -->
+    <div class="progress-bar-wrapper">
+      <div class="progress-bar-fill" id="progressBar"></div>
+    </div>
+
+    <!-- FORM START -->
+    <form id="tutorRequestForm" method="post" action="{% url 'submit_tutor_request' %}">
+      {% csrf_token %}
+
+      <!-- MULTI STEP WRAPPER -->
+      <div id="multiForm">
+
+        <!-- STEP 1 -->
+        <div class="form-step active" id="step1">
+          <h2 class="contact-question">
+            What <span class="highlight">level</span> of study?
+          </h2>
+
+          <div class="contact-options">
+            <button type="button" class="option-btn next" data-next="step2-standard">
+              School Level, University & Professional Tutoring
+            </button>
+
+            <button type="button" class="option-btn next" data-next="step2-uni">
+              University Applications
+            </button>
+          </div>
+        </div>
+
+        <!-- =============================================== -->
+        <!-- ========== STANDARD TUTORING PATH ============= -->
+        <!-- =============================================== -->
+
+        <!-- STEP 2 STANDARD -->
+        <div class="form-step" id="step2-standard">
+          <h2 class="contact-question">
+            What do you need <span class="highlight">help</span> with?
+          </h2>
+
+          <div class="contact-options">
+            <button type="button" class="option-btn next" data-next="step3-standard">Primary</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">Secondary</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">GCSE</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">IGCSE</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">A Level</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">IB</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">Admissions</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">Undergraduate</button>
+            <button type="button" class="option-btn next" data-next="step3-standard">Postgraduate</button>
+            <button type="button" class="option-btn next wide-btn" data-next="step3-standard">Dissertations</button>
+            <button type="button" class="option-btn next wide-btn" data-next="step3-standard">Professional</button>
+          </div>
+
+          <button type="button" class="previous-btn" data-prev="step1">Previous</button>
+        </div>
+
+        <!-- STEP 3 STANDARD -->
+        <div class="form-step" id="step3-standard">
+          <h2 class="contact-question">
+            What <span class="highlight">subject/course</span>?
+          </h2>
+
+          <input class="text-input" placeholder="E.g. Maths, Law, Economics">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step2-standard">Previous</button>
+            <button type="button" class="next-btn" data-next="step4-standard">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 STANDARD -->
+        <div class="form-step" id="step4-standard">
+          <h2 class="contact-question">
+            How much <span class="highlight">tutoring</span> do you need?
+          </h2>
+
+          <p class="min-note">
+            *Please be aware that we have a 5-hour minimum spend policy
+          </p>
+
+          <div class="contact-options">
+            <button type="button" class="option-btn next" data-next="step5-standard">5–10 hours</button>
+            <button type="button" class="option-btn next" data-next="step5-standard">10–20 hours</button>
+            <button type="button" class="option-btn next" data-next="step5-standard">20+ hours</button>
+            <button type="button" class="option-btn next wide-btn" data-next="step5-standard">Unsure</button>
+          </div>
+
+          <button type="button" class="previous-btn" data-prev="step3-standard">Previous</button>
+        </div>
+
+        <!-- STEP 5 STANDARD -->
+        <div class="form-step" id="step5-standard">
+          <h2 class="contact-question">
+            Please provide <span class="highlight">additional information</span>
+          </h2>
+
+          <input class="text-input" placeholder="What is your current year of study?">
+          <input class="text-input" placeholder="Any deadlines? coursework, exams, interviews?">
+
+          <select class="text-input" id="timeOfDaySelectStandard">
+            <option value="">Please select</option>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+          </select>
+
+          <select class="text-input" id="specificTimeslotStandard" style="display:none;">
+            <option value="">Select a timeslot</option>
+          </select>
+
+          <textarea class="text-area" placeholder="Describe what you need..."></textarea>
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step4-standard">Previous</button>
+            <button type="button" class="next-btn" data-next="step6-standard">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 6 STANDARD (FINAL) -->
+        <div class="form-step" id="step6-standard">
+          <h2 class="contact-question">
+            <span class="highlight">Contact</span> details:
+          </h2>
+
+          <div class="two-col">
+            <input class="text-input" placeholder="First name">
+            <input class="text-input" placeholder="Last name">
+          </div>
+
+          <div class="two-col">
+            <select class="text-input">
+              <option>United Kingdom (+44)</option>
+              <option>United States (+1)</option>
+              <option>Europe (+33, +34, +39…)</option>
+            </select>
+
+            <input class="text-input" placeholder="Phone number">
+          </div>
+
+          <input class="text-input" placeholder="Email">
+          <input class="text-input" placeholder="Confirm your email">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step5-standard">Previous</button>
+            <button class="submit-btn">Submit</button>
+          </div>
+        </div>
+
+        <!-- =============================================== -->
+        <!-- ========== UNIVERSITY APPLICATION PATH ======== -->
+        <!-- =============================================== -->
+
+        <!-- STEP 2 UNI -->
+        <div class="form-step" id="step2-uni">
+          <h2 class="contact-question">
+            What do you need <span class="highlight">help</span> with?
+          </h2>
+
+          <div class="contact-options">
+            <button type="button" class="option-btn next" data-next="step3-uni">All Admissions Support</button>
+            <button type="button" class="option-btn next" data-next="step3-uni">Personal Statement</button>
+            <button type="button" class="option-btn next" data-next="step3-uni">Admissions Test</button>
+            <button type="button" class="option-btn next" data-next="step3-uni">University Interview</button>
+            <button type="button" class="option-btn next" data-next="step3-uni">Research Proposal</button>
+            <button type="button" class="option-btn next" data-next="step3-uni">Other Admissions Support</button>
+          </div>
+
+          <button type="button" class="previous-btn" data-prev="step1">Previous</button>
+        </div>
+
+        <!-- STEP 3 UNI -->
+        <div class="form-step" id="step3-uni">
+          <h2 class="contact-question">
+            What <span class="highlight">subject/course</span>?
+          </h2>
+
+          <input class="text-input" placeholder="E.g. Maths, Law, Economics">
+
+          <h2 class="contact-question">
+            Which <span class="highlight">university</span> are you applying to?
+          </h2>
+
+          <input class="text-input" placeholder="e.g. Oxford, Imperial, LSE etc.">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step2-uni">Previous</button>
+            <button type="button" class="next-btn" data-next="step4-uni">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 4 UNI -->
+        <div class="form-step" id="step4-uni">
+          <h2 class="contact-question">
+            What are your <span class="highlight">grades</span>?
+          </h2>
+
+          <div class="two-col">
+            <input class="text-input" placeholder="Subject(s)">
+            <input class="text-input" placeholder="Grade(s)">
+          </div>
+
+          <label class="checkbox-line">
+            <input type="checkbox"> I'm still studying this course/these courses
+          </label>
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step3-uni">Previous</button>
+            <button type="button" class="next-btn" data-next="step5-uni">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 5 UNI -->
+        <div class="form-step" id="step5-uni">
+          <h2 class="contact-question">
+            How much <span class="highlight">tutoring</span> do you need?
+          </h2>
+
+          <p class="min-note">
+            *Please be aware that we have a 5-hour minimum spend policy
+          </p>
+
+          <div class="contact-options">
+            <button type="button" class="option-btn next" data-next="step6-uni">5–10 hours</button>
+            <button type="button" class="option-btn next" data-next="step6-uni">10–20 hours</button>
+            <button type="button" class="option-btn next" data-next="step6-uni">20+ hours</button>
+            <button type="button" class="option-btn next wide-btn" data-next="step6-uni">Unsure</button>
+          </div>
+
+          <button type="button" class="previous-btn" data-prev="step4-uni">Previous</button>
+        </div>
+
+        <!-- STEP 6 UNI -->
+        <div class="form-step" id="step6-uni">
+          <h2 class="contact-question">
+            Please provide <span class="highlight">additional information</span>
+          </h2>
+
+          <input class="text-input" placeholder="What is your current year of study?">
+          <input class="text-input" placeholder="Any deadlines? coursework, exams, interviews?">
+
+          <select class="text-input" id="timeOfDaySelectUni">
+            <option value="">Please select</option>
+            <option value="morning">Morning</option>
+            <option value="afternoon">Afternoon</option>
+            <option value="evening">Evening</option>
+          </select>
+
+          <select class="text-input" id="specificTimeslotUni" style="display:none;">
+            <option value="">Select a timeslot</option>
+          </select>
+
+          <textarea class="text-area" placeholder="Describe what you need..."></textarea>
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step5-uni">Previous</button>
+            <button type="button" class="next-btn" data-next="step7-uni">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 7 UNI (FINAL) -->
+        <div class="form-step" id="step7-uni">
+          <h2 class="contact-question"><span class="highlight">Contact</span> details:</h2>
+
+          <div class="two-col">
+            <input class="text-input" placeholder="First name">
+            <input class="text-input" placeholder="Last name">
+          </div>
+
+          <div class="two-col">
+            <select class="text-input">
+              <option>United Kingdom (+44)</option>
+              <option>United States (+1)</option>
+              <option>Europe (+33, +34, +39…)</option>
+            </select>
+
+            <input class="text-input" placeholder="Phone number">
+          </div>
+
+          <input class="text-input" placeholder="Email">
+          <input class="text-input" placeholder="Confirm your email">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step6-uni">Previous</button>
+            <button class="submit-btn">Submit</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- END MULTI-FORM -->
+
+    </form>
+    <!-- END FORM -->
+
+  </div>
+</section>
+
+<section class="contact-disclaimer">
+  <p>
+    We do not facilitate cheating or academic misconduct in any way.
+    <br>
+    Please do not call or request anything unethical from our team.
+  </p>
+</section>
+
+<div class="trustpilot-banner">
+  <p>Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+</div>
+
+<!-- ========== JAVASCRIPT ========== -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    /* ============================================================
+       STEP SYSTEM
+    ============================================================ */
+    const steps = document.querySelectorAll(".form-step");
+    const nextButtons = document.querySelectorAll(".next, .next-btn");
+    const prevButtons = document.querySelectorAll(".previous-btn");
+    const submitButtons = document.querySelectorAll(".submit-btn");
+    const progressBar = document.getElementById("progressBar");
+
+    function showStep(stepId) {
+        steps.forEach(step => step.classList.remove("active"));
+        document.getElementById(stepId).classList.add("active");
+        updateProgress(stepId);
+    }
+
+    function updateProgress(stepId) {
+        const progressMap = {
+            "step1": "20%",
+            "step2-standard": "35%",
+            "step3-standard": "50%",
+            "step4-standard": "65%",
+            "step5-standard": "80%",
+            "step6-standard": "100%",
+
+            "step2-uni": "35%",
+            "step3-uni": "50%",
+            "step4-uni": "65%",
+            "step5-uni": "75%",
+            "step6-uni": "87%",
+            "step7-uni": "100%",
+        };
+
+        progressBar.style.width = progressMap[stepId] ?? "0%";
+    }
+
+    /* ============================================================
+       TIMESLOT SYSTEM (Fixed, Fully Working)
+    ============================================================ */
+    function setupTimeslot(timeSelectId, slotSelectId) {
+        const timeSelect = document.getElementById(timeSelectId);
+        const slotSelect = document.getElementById(slotSelectId);
+
+        if (!timeSelect || !slotSelect) return;
+
+        const times = {
+            morning: ["8–9 AM", "9–10 AM", "10–11 AM", "11 AM–12 PM"],
+            afternoon: ["12–1 PM", "1–2 PM", "2–3 PM", "3–4 PM", "4–5 PM"],
+            evening: ["5–6 PM", "6–7 PM", "7–8 PM", "8–9 PM"]
+        };
+
+        timeSelect.addEventListener("change", () => {
+            const selected = timeSelect.value;
+
+            // Reset + placeholder
+            slotSelect.innerHTML = '<option value="">Select a timeslot</option>';
+
+            if (times[selected]) {
+                slotSelect.style.display = "block";
+                times[selected].forEach(slot => {
+                    const opt = document.createElement("option");
+                    opt.value = slot;
+                    opt.textContent = slot;
+                    slotSelect.appendChild(opt);
+                });
+            } else {
+                slotSelect.style.display = "none";
+            }
+        });
+    }
+
+    // Attach when everything is rendered (fixes original bug)
+    setTimeout(() => {
+        setupTimeslot("timeOfDaySelectStandard", "specificTimeslotStandard");
+        setupTimeslot("timeOfDaySelectUni", "specificTimeslotUni");
+    }, 200);
+
+
+    /* ============================================================
+       VALIDATION
+    ============================================================ */
+    function validateStep(stepElement) {
+        let valid = true;
+
+        // clear old errors
+        stepElement.querySelectorAll(".error-message").forEach(e => e.remove());
+        stepElement.querySelectorAll(".input-error").forEach(el => el.classList.remove("input-error"));
+
+        const fields = stepElement.querySelectorAll(
+            "input.text-input, textarea.text-area, select.text-input"
+        );
+
+        fields.forEach(field => {
+            if (field.offsetParent !== null) {  // only validate visible fields
+                if (field.value.trim() === "" || field.value === "Please select") {
+
+                    valid = false;
+                    field.classList.add("input-error");
+
+                    const error = document.createElement("div");
+                    error.classList.add("error-message");
+                    error.innerText = "This field is required.";
+                    field.insertAdjacentElement("afterend", error);
+
+                    setTimeout(() => error.style.display = "block", 10);
+                }
+            }
+        });
+
+        return valid;
+    }
+
+
+    /* ============================================================
+       NEXT BUTTON HANDLER
+    ============================================================ */
+    nextButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const currentStep = btn.closest(".form-step");
+            const next = btn.dataset.next;
+
+            const hasInputs =
+                currentStep.querySelectorAll("input.text-input, textarea.text-area, select.text-input")
+                .length > 0;
+
+            if (hasInputs && !validateStep(currentStep)) return;
+
+            if (next) showStep(next);
+        });
+    });
+
+
+    /* ============================================================
+       PREVIOUS BUTTON HANDLER
+    ============================================================ */
+    prevButtons.forEach(btn => {
+        btn.addEventListener("click", () => {
+            const prev = btn.dataset.prev;
+            if (prev) showStep(prev);
+        });
+    });
+
+
+    /* ============================================================
+       SUBMIT HANDLER (Final Step Only)
+    ============================================================ */
+    submitButtons.forEach(btn => {
+        btn.addEventListener("click", (e) => {
+            e.preventDefault();
+
+            const currentStep = btn.closest(".form-step");
+            const currentId = currentStep.id;
+
+            const isFinalStep =
+                currentId === "step6-standard" ||
+                currentId === "step7-uni";
+
+            if (!validateStep(currentStep)) return;
+
+            if (isFinalStep) {
+                document.getElementById("tutorRequestForm").submit();
+            } else {
+                console.warn("Submit blocked – not final step.");
+            }
+        });
+    });
+
+});
+</script>
+
+<style>
+
+.form-step {
+  display: none;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: opacity .3s ease, transform .3s ease;
+}
+.form-step.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+.text-input, .text-area, select {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid #ddd;
+  margin-bottom: 18px;
+  font-size: 17px;
+}
+.text-area {
+  height: 130px;
+}
+.two-col {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.btn-row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.previous-btn {
+  background: #bfbfbf;
+  color: white;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 30px;
+}
+.next-btn, .submit-btn {
+  background: #ff9c66;
+  color: #fff;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+}
+.checkbox-line {
+  margin: 15px 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.fake-recaptcha {
+  height: 78px;
+  background: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+.wide-btn { width: 100%; }
+
+.form-step {
+  padding: 20px 0;
+}
+
+.contact-card-inner .form-step h2.contact-question {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.contact-card-inner .contact-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 35px;
+}
+
+.contact-card-inner .option-btn {
+  background: #f3f4f6;
+  padding: 25px 30px;
+  border-radius: 20px;
+  font-size: 20px;
+  color: #4c5567;
+  font-weight: 600;
+  flex: 1;
+  min-width: 280px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-card-inner .two-col {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.contact-card-inner input.text-input,
+.contact-card-inner select.text-input,
+.contact-card-inner textarea.text-area {
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #ddd;
+  padding: 18px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  background: #fff;
+}
+
+.contact-card-inner .btn-row {
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.previous-btn {
+  background: #bfbfbf;
+  color: white;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+}
+
+.next-btn, .submit-btn {
+  background: #ff9c66;
+  color: white;
+  padding: 14px 35px;
+  border-radius: 30px;
+  border: none;
+  font-size: 18px;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+  color: #d9534f;
+  font-size: 16px;
+  margin: -10px 0 15px;
+  display: none;
+}
+
+.input-error {
+  border-color: #d9534f !important;
+  background: #fff5f5 !important;
+}
+
+.hero--contact .container {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.hero--contact {
+  padding: 80px 0 40px;
+  background: #fcf4ef;
+}
+
+/* CENTER THE FORM CARD */
+.contact-card-inner {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 40px 50px;
+  border-radius: 28px;
+  background: #ffffff;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* OPTIONAL: SPACING LIKE THE PROFS */
+.contact-white-card {
+  margin-top: 20px;
+}
+
+/* OPTIONAL: SOFT GRADIENT DISCLAIMER */
+.contact-disclaimer {
+  background: linear-gradient(to bottom, #fcf4ef, #f7f7f7);
+  padding: 40px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #6b7280;
+}
+
+/* Center the top contact heading block */
+.contact-hero {
+  padding: 60px 0 30px;  
+}
+
+.contact-hero .contact-container {
+  max-width: 900px;
+  margin: 0 auto; 
+  text-align: center;         
+}
+
+/* Center the Trustpilot banner text */
+.trustpilot-banner {
+  text-align: center;
+  padding: 16px 0;
+}
+
+.trustpilot-banner p {
+  margin: 0;
+}
+
+.contact-title {
+  font-size: 40px;      /* try 48–56px depending on preference */
+  font-weight: 800;
+  color: #1d2340;  
+  margin-bottom: 10px;
+}
+
+</style>
+
+{% endblock %}

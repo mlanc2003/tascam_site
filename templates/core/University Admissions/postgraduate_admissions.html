@@ -1,0 +1,115 @@
+{# templates/core/postgraduate_admissions.html #}
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Postgraduate Admissions Tutors | TASCAM Co LtD{% endblock %}
+
+{% block content %}
+<section class="hero hero--subject">
+  <div class="grid two">
+    <div>
+      <h1>Find Expert Postgraduate Admissions Tutors</h1>
+      <p>Secure a world class university offer with guidance from Cameroon’s leading admissions specialists.</p>
+      <p>Our team of over 400 tutors will maximise your chances of success.</p>
+      <div class="hero-cta hero-cta--inline">
+        <a href="/find-tutors/" class="btn btn-accent btn-large">
+          Find A Tutor
+        </a>
+        <a href="/request-tutor/" class="btn btn-accent btn-large">
+          Contact Us
+        </a>
+      </div>
+      <p><strong>Call us 24/7:</strong> +237 675 31 61 71<br>
+         <strong>Email:</strong> enquiries@tascamcoltd.co.Cameroon</p>
+    </div>
+    <div>
+      <img src="{% static 'img/subjects/admissions-hero.jpg' %}" alt="Postgraduate Admissions tutoring" class="responsive">
+    </div>
+  </div>
+</section>
+
+<section class="usp container">
+  <h2>Improve your admissions chances with the help of TASCAM Co LtD</h2>
+  <div class="stat-block">
+    <h3>Cambridge University</h3>
+    <p>90% of our students obtain offers from their first or second choice universities with our support</p>
+    <p>Without our support: 25%</p>
+  </div>
+</section>
+
+<section class="awards container">
+  <h2>Award-Winning Institution and Services</h2>
+  <div class="grid three">
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2025.jpg' %}" alt="National Tutoring Awards 2025">
+      <p>Private Tutoring Provider of the Year 2025</p>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2023.jpg' %}" alt="National Tutoring Awards 2023">
+      <p>Best Tuition Business & Delivery to Private Clients of the Year 2023</p>
+    </div>
+    <div class="card">
+      <img src="{% static 'img/awards/national-tutoring-2022.jpg' %}" alt="National Tutoring Awards 2022">
+      <p>Best Customer Service of the Year 2022</p>
+    </div>
+  </div>
+  <p class="trustpilot">The highest-rated tutoring company on TrustPilot since 2016 – 9 out of 10 customers said they would recommend us.</p>
+</section>
+
+<section class="experts container">
+  <h2>Our Experts – Top Admissions Tutors</h2>
+  <div class="grid three">
+    <!-- Example Tutor Card -->
+    <div class="card tutor">
+      <h3>Dr Arjun</h3>
+      <p>6,890 Hours Taught</p>
+      <p>Awards & background detail…</p>
+    </div>
+    <div class="card tutor">
+      <h3>Dr Don</h3>
+      <p>5,081 Hours Taught</p>
+      <p>Cambridge & UCL graduate with years of admissions experience…</p>
+    </div>
+    <div class="card tutor">
+      <h3>Dr Jack</h3>
+      <p>2,944 Hours Taught</p>
+      <p>Specialist in Mathematics, STEP, Oxbridge admissions…</p>
+    </div>
+  </div>
+</section>
+
+{% include "components/get_started.html" with btn_text=button_text %}
+
+<section class="process container">
+  <h2>Get Assistance With Every Stage Of The University Application Process</h2>
+  <ol class="steps">
+    <li><strong>Course Selection</strong> – Our university consultancy team will review your application and advise on which course and college selection will give you the greatest chance of success.</li>
+    <li><strong>University Personal Statement Development</strong> – Your tutor will work closely with you to create a standout personal statement that appeals to top universities.</li>
+    <li><strong>Profile & Experience</strong> – TASCAM Co LtD can help you build your application profile, advising on further reading and research to showcase your subject knowledge beyond school level.</li>
+    <li><strong>University Admission Test Preparation</strong> – Our admissions tutors train you in time management and knowledge-application skills needed to score well in admissions tests.</li>
+    <li><strong>University Interview Support</strong> – We will conduct rigorous mock interviews with comprehensive feedback to ensure you are ready for challenging questions and can demonstrate your passion for your subject.</li>
+  </ol>
+  <p>90% of our students receive an offer from their first or second choice university.</p>
+</section>
+
+<section class="features container">
+  <h2>What sets us apart?</h2>
+  <ul class="feature-list">
+    <li><strong>Expertly Vetted</strong> – Only 3% of tutor applicants are accepted. You’re working with the best.</li>
+    <li><strong>Related Experience</strong> – Your tutor will be an admissions expert who knows exactly what top universities are looking for.</li>
+    <li><strong>No Junior Tutors</strong> – We only work with experienced graduates and postgraduates.</li>
+    <li><strong>Insider Knowledge</strong> – Tutors include former admissions tutors or consultants who understand what universities expect.</li>
+    <li><strong>Proven Track Record</strong> – We expect excellence. Our tutors have a track record of helping similar students succeed.</li>
+    <li><strong>Progress Tracking</strong> – Our in-office team provides updates, reports and tracking so you always know where you stand.</li>
+    <li><strong>Get Started Today</strong> – Our team of university experts are available 24/7 to help you maximise your chances of success.</li>
+  </ul>
+</section>
+
+<section class="cta container">
+  <div class="card card-accent">
+    <h2>Talk to us to find out how we can help</h2>
+    <a href="/request-tutor/" class="btn btn-primary">Find Your Tutor</a>
+  </div>
+</section>
+
+{% endblock %}

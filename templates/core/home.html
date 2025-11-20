@@ -1,0 +1,209 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}TASCAM Co Ltd — Get Results{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <h1>TASCAM Co Ltd <span>Get Results</span></h1>
+    <p>
+      Our tutors help students achieve <strong>life-changing success</strong>.
+      We will <strong>reduce</strong> your stress, <strong>increase</strong> your confidence,
+      and <strong>improve</strong> your grades.
+      Over 90% of our students achieve their target grades and get into their preferred universities.
+    </p>
+    <div class="hero-buttons">
+      <a href="/find-tutors/" class="btn btn-accent">Find Tutors</a>
+      <a href="/request-tutor/" class="btn btn-accent">Request Tutor</a>
+    </div>
+  </div>
+  
+  <div class="hero-image">
+    <img src="{% static 'images/tutor-sample.jpg' %}" alt="Tutor Profile">
+  </div>
+</section>
+
+<section>
+  <h2>Subjects we cover</h2>
+  <div class="grid grid-4" style="margin-top:12px">
+    {% for s in subjects %}
+      <a href="{{ s.url }}" class="card subject-card-link">
+        {{ s.name }}
+      </a>
+    {% endfor %}
+  </div>
+</section>
+
+  <div class="show-more">
+    <p>
+      TASCAM Co Ltd prides itself on covering all subjects. Don’t believe us?
+      <a href="/request-tutor/" class="accent">Click here and give us a Call!</a>
+    </p>
+
+    <a href="/subjects/" class="btn btn-accent show-more-btn">
+      See More Subjects
+    </a>
+  </div>
+</section>
+
+<section style="margin-top:60px">
+  <h2>Our Tutors</h2>
+  <p>A small selection of some of our professional private tutors. Call us today for your personalised shortlist of top tutors in your subject.</p>
+  <p>We only work with the best! Only 3% of tutors who apply make it onto our network.</p>
+
+  <div class="grid grid-3" style="margin-top:20px">
+
+    <div class="card">
+      <h3>Dr Bianca</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>Lecturer, Research Consultant & Tutor, Ph.D in Health Psychology / Psychobiology.</p>
+      <p class="small">Experienced lecturer in health-sciences and psychology with a history in higher education.</p>
+      <a href="{% url 'dr_bianca' %}" class="btn btn-accent">More about Dr Bianca</a>
+    </div>
+
+    <div class="card">
+      <h3>Tormod</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>Five Years Tutoring Experience in Arts & Humanities, Trained Anthropologist.</p>
+      <p class="small">Expert in research methods, ethics, human rights, and conflict issues.</p>
+      <a href="{% url 'tormod' %}" class="btn btn-accent">More about Tormod</a>
+    </div>
+
+    <div class="card">
+      <h3>Dr Amar</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>CFA Charter Holder, Former Stanford Economics Lecturer, PhD in Economics.</p>
+      <p class="small">20+ years teaching undergraduates, postgraduates, and professionals.</p>
+      <a href="{% url 'dr_amar' %}" class="btn btn-accent">More about Dr Amar</a>
+    </div>
+
+    <div class="card">
+      <h3>Dr Don</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>PhD in Philosophy of Maths, Over 12 Years Full-time Tutoring Experience.</p>
+      <p class="small">Economics, mathematics, philosophy, and psychology tutor.</p>
+      <a href="{% url 'dr_don' %}" class="btn btn-accent">More about Dr Don</a>
+    </div>
+
+    <div class="card">
+      <h3>Dr Claire</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>DPhil in Biochemistry from Oxford, Full-time Tutor with 10+ years’ experience.</p>
+      <p class="small">Teaches Biology, Chemistry, Physics, and Mathematics at all levels.</p>
+      <a href="{% url 'dr_claire' %}" class="btn btn-accent">More about Dr Claire</a>
+    </div>
+
+    <div class="card">
+      <h3>Dr Arjun</h3>
+      <div class="small">⭐ 5.0</div>
+      <p>Masters and Ph.D in Mathematics, Tutors at All Levels.</p>
+      <p class="small">Helps students solve problems and inspires love for studying.</p>
+      <a href="{% url 'dr_arjun' %}" class="btn btn-accent">More about Dr Arjun</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="featured" style="margin-top:60px; text-align:center;">
+  <h2>TASCAM Co Ltd Featured In</h2>
+  <div class="logo-row" style="margin-top:20px">
+    <img src="{% static 'images/the-telegraph-logo.png' %}" alt="The Telegraph">
+    <img src="{% static 'images/the-guardian-logo.png' %}" alt="The Guardian">
+    <img src="{% static 'images/ft-logo.png' %}" alt="Financial Times">
+    <img src="{% static 'images/the-times-logo.png' %}" alt="The Times">
+    <img src="{% static 'images/evening-standard-logo.png' %}" alt="Evening Standard">
+    <img src="{% static 'images/fe-news-logo.png' %}" alt="FE News">
+  </div>
+</section>
+
+<section style="margin-top:60px">
+  <h2>Our Services</h2>
+  <div class="grid grid-3" style="margin-top:20px">
+    <div class="card">
+      <h3>Academic Tutoring</h3>
+      <p>We find tutors for students at all levels, providing personalised support and mentoring.</p>
+    </div>
+    <div class="card">
+      <h3>University Admissions</h3>
+      <p>We guide students through course selection, applications, and interview preparation.</p>
+    </div>
+    <div class="card">
+      <h3>Online Tutoring</h3>
+      <p>Pioneers of online tutoring and creators of BitPaper for enhanced learning.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stop-search" style="margin-top:60px; text-align:center;">
+  <h2>Stop Your Search</h2>
+  <p>We search hundreds of tutors for you, so you don't have to!</p>
+  <div class="team grid grid-3" style="margin-top:20px">
+    <div class="card"><strong>Rebecca Thompson</strong><br>Senior Client Manager</div>
+    <div class="card"><strong>Josh Bedford</strong><br>Client Manager</div>
+    <div class="card"><strong>Richard Evans</strong><br>Founder & Education Expert</div>
+  </div>
+  <p style="margin-top:20px"><strong>24/7 support</strong> — We're here to help! We know our tutors personally and can match you with the perfect one.</p>
+</section>
+
+<section class="testimonial" style="margin-top:60px">
+  <h2>We Can Make the Difference</h2>
+  <div class="testimonial-card" style="margin-top:20px">
+    <h3>Nima Nima</h3>
+    <p>"I went from 43% in first year to receiving a masters offer at the LSE! Thanks to the brilliant quality of tutors I managed to score a 1st and secure my dream offer."</p>
+  </div>
+</section>
+
+<section class="awards" style="margin-top:60px">
+  <h2>Tutoring Awards</h2>
+  <p>An award-winning company:</p>
+  <ul>
+    <li>Department of Education</li>
+    <li>Forbes - Under 30 Europe Awards</li>
+    <li>National Tutoring Awards 2025</li>
+    <li>Education Investor Awards 2024</li>
+    <li>The Telegraph Trade Awards</li>
+    <li>National Tutoring Awards 2023</li>
+    <li>Education Investor Awards 2017</li>
+  </ul>
+  <p style="margin-top:10px"><strong>Cameroon’s highest rated tuition company since 2016 on Trustpilot</strong></p>
+</section>
+
+<style>
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Make all cards same height + aligned */
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  padding: 30px 25px;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+/* Ensure bottom button is centered */
+.card .btn {
+  margin: 25px auto 0 auto;   /* centers horizontally */
+  text-align: center;
+  min-width: 70%;
+  display: inline-block;
+}
+
+.show-more {
+  margin: 40px 0 20px 0;
+  text-align: center;
+}
+
+.show-more-btn {
+  display: inline-block;
+  margin-top: 10px;
+}
+</style>
+
+{% endblock %}

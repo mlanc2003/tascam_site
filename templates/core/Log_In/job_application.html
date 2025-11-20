@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="application-card">
+    <h2>Tutor Job Application</h2>
+    <p class="subtext">Complete your application to join the TASCAM Consultancy team.</p>
+
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+
+        <label>Upload Resume (PDF)</label>
+        <input type="file" name="resume" accept="application/pdf" required>
+
+        <label>Cover Letter</label>
+        <textarea name="cover_letter" required></textarea>
+
+        <label>Availability</label>
+        <input type="text" name="availability" placeholder="e.g., Weekdays after 4 PM" required>
+
+        <label>Your Rates</label>
+        <input type="text" name="rates" placeholder="e.g., 10,000 XAF / hour" required>
+
+        <label>Years of Experience</label>
+        <input type="number" name="experience_years" min="0" required>
+
+        <button type="submit">Submit Application</button>
+    </form>
+</div>
+
+<style>
+/* ---- PAGE WRAPPER ---- */
+.application-card {
+    max-width: 520px;
+    margin: 70px auto;
+    background: #ffffff;
+    padding: 45px 55px;
+    border-radius: 14px;
+    box-shadow: 0 8px 35px rgba(0,0,0,0.07);
+    border: 1px solid #eee;
+}
+
+/* ---- HEADINGS ---- */
+.application-card h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e1d3b;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.application-card .subtext {
+    text-align: center;
+    color: #666;
+    font-size: 15px;
+    margin-bottom: 25px;
+}
+
+/* ---- LABELS ---- */
+.application-card label {
+    display: block;
+    font-weight: 600;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    color: #1e1d3b;
+}
+
+/* ---- FORM INPUTS ---- */
+.application-card input,
+.application-card textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 2px solid #dcdcdc;
+    font-size: 15px;
+    transition: 0.2s ease;
+}
+
+.application-card input:focus,
+.application-card textarea:focus {
+    border-color: #ff7a00;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,122,0,0.2);
+}
+
+.application-card textarea {
+    height: 110px;
+    resize: vertical;
+}
+
+/* ---- SUBMIT BUTTON ---- */
+.application-card button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 35px;
+    background: #ff7a00;
+    border-radius: 8px;
+    border: none;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.application-card button:hover {
+    background: #e56d00;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 600px) {
+    .application-card { padding: 35px 25px; }
+}
+</style>
+
+{% endblock %}
