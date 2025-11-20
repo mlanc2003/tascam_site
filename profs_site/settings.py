@@ -1,9 +1,12 @@
 from pathlib import Path
+import os
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-change-me'
-DEBUG = True
+
+DEBUG = False
+
 ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
@@ -61,9 +64,8 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = '/static/'
-import os
-STATICFILES_DIRS = [os.path.join(BASE_DIR / 'static')]  
-STATIC_ROOT = BASE_DIR / 'staticfiles' 
+STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
@@ -72,7 +74,7 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
-EMAIL_HOST_USER = 'tascam.noreply@gmail.com'
-EMAIL_HOST_PASSWORD = 'rbqg nxxo djif nhlu'
+EMAIL_HOST_USER = os.environ.get("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = os.environ.get("EMAIL_HOST_PASSWORD")
 
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
