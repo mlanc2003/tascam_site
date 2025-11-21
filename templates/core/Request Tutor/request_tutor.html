@@ -161,7 +161,7 @@
           </div>
         </div>
 
-        <!-- STEP 6 STANDARD (FINAL) -->
+        <!-- STEP 6 STANDARD -->
         <div class="form-step" id="step6-standard">
           <h2 class="contact-question">
             <span class="highlight">Contact</span> details:
@@ -187,6 +187,32 @@
 
           <div class="btn-row">
             <button type="button" class="previous-btn" data-prev="step5-standard">Previous</button>
+            <button type="button" class="next-btn" data-next="step7-standard">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 7 STANDARD – ADDRESS MAP -->
+        <div class="form-step" id="step7-standard">
+          <h2 class="contact-question">
+            Your <span class="highlight">address</span>:
+          </h2>
+
+          <p class="muted mb-sm">Search or click the map to place a pin.</p>
+
+          <input id="address-input-standard" 
+                class="text-input mb-sm" 
+                placeholder="Search address">
+
+          <div id="map-standard" 
+              style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+          </div>
+
+          <input type="hidden" name="address_standard" id="addressFieldStandard">
+          <input type="hidden" name="lat_standard" id="latFieldStandard">
+          <input type="hidden" name="lng_standard" id="lngFieldStandard">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step6-standard">Previous</button>
             <button class="submit-btn">Submit</button>
           </div>
         </div>
@@ -344,7 +370,7 @@
           </div>
         </div>
 
-        <!-- STEP 7 UNI (FINAL) -->
+        <!-- STEP 7 UNI -->
         <div class="form-step" id="step7-uni">
           <h2 class="contact-question"><span class="highlight">Contact</span> details:</h2>
 
@@ -368,6 +394,32 @@
 
           <div class="btn-row">
             <button type="button" class="previous-btn" data-prev="step6-uni">Previous</button>
+            <button type="button" class="next-btn" data-next="step8-uni">Next</button>
+          </div>
+        </div>
+
+        <!-- STEP 8 UNI – ADDRESS MAP -->
+        <div class="form-step" id="step8-uni">
+          <h2 class="contact-question">
+            Your <span class="highlight">address</span>:
+          </h2>
+
+          <p class="muted mb-sm">Search or click the map to place a pin.</p>
+
+          <input id="address-input-uni" 
+                class="text-input mb-sm" 
+                placeholder="Search address">
+
+          <div id="map-uni" 
+              style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;">
+          </div>
+
+          <input type="hidden" name="address_uni" id="addressFieldUni">
+          <input type="hidden" name="lat_uni" id="latFieldUni">
+          <input type="hidden" name="lng_uni" id="lngFieldUni">
+
+          <div class="btn-row">
+            <button type="button" class="previous-btn" data-prev="step7-uni">Previous</button>
             <button class="submit-btn">Submit</button>
           </div>
         </div>
@@ -410,6 +462,17 @@ document.addEventListener("DOMContentLoaded", () => {
         steps.forEach(step => step.classList.remove("active"));
         document.getElementById(stepId).classList.add("active");
         updateProgress(stepId);
+
+        if (stepId === "step7-standard" || stepId === "step8-uni") {
+            setTimeout(() => {
+                if (window.standardMap) {
+                    window.standardMap.invalidateSize();
+                }
+                if (window.uniMap) {
+                    window.uniMap.invalidateSize();
+                }
+            }, 300);
+        }
     }
 
     function updateProgress(stepId) {
@@ -576,8 +639,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const currentId = currentStep.id;
 
             const isFinalStep =
-                currentId === "step6-standard" ||
-                currentId === "step7-uni";
+                currentId === "step7-standard" ||
+                currentId === "step8-uni";
 
             if (!validateStep(currentStep)) return;
 
@@ -591,6 +654,83 @@ document.addEventListener("DOMContentLoaded", () => {
 
 });
 </script>
+
+<script>
+function setupLeafletMap(mapId, searchId, addrFieldId, latFieldId, lngFieldId) {
+    if (mapId === "map-standard") {
+    window.standardMap = L.map(mapId).setView([3.848, 11.502], 13);
+    var map = window.standardMap;
+    } else {
+        window.uniMap = L.map(mapId).setView([3.848, 11.502], 13);
+        var map = window.uniMap;
+    }
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        maxZoom: 19,
+    }).addTo(map);
+
+    let marker;
+
+    // Click to drop pin
+    map.on("click", (e) => {
+        if (marker) map.removeLayer(marker);
+        marker = L.marker(e.latlng).addTo(map);
+
+        document.getElementById(latFieldId).value = e.latlng.lat;
+        document.getElementById(lngFieldId).value = e.latlng.lng;
+        document.getElementById(addrFieldId).value =
+            `Lat: ${e.latlng.lat}, Lng: ${e.latlng.lng}`;
+    });
+
+    // SEARCH field (free)
+    const input = document.getElementById(searchId);
+    input.addEventListener("keydown", async (e) => {
+        if (e.key !== "Enter") return;
+        e.preventDefault();
+
+        const q = input.value;
+        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}`;
+
+        const res = await fetch(url);
+        const data = await res.json();
+        if (!data.features.length) return;
+
+        const place = data.features[0];
+        const [lng, lat] = place.geometry.coordinates;
+
+        map.setView([lat, lng], 16);
+
+        if (marker) map.removeLayer(marker);
+        marker = L.marker([lat, lng]).addTo(map);
+
+        document.getElementById(latFieldId).value = lat;
+        document.getElementById(lngFieldId).value = lng;
+        document.getElementById(addrFieldId).value =
+            place.properties.name || input.value;
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    setupLeafletMap(
+        "map-standard",
+        "address-input-standard",
+        "addressFieldStandard",
+        "latFieldStandard",
+        "lngFieldStandard"
+    );
+
+    setupLeafletMap(
+        "map-uni",
+        "address-input-uni",
+        "addressFieldUni",
+        "latFieldUni",
+        "lngFieldUni"
+    );
+});
+</script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <style>
 

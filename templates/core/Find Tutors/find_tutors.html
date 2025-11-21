@@ -246,10 +246,27 @@
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const tabs = document.querySelectorAll(".tab");
+  const levelDropdown = document.getElementById("level");
   const resultsContainer = document.getElementById("tutors-results");
 
   // load default level
   loadTutors("undergraduate");
+
+  levelDropdown.addEventListener("change", function () {
+      const selected = this.value;
+
+      // Remove active from all tabs
+      tabs.forEach(tab => tab.classList.remove("active"));
+
+      // Find the tab with matching data-level
+      const activeTab = document.querySelector(`.tab[data-level="${selected}"]`);
+      if (activeTab) {
+          activeTab.classList.add("active");
+      }
+
+      // Load tutors for that level
+      loadTutors(selected);
+  });
 
   tabs.forEach(tab => {
     tab.addEventListener("click", function() {
@@ -257,6 +274,8 @@ document.addEventListener("DOMContentLoaded", function() {
       tabs.forEach(t => t.classList.remove("active"));
       this.classList.add("active");
       loadTutors(level);
+
+      levelDropdown.value = level;
     });
   });
 

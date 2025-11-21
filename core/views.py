@@ -572,7 +572,7 @@ def submit_tutor_request(request):
     return redirect("request_tutor")
 
 def request_tutor_success(request):
-    return render(request, "core/request_tutor_success.html")
+    return render(request, "core/Log_In/request_tutor_success.html")
 
 def generate_button_text(filename):
     # Remove extension

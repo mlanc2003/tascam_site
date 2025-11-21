@@ -25,6 +25,44 @@
         <label>Years of Experience</label>
         <input type="number" name="experience_years" min="0" required>
 
+        <hr class="form-divider">
+
+        <h3 class="section-title">Employment Information</h3>
+
+        <label>Are you legally authorized to work in your country of employment?</label>
+        <select name="authorized" required>
+            <option value="" disabled selected>Select an option</option>
+            <option>Yes</option>
+            <option>No</option>
+        </select>
+
+        <label>Have you ever been convicted of a crime?</label>
+        <select name="convicted" required>
+            <option value="" disabled selected>Select an option</option>
+            <option>No</option>
+            <option>Yes</option>
+        </select>
+
+        <label>If yes, please briefly explain (optional)</label>
+        <textarea name="conviction_explanation" placeholder="Explain here..."></textarea>
+
+        <label>Desired Salary / Expected Pay</label>
+        <input type="text" name="desired_salary" placeholder="e.g., 15,000 XAF / hour">
+
+        <label>Preferred Mode of Teaching</label>
+        <select name="teaching_mode" required>
+            <option value="" disabled selected>Select an option</option>
+            <option>Online</option>
+            <option>In-Person</option>
+            <option>Both</option>
+        </select>
+
+        <label>Notice Period</label>
+        <input type="text" name="notice_period" placeholder="e.g., 1 week">
+
+        <label>Additional Comments (optional)</label>
+        <textarea name="additional_comments" placeholder="Anything else we should know?"></textarea>
+
         <button type="submit">Submit Application</button>
     </form>
 </div>
@@ -107,6 +145,39 @@
 .application-card button:hover {
     background: #e56d00;
     transform: translateY(-1px);
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #1e1d3b;
+}
+
+/* Divider line */
+.form-divider {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 30px 0 20px;
+}
+
+/* Select dropdowns */
+.application-card select {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+    border: 2px solid #dcdcdc;
+    font-size: 15px;
+    background: white;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.application-card select:focus {
+    border-color: #ff7a00;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255,122,0,0.2);
 }
 
 @media (max-width: 600px) {
