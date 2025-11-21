@@ -83,7 +83,29 @@
             What <span class="highlight">subject/course</span>?
           </h2>
 
-          <input class="text-input" placeholder="E.g. Maths, Law, Economics">
+          <select class="text-input select-input" id="subjectStandardSelect" name="subject_standard" required>
+              <option value="" disabled selected>Select a subject</option>
+
+              <option>Mathematics</option>
+              <option>English</option>
+              <option>Biology</option>
+              <option>Chemistry</option>
+              <option>Physics</option>
+              <option>History</option>
+              <option>Geography</option>
+              <option>Economics</option>
+              <option>Computer Science</option>
+              <option>Business Studies</option>
+              <option>Accounting</option>
+
+              <option value="Other">Other (Type manually below)</option>
+          </select>
+
+          <input class="text-input mt-sm" 
+            id="subjectStandardOther"
+            name="subject_standard_other" 
+            placeholder="If 'Other', type the subject here"
+            style="display:none;">
 
           <div class="btn-row">
             <button type="button" class="previous-btn" data-prev="step2-standard">Previous</button>
@@ -197,13 +219,55 @@
             What <span class="highlight">subject/course</span>?
           </h2>
 
-          <input class="text-input" placeholder="E.g. Maths, Law, Economics">
+          <select class="text-input select-input" id="subjectUniSelect" name="subject_uni" required>
+              <option value="" disabled selected>Select a course</option>
+
+              <option>Economics</option>
+              <option>Law</option>
+              <option>Medicine</option>
+              <option>Engineering</option>
+              <option>Computer Science</option>
+              <option>Finance</option>
+              <option>Business Management</option>
+              <option>Psychology</option>
+              <option>Politics</option>
+              <option>International Relations</option>
+
+              <option value="Other">Other (Type manually below)</option>
+          </select>
+
+          <input class="text-input mt-sm"
+                id="subjectUniOther"
+                name="subject_uni_other"
+                placeholder="If 'Other', type the subject here"
+                style="display:none;">
 
           <h2 class="contact-question">
             Which <span class="highlight">university</span> are you applying to?
           </h2>
 
-          <input class="text-input" placeholder="e.g. Oxford, Imperial, LSE etc.">
+          <select class="text-input select-input" id="universitySelect" name="university" required>
+              <option value="" disabled selected>Select a university</option>
+
+              <option>University of Oxford</option>
+              <option>University of Cambridge</option>
+              <option>Imperial College London</option>
+              <option>London School of Economics (LSE)</option>
+              <option>UCL</option>
+              <option>King’s College London</option>
+              <option>University of Manchester</option>
+              <option>University of Edinburgh</option>
+              <option>Warwick</option>
+              <option>Durham</option>
+
+              <option value="Other">Other (Type manually below)</option>
+          </select>
+
+          <input class="text-input mt-sm"
+                id="universityOther"
+                name="university_other"
+                placeholder="If 'Other', type the university here"
+                style="display:none;">
 
           <div class="btn-row">
             <button type="button" class="previous-btn" data-prev="step2-uni">Previous</button>
@@ -409,6 +473,32 @@ document.addEventListener("DOMContentLoaded", () => {
         setupTimeslot("timeOfDaySelectUni", "specificTimeslotUni");
     }, 200);
 
+    function enableOtherField(selectId, inputId) {
+        const select = document.getElementById(selectId);
+        const input = document.getElementById(inputId);
+
+        if (!select || !input) return;
+
+        input.style.display = "none"; // ⭐ ADDED
+
+        select.addEventListener("change", () => {
+            if (select.value === "Other") {
+                input.style.display = "block";   // ⭐ ADDED
+                input.required = true;           // ⭐ ADDED
+            } else {
+                input.style.display = "none";    // ⭐ ADDED
+                input.required = false;          // ⭐ ADDED
+                input.value = "";                // ⭐ ADDED
+            }
+        });
+    }
+
+    // ⭐ ADDED — Applies to UNI step
+    enableOtherField("subjectUniSelect", "subjectUniOther");
+    enableOtherField("universitySelect", "universityOther");
+
+    // ⭐ ADDED — Applies to STANDARD step (optional but included)
+    enableOtherField("subjectStandardSelect", "subjectStandardOther");
 
     /* ============================================================
        VALIDATION
@@ -713,6 +803,22 @@ document.addEventListener("DOMContentLoaded", () => {
   font-weight: 800;
   color: #1d2340;  
   margin-bottom: 10px;
+}
+
+.select-input {
+  appearance: none;
+  background: #fff url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 12px center;
+  background-size: 16px;
+  border: 1px solid #ddd;
+  padding: 14px;
+  padding-right: 40px;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.mt-sm {
+  margin-top: 12px;
 }
 
 </style>

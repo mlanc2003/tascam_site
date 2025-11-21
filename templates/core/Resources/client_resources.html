@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title highlight">Client Resources:</h2>
+
+    <div class="blogs-grid">
+
+      <!-- Parent Guide -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/parent-guide.jpg' %}" alt="Parent Guide">
+        <div class="blog-info">
+          <h3>Parent Guide to Hiring a Tutor</h3>
+          <p class="topic">Category: <span>Support</span></p>
+          <a href="{% url 'client_parent_guide' %}" class="btn-read">View Guide</a>
+        </div>
+      </article>
+
+      <!-- Student Success -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/student-success.jpg' %}" alt="Student Success Tips">
+        <div class="blog-info">
+          <h3>Student Success Strategies</h3>
+          <p class="topic">Category: <span>Study Skills</span></p>
+          <a href="{% url 'client_student_success' %}" class="btn-read">View Tips</a>
+        </div>
+      </article>
+
+      <!-- Working With Tutors -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/working-with-tutors.jpg' %}" alt="Working with Tutors">
+        <div class="blog-info">
+          <h3>How to Get the Most Out of Tutoring</h3>
+          <p class="topic">Category: <span>Learning</span></p>
+          <a href="{% url 'client_working_with_tutors' %}" class="btn-read">Learn More</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

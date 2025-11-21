@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}Parent Guide to Hiring a Tutor | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<!-- Breadcrumbs -->
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="/client-resources/">Client Resources</a>
+    <span> &gt; </span>
+    <span>Parent Guide</span>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="hero hero--article">
+  <div class="container">
+    <h1>Parent Guide to Hiring a Tutor</h1>
+    <p class="meta">Updated January 2026 · TASCAM Learning Support Team</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid grid--2col">
+
+    <article class="prose">
+      <p>Choosing the right tutor is one of the most important decisions a parent can make for their child’s education. This guide helps you understand what to look for, how to evaluate a tutor, and how to ensure your child gets the most out of every session.</p>
+
+      <h2>1. What Makes a Good Tutor?</h2>
+      <ul>
+        <li><strong>Subject expertise</strong> backed by real qualifications.</li>
+        <li><strong>Patience and adaptability</strong> to meet individual learning needs.</li>
+        <li><strong>Clear communication</strong> with both students and parents.</li>
+        <li><strong>Demonstrated teaching experience</strong> in the relevant level.</li>
+      </ul>
+
+      <h2>2. How to Assess a Tutor Before Hiring</h2>
+      <p>Before committing, parents should:</p>
+      <ul>
+        <li>Review the tutor’s qualifications and background.</li>
+        <li>Ask for a short consultation or introductory meeting.</li>
+        <li>Check for experience with exam boards relevant to your child.</li>
+        <li>Discuss goals, expectations, and learning challenges.</li>
+      </ul>
+
+      <h2>3. Setting Goals With Your Child</h2>
+      <ul>
+        <li>Set clear academic targets together.</li>
+        <li>Identify strengths, weaknesses, and learning preferences.</li>
+        <li>Encourage open communication between you and the tutor.</li>
+      </ul>
+
+      <h2>4. Warning Signs to Watch Out For</h2>
+      <ul>
+        <li>Lack of feedback or progress reporting.</li>
+        <li>Guaranteeing unrealistic grades.</li>
+        <li>Lack of structure or unclear lesson planning.</li>
+      </ul>
+
+      <p class="note text-sm">Our team is always available to help guide you through selecting the right tutor for your child.</p>
+    </article>
+
+    <section class="section section--light sidebar-support">
+    <div class="container">
+        <div class="support-panel card card--soft">
+        <div class="card-body">
+            <div class="grid grid--2 sm:grid--1 gap-lg">
+            <div>
+                <h3>24/7 support</h3>
+                <h2 class="mt-xs">We're Here To help</h2>
+                <p>We know our tutors personally, meaning we can find the perfect tutor for you.</p>
+                <div class="btn-row">
+                <a href="{% url 'request_tutor' %}" class="btn contact-btn-orange">Contact Us</a>
+                </div>
+            </div>
+            <div class="trust-banner align-center">
+                <img src="{% static 'images/badges/trustpilot.svg' %}" alt="Trustpilot" class="trustpilot-logo">
+                <p class="muted">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+  </div>
+</section>
+
+{% endblock %}

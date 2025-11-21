@@ -1,0 +1,90 @@
+{% extends "base.html" %} 
+{% load static %}
+
+{% block title %}How to Get the Most Out of Tutoring | TASCAM Co Ltd{% endblock %}
+{% block content %}
+
+<!-- Breadcrumbs -->
+<nav class="breadcrumbs">
+  <div class="container">
+    <a href="/client-resources/">Client Resources</a>
+    <span> &gt; </span>
+    <span>Working With Tutors</span>
+  </div>
+</nav>
+
+<!-- Header -->
+<header class="hero hero--article">
+  <div class="container">
+    <h1>How to Get the Most Out of Tutoring</h1>
+    <p class="meta">Updated January 2026 · TASCAM Learning Support Team</p>
+  </div>
+</header>
+
+<section class="section">
+  <div class="container grid grid--2col">
+
+    <article class="prose">
+
+      <p>Effective tutoring is a partnership between students, parents, and tutors. This guide explains how to maximise outcomes every time your child attends a session.</p>
+
+      <h2>1. Preparing Before Each Session</h2>
+      <ul>
+        <li>Bring homework, notes, and key questions.</li>
+        <li>Review previous feedback from your tutor.</li>
+        <li>Identify topics that need clarification.</li>
+      </ul>
+
+      <h2>2. What Happens During a Good Tutoring Session?</h2>
+      <ul>
+        <li>Clear learning goals at the start.</li>
+        <li>Interactive examples and guided practice.</li>
+        <li>Checking understanding through small tasks.</li>
+        <li>Actionable feedback at the end.</li>
+      </ul>
+
+      <h2>3. Parental Follow-up After the Session</h2>
+      <ul>
+        <li>Review progress with your child.</li>
+        <li>Encourage them to complete assigned practice.</li>
+        <li>Share updates with the tutor if needed.</li>
+      </ul>
+
+      <h2>4. Building a Long-Term Tutor–Student Relationship</h2>
+      <ul>
+        <li>Maintain consistent weekly sessions.</li>
+        <li>Track improvements over time.</li>
+        <li>Adjust learning plans as the student develops.</li>
+      </ul>
+
+      <p class="note text-sm">Strong communication between parents, students, and tutors is the key to long-term academic progress.</p>
+
+    </article>
+
+    <section class="section section--light sidebar-support">
+    <div class="container">
+        <div class="support-panel card card--soft">
+        <div class="card-body">
+            <div class="grid grid--2 sm:grid--1 gap-lg">
+            <div>
+                <h3>24/7 support</h3>
+                <h2 class="mt-xs">We're Here To help</h2>
+                <p>We know our tutors personally, meaning we can find the perfect tutor for you.</p>
+                <div class="btn-row">
+                <a href="{% url 'request_tutor' %}" class="btn contact-btn-orange">Contact Us</a>
+                </div>
+            </div>
+            <div class="trust-banner align-center">
+                <img src="{% static 'images/badges/trustpilot.svg' %}" alt="Trustpilot" class="trustpilot-logo">
+                <p class="muted">Cameroon’s highest rated tuition company since 2016 on Trustpilot</p>
+            </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+  </div>
+</section>
+
+{% endblock %}

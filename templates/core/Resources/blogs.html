@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+
+    <!-- Latest Blogs -->
+    <h2 class="section-title highlight">Latest Blogs:</h2>
+
+    <div class="blogs-grid">
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/ucl-economics.jpg' %}" alt="How to get into UCL for Economics">
+        <div class="blog-info">
+          <h3>How to get into UCL for Economics</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'ucl_economics' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-finance.jpg' %}" alt="Imperial Finance">
+        <div class="blog-info">
+          <h3>How to get into Economics, Finance and Data Science at Imperial</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'imperial_economics_finance' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-management.jpg' %}" alt="Imperial Management">
+        <div class="blog-info">
+          <h3>How to get into Imperial for MSc Management and International Management</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'imperial_management' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/lbs-mba.jpg' %}" alt="LBS MBA">
+        <div class="blog-info">
+          <h3>How to get into the London Business School MBA</h3>
+          <p class="topic">Topic: <span>University Applications</span></p>
+          <a href="{% url 'lbs_mba' %}" class="btn-read">Read More</a>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Popular Blogs -->
+    <h2 class="section-title highlight">Popular Blogs:</h2>
+
+    <div class="blogs-grid">
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/cambridge.jpg' %}" alt="Cambridge">
+        <div class="blog-info">
+          <h3>How to Get Into Cambridge</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'cambridge' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/imperial-college.jpg' %}" alt="Imperial College London">
+        <div class="blog-info">
+          <h3>How to Get Into Imperial College London</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'imperial_college_london' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/lse.jpg' %}" alt="LSE">
+        <div class="blog-info">
+          <h3>How to Get Into LSE</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'lse' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="{% static 'img/blogs/ucl.jpg' %}" alt="UCL">
+        <div class="blog-info">
+          <h3>How to Get Into UCL</h3>
+          <p class="topic">Topic: <span>Undergraduate</span></p>
+          <a href="{% url 'ucl' %}" class="btn-read dark">Read More</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

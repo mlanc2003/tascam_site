@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<section class="section">
+  <div class="container">
+
+    <h2 class="section-title highlight">Tutor Resources:</h2>
+
+    <div class="blogs-grid">
+
+      <!-- Ethics Training -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/ethics-training.jpg' %}" alt="Tutor Ethics Training">
+        <div class="blog-info">
+          <h3>Ethics & Academic Integrity Training</h3>
+          <p class="topic">Category: <span>Tutor Guidelines</span></p>
+          <a href="{% url 'tutor_ethics' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Lesson Planning -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/lesson-planning.jpg' %}" alt="Lesson Planning Resources">
+        <div class="blog-info">
+          <h3>Lesson Planning & Teaching Frameworks</h3>
+          <p class="topic">Category: <span>Teaching Skills</span></p>
+          <a href="{% url 'tutor_lesson_planning' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Platform Guidelines -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/platform-guidelines.jpg' %}" alt="Platform Guidelines">
+        <div class="blog-info">
+          <h3>Using the TASCAM Platform</h3>
+          <p class="topic">Category: <span>Platform Training</span></p>
+          <a href="{% url 'tutor_platform' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+      <!-- Assessment Standards -->
+      <article class="blog-card">
+        <img src="{% static 'img/resources/assessment-standards.jpg' %}" alt="Assessment Standards">
+        <div class="blog-info">
+          <h3>Assessment & Marking Standards</h3>
+          <p class="topic">Category: <span>University Standards</span></p>
+          <a href="{% url 'tutor_assessment_standards' %}" class="btn-read">View Resources</a>
+        </div>
+      </article>
+
+    </div>
+
+  </div>
+</section>
+
+{% endblock %}

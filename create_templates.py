@@ -4,9 +4,9 @@ import os
 templates = [
    
     # Lastest Blogs
-    "profile",
-    "job_application",
-    "application_success",
+    "tutor_resources",
+    "client_resources",
+    "blogs",
 
 ]
 

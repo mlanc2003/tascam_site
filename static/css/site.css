@@ -1588,19 +1588,40 @@ body {
     display: none !important;
   }
 
+  .contact-btn-orange {
+    background-color: #ff7a00;
+    color: #fff !important;
+    border-radius: 12px;
+    padding: 14px 30px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+
+  .contact-btn-orange:hover {
+    background-color: #e86d00;
+  }
+}
+
 .contact-btn-orange {
-  background-color: #ff7a00;   /* Orange */
-  color: #fff !important;
-  border-radius: 12px;
-  padding: 14px 30px;
-  font-size: 16px;
-  font-weight: 700;
-  text-decoration: none;
-  display: inline-block;
-  transition: background 0.3s ease;
+    background: #ff7a00;
+    color: #ffffff;
+    padding: 14px 30px;
+    border-radius: 10px;
+    text-decoration: none;
+    display: inline-block;
+    font-weight: 600;
+    transition: 0.3s ease;
 }
 
 .contact-btn-orange:hover {
-  background-color: #e86d00;  /* Slightly darker on hover */
+    background: #e96d00;
 }
+
+/* Ensure container allows button to be visible */
+.btn-row {
+    margin-top: 20px;
+    text-align: center;
 }

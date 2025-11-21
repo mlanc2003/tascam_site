@@ -284,6 +284,23 @@ def ssat_tutors(request): return render(request, "core/University Admissions/ssa
 # Resources
 def resources(request):
     return render(request, "core/Resources/resources.html")
+def tutor_resources(request):
+    return render(request, 'core/Resources/tutor_resources.html')
+
+def client_resources(request):
+    return render(request, 'core/Resources/client_resources.html')
+def client_parent_guide(request):
+    return render(request, 'core/Resources/client_parent_guide.html')
+
+def client_student_success(request):
+    return render(request, 'core/Resources/client_student_success.html')
+
+def client_working_with_tutors(request):
+    return render(request, 'core/Resources/client_working_with_tutors.html')
+
+def blogs(request):
+    return render(request, 'core/Resources/blogs.html')
+
 def cambridge(request):
     return render(request, 'core/Resources/cambridge.html')
 def imperial_college_london(request):
@@ -578,3 +595,6 @@ def subject_page(request, template_name):
     return render(request, f"core/Tutoring/{template_name}", {
         "button_text": button_text
     })
+
+def testimonials(request):
+    return render(request, 'core/testimonials.html')

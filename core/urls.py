@@ -163,6 +163,18 @@ urlpatterns = [
 
     # Resources
     path("resources/", views.resources, name="resources"),
+    path('tutor-resources/', views.tutor_resources, name='tutor_resources'),
+    path('resources/ethics/', views.tutor_ethics, name='tutor_ethics'),
+    path('resources/lesson-planning/', views.tutor_lesson_planning, name='tutor_lesson_planning'),
+    path('resources/platform-guidelines/', views.tutor_platform, name='tutor_platform'),
+    path('resources/assessment-standards/', views.tutor_assessment_standards, name='tutor_assessment_standards'),
+
+    path('client-resources/', views.client_resources, name='client_resources'),
+    path('client/parent-guide/', views.client_parent_guide, name='client_parent_guide'),
+    path('client/student-success/', views.client_student_success, name='client_student_success'),
+    path('client/working-with-tutors/', views.client_working_with_tutors, name='client_working_with_tutors'),
+
+    path('blogs/', views.blogs, name='blogs'),
     path("resources/ucl_economics/", TemplateView.as_view(template_name="core/Resources/ucl_economics.html"), name="ucl_economics"),
     path("resources/imperial_economics_finance/", TemplateView.as_view(template_name="core/Resources/imperial_economics_finance.html"), name="imperial_economics_finance"),
     path("resources/imperial_management/", TemplateView.as_view(template_name="core/Resources/imperial_management.html"), name="imperial_management"),
@@ -171,10 +183,7 @@ urlpatterns = [
     path("resources/imperial_college_london/", TemplateView.as_view(template_name="core/Resources/imperial_college_london.html"), name="imperial_college_london"),
     path("resources/lse/", TemplateView.as_view(template_name="core/Resources/lse.html"), name="lse"),
     path("resources/ucl/", TemplateView.as_view(template_name="core/Resources/ucl.html"), name="ucl"),
-    path('resources/ethics/', views.tutor_ethics, name='tutor_ethics'),
-    path('resources/lesson-planning/', views.tutor_lesson_planning, name='tutor_lesson_planning'),
-    path('resources/platform-guidelines/', views.tutor_platform, name='tutor_platform'),
-    path('resources/assessment-standards/', views.tutor_assessment_standards, name='tutor_assessment_standards'),
+    
 
     # Find Tutors
     path("find-tutors/", views.find_tutors, name="find_tutors"),
@@ -220,5 +229,8 @@ urlpatterns = [
     path("request-tutor/", views.request_tutor, name="request_tutor"),
     path("request/submit/", submit_tutor_request, name="submit_tutor_request"),
     path("request/success/", request_tutor_success, name="request_tutor_success"),
+
+    # Testimonials
+    path('testimonials/', views.testimonials, name='testimonials'),
 
 ]
