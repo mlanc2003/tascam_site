@@ -3,7 +3,7 @@ from django.http import JsonResponse
 from django.contrib import messages
 from django.urls import reverse
 from django.contrib.auth import authenticate, login
-from .models import TutorProfile, TutorApplication
+from .models import TutorProfile, TutorApplication, TutorRequest
 
 def home(request):
     subjects = [
@@ -536,6 +536,8 @@ from django.core.mail import send_mail
 def submit_tutor_request(request):
     if request.method == "POST":
 
+        print("DEBUG: View reached")
+
         subject = request.POST.get("subject", "")
         hours = request.POST.get("hours_needed", "")
         first = request.POST.get("first_name", "")
@@ -543,6 +545,16 @@ def submit_tutor_request(request):
         phone = request.POST.get("phone", "")
         email = request.POST.get("email", "")
         details = request.POST.get("details", "")
+
+        TutorRequest.objects.create(
+            subject=subject,
+            hours_needed=hours,
+            first_name=first,
+            last_name=last,
+            phone=phone,
+            email=email,
+            details=details
+        )
 
         message_body = f"""
         New Tutor Request Submitted:

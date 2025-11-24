@@ -5,7 +5,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-change-me'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['.onrender.com', '127.0.0.1', 'localhost']
 
@@ -17,6 +17,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'tascam_site',
 ]
 
 MIDDLEWARE = [
@@ -30,7 +31,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'profs_site.urls'
+ROOT_URLCONF = 'tascam_site.urls'
 
 TEMPLATES = [
     {
@@ -48,7 +49,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'profs_site.wsgi.application'
+WSGI_APPLICATION = 'tascam_site.wsgi.application'
 
 DATABASES = {
     'default': {

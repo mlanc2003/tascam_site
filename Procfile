@@ -1,1 +1,1 @@
-web: gunicorn profs_site.wsgi
+web: gunicorn tascam_site.wsgi

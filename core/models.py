@@ -15,7 +15,6 @@ class TutorProfile(models.Model):
     def __str__(self):
         return self.full_name
 
-
 class TutorApplication(models.Model):
     profile = models.ForeignKey(TutorProfile, on_delete=models.CASCADE)
     resume = models.FileField(upload_to="tutor_resumes/")
@@ -28,3 +27,17 @@ class TutorApplication(models.Model):
 
     def __str__(self):
         return f"Application - {self.profile.full_name}"
+
+class TutorRequest(models.Model):
+    subject = models.CharField(max_length=255)
+    hours_needed = models.CharField(max_length=100)
+    first_name = models.CharField(max_length=100)
+    last_name = models.CharField(max_length=100)
+    phone = models.CharField(max_length=50)
+    email = models.EmailField()
+    details = models.TextField(blank=True)
+
+    submitted_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"Tutor Request from {self.first_name} {self.last_name}"

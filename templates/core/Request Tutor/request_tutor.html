@@ -30,6 +30,8 @@
     <form id="tutorRequestForm" method="post" action="{% url 'submit_tutor_request' %}">
       {% csrf_token %}
 
+      <input type="hidden" name="hours_needed" id="hoursField">
+
       <!-- MULTI STEP WRAPPER -->
       <div id="multiForm">
 
@@ -50,15 +52,9 @@
           </div>
         </div>
 
-        <!-- =============================================== -->
-        <!-- ========== STANDARD TUTORING PATH ============= -->
-        <!-- =============================================== -->
-
         <!-- STEP 2 STANDARD -->
         <div class="form-step" id="step2-standard">
-          <h2 class="contact-question">
-            What do you need <span class="highlight">help</span> with?
-          </h2>
+          <h2 class="contact-question">What do you need <span class="highlight">help</span> with?</h2>
 
           <div class="contact-options">
             <button type="button" class="option-btn next" data-next="step3-standard">Primary</button>
@@ -83,9 +79,9 @@
             What <span class="highlight">subject/course</span>?
           </h2>
 
-          <select class="text-input select-input" id="subjectStandardSelect" name="subject_standard" required>
+          <!-- FIXED: name changed to subject -->
+          <select class="text-input select-input" id="subjectStandardSelect" name="subject" required>
               <option value="" disabled selected>Select a subject</option>
-
               <option>Mathematics</option>
               <option>English</option>
               <option>Biology</option>
@@ -97,13 +93,12 @@
               <option>Computer Science</option>
               <option>Business Studies</option>
               <option>Accounting</option>
-
               <option value="Other">Other (Type manually below)</option>
           </select>
 
-          <input class="text-input mt-sm" 
+          <input class="text-input mt-sm"
             id="subjectStandardOther"
-            name="subject_standard_other" 
+            name="subject_standard_other"
             placeholder="If 'Other', type the subject here"
             style="display:none;">
 
@@ -113,21 +108,17 @@
           </div>
         </div>
 
-        <!-- STEP 4 STANDARD -->
+        <!-- STEP 4 STANDARD (Hours) -->
         <div class="form-step" id="step4-standard">
-          <h2 class="contact-question">
-            How much <span class="highlight">tutoring</span> do you need?
-          </h2>
+          <h2 class="contact-question">How much <span class="highlight">tutoring</span> do you need?</h2>
 
-          <p class="min-note">
-            *Please be aware that we have a 5-hour minimum spend policy
-          </p>
+          <p class="min-note">*Please be aware that we have a 5-hour minimum spend policy</p>
 
           <div class="contact-options">
-            <button type="button" class="option-btn next" data-next="step5-standard">5–10 hours</button>
-            <button type="button" class="option-btn next" data-next="step5-standard">10–20 hours</button>
-            <button type="button" class="option-btn next" data-next="step5-standard">20+ hours</button>
-            <button type="button" class="option-btn next wide-btn" data-next="step5-standard">Unsure</button>
+            <button type="button" class="option-btn next hour-btn" data-value="5–10 hours" data-next="step5-standard">5–10 hours</button>
+            <button type="button" class="option-btn next hour-btn" data-value="10–20 hours" data-next="step5-standard">10–20 hours</button>
+            <button type="button" class="option-btn next hour-btn" data-value="20+ hours" data-next="step5-standard">20+ hours</button>
+            <button type="button" class="option-btn next hour-btn wide-btn" data-value="Unsure" data-next="step5-standard">Unsure</button>
           </div>
 
           <button type="button" class="previous-btn" data-prev="step3-standard">Previous</button>
@@ -135,9 +126,7 @@
 
         <!-- STEP 5 STANDARD -->
         <div class="form-step" id="step5-standard">
-          <h2 class="contact-question">
-            Please provide <span class="highlight">additional information</span>
-          </h2>
+          <h2 class="contact-question">Please provide <span class="highlight">additional information</span></h2>
 
           <input class="text-input" placeholder="What is your current year of study?">
           <input class="text-input" placeholder="Any deadlines? coursework, exams, interviews?">
@@ -146,14 +135,15 @@
             <option value="">Please select</option>
             <option value="morning">Morning</option>
             <option value="afternoon">Afternoon</option>
-            <option value="evening">Evening</option>
+            <option value="evening">Evenening</option>
           </select>
 
           <select class="text-input" id="specificTimeslotStandard" style="display:none;">
             <option value="">Select a timeslot</option>
           </select>
 
-          <textarea class="text-area" placeholder="Describe what you need..."></textarea>
+          <!-- FIXED: added name -->
+          <textarea class="text-area" name="details" placeholder="Describe what you need..."></textarea>
 
           <div class="btn-row">
             <button type="button" class="previous-btn" data-prev="step4-standard">Previous</button>
@@ -161,15 +151,14 @@
           </div>
         </div>
 
-        <!-- STEP 6 STANDARD -->
+        <!-- STEP 6 STANDARD (Contact details) -->
         <div class="form-step" id="step6-standard">
-          <h2 class="contact-question">
-            <span class="highlight">Contact</span> details:
-          </h2>
+          <h2 class="contact-question"><span class="highlight">Contact</span> details:</h2>
 
           <div class="two-col">
-            <input class="text-input" placeholder="First name">
-            <input class="text-input" placeholder="Last name">
+            <!-- FIXED: added name="" -->
+            <input class="text-input" name="first_name" placeholder="First name" required>
+            <input class="text-input" name="last_name" placeholder="Last name" required>
           </div>
 
           <div class="two-col">
@@ -180,10 +169,12 @@
               <option>Europe (+33, +34, +39…)</option>
             </select>
 
-            <input class="text-input" placeholder="Phone number">
+            <!-- FIXED -->
+            <input class="text-input" name="phone" placeholder="Phone number" required>
           </div>
 
-          <input class="text-input" placeholder="Email">
+          <!-- FIXED -->
+          <input class="text-input" name="email" placeholder="Email" required>
           <input class="text-input" placeholder="Confirm your email">
 
           <div class="btn-row">
@@ -192,7 +183,7 @@
           </div>
         </div>
 
-        <!-- STEP 7 STANDARD – ADDRESS MAP -->
+        <!-- STEP 7 STANDARD (Address) -->
         <div class="form-step" id="step7-standard">
           <h2 class="contact-question">
             Your <span class="highlight">address</span>:
@@ -200,13 +191,9 @@
 
           <p class="muted mb-sm">Search or click the map to place a pin.</p>
 
-          <input id="address-input-standard" 
-                class="text-input mb-sm" 
-                placeholder="Search address">
+          <input id="address-input-standard" class="text-input mb-sm" placeholder="Search address">
 
-          <div id="map-standard" 
-              style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;">
-          </div>
+          <div id="map-standard" style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;"></div>
 
           <input type="hidden" name="address_standard" id="addressFieldStandard">
           <input type="hidden" name="lat_standard" id="latFieldStandard">
@@ -225,16 +212,16 @@
         <!-- STEP 2 UNI -->
         <div class="form-step" id="step2-uni">
           <h2 class="contact-question">
-            What do you need <span class="highlight">help</span> with?
+              What do you need <span class="highlight">help</span> with?
           </h2>
 
           <div class="contact-options">
-            <button type="button" class="option-btn next" data-next="step3-uni">All Admissions Support</button>
-            <button type="button" class="option-btn next" data-next="step3-uni">Personal Statement</button>
-            <button type="button" class="option-btn next" data-next="step3-uni">Admissions Test</button>
-            <button type="button" class="option-btn next" data-next="step3-uni">University Interview</button>
-            <button type="button" class="option-btn next" data-next="step3-uni">Research Proposal</button>
-            <button type="button" class="option-btn next" data-next="step3-uni">Other Admissions Support</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">All Admissions Support</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">Personal Statement</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">Admissions Test</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">University Interview</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">Research Proposal</button>
+              <button type="button" class="option-btn next" data-next="step3-uni">Other Admissions Support</button>
           </div>
 
           <button type="button" class="previous-btn" data-prev="step1">Previous</button>
@@ -243,12 +230,12 @@
         <!-- STEP 3 UNI -->
         <div class="form-step" id="step3-uni">
           <h2 class="contact-question">
-            What <span class="highlight">subject/course</span>?
+              What <span class="highlight">subject/course</span>?
           </h2>
 
-          <select class="text-input select-input" id="subjectUniSelect" name="subject_uni" required>
+          <!-- FIXED: Use same key as standard path -->
+          <select class="text-input select-input" id="subjectUniSelect" name="subject" required>
               <option value="" disabled selected>Select a course</option>
-
               <option>Economics</option>
               <option>Law</option>
               <option>Medicine</option>
@@ -259,7 +246,6 @@
               <option>Psychology</option>
               <option>Politics</option>
               <option>International Relations</option>
-
               <option value="Other">Other (Type manually below)</option>
           </select>
 
@@ -270,12 +256,11 @@
                 style="display:none;">
 
           <h2 class="contact-question">
-            Which <span class="highlight">university</span> are you applying to?
+              Which <span class="highlight">university</span> are you applying to?
           </h2>
 
-          <select class="text-input select-input" id="universitySelect" name="university" required>
+          <select class="text-input select-input" id="universitySelect" name="university">
               <option value="" disabled selected>Select a university</option>
-
               <option>University of Oxford</option>
               <option>University of Cambridge</option>
               <option>Imperial College London</option>
@@ -286,7 +271,6 @@
               <option>University of Edinburgh</option>
               <option>Warwick</option>
               <option>Durham</option>
-
               <option value="Other">Other (Type manually below)</option>
           </select>
 
@@ -297,47 +281,45 @@
                 style="display:none;">
 
           <div class="btn-row">
-            <button type="button" class="previous-btn" data-prev="step2-uni">Previous</button>
-            <button type="button" class="next-btn" data-next="step4-uni">Next</button>
+              <button type="button" class="previous-btn" data-prev="step2-uni">Previous</button>
+              <button type="button" class="next-btn" data-next="step4-uni">Next</button>
           </div>
         </div>
 
         <!-- STEP 4 UNI -->
         <div class="form-step" id="step4-uni">
           <h2 class="contact-question">
-            What are your <span class="highlight">grades</span>?
+              What are your <span class="highlight">grades</span>?
           </h2>
 
           <div class="two-col">
-            <input class="text-input" placeholder="Subject(s)">
-            <input class="text-input" placeholder="Grade(s)">
+              <input class="text-input" placeholder="Subject(s)">
+              <input class="text-input" placeholder="Grade(s)">
           </div>
 
           <label class="checkbox-line">
-            <input type="checkbox"> I'm still studying this course/these courses
+              <input type="checkbox"> I'm still studying this course/these courses
           </label>
 
           <div class="btn-row">
-            <button type="button" class="previous-btn" data-prev="step3-uni">Previous</button>
-            <button type="button" class="next-btn" data-next="step5-uni">Next</button>
+              <button type="button" class="previous-btn" data-prev="step3-uni">Previous</button>
+              <button type="button" class="next-btn" data-next="step5-uni">Next</button>
           </div>
         </div>
 
-        <!-- STEP 5 UNI -->
+        <!-- STEP 5 UNI (Hours) -->
         <div class="form-step" id="step5-uni">
           <h2 class="contact-question">
-            How much <span class="highlight">tutoring</span> do you need?
+              How much <span class="highlight">tutoring</span> do you need?
           </h2>
 
-          <p class="min-note">
-            *Please be aware that we have a 5-hour minimum spend policy
-          </p>
+          <p class="min-note">*Please be aware that we have a 5-hour minimum spend policy</p>
 
           <div class="contact-options">
-            <button type="button" class="option-btn next" data-next="step6-uni">5–10 hours</button>
-            <button type="button" class="option-btn next" data-next="step6-uni">10–20 hours</button>
-            <button type="button" class="option-btn next" data-next="step6-uni">20+ hours</button>
-            <button type="button" class="option-btn next wide-btn" data-next="step6-uni">Unsure</button>
+              <button type="button" class="option-btn next hour-btn" data-value="5–10 hours" data-next="step6-uni">5–10 hours</button>
+              <button type="button" class="option-btn next hour-btn" data-value="10–20 hours" data-next="step6-uni">10–20 hours</button>
+              <button type="button" class="option-btn next hour-btn" data-value="20+ hours" data-next="step6-uni">20+ hours</button>
+              <button type="button" class="option-btn next hour-btn wide-btn" data-value="Unsure" data-next="step6-uni">Unsure</button>
           </div>
 
           <button type="button" class="previous-btn" data-prev="step4-uni">Previous</button>
@@ -346,28 +328,15 @@
         <!-- STEP 6 UNI -->
         <div class="form-step" id="step6-uni">
           <h2 class="contact-question">
-            Please provide <span class="highlight">additional information</span>
+              Please provide <span class="highlight">additional information</span>
           </h2>
 
-          <input class="text-input" placeholder="What is your current year of study?">
-          <input class="text-input" placeholder="Any deadlines? coursework, exams, interviews?">
-
-          <select class="text-input" id="timeOfDaySelectUni">
-            <option value="">Please select</option>
-            <option value="morning">Morning</option>
-            <option value="afternoon">Afternoon</option>
-            <option value="evening">Evening</option>
-          </select>
-
-          <select class="text-input" id="specificTimeslotUni" style="display:none;">
-            <option value="">Select a timeslot</option>
-          </select>
-
-          <textarea class="text-area" placeholder="Describe what you need..."></textarea>
+          <!-- FIXED: Use same key for details field -->
+          <textarea class="text-area" name="details" placeholder="Describe what you need..."></textarea>
 
           <div class="btn-row">
-            <button type="button" class="previous-btn" data-prev="step5-uni">Previous</button>
-            <button type="button" class="next-btn" data-next="step7-uni">Next</button>
+              <button type="button" class="previous-btn" data-prev="step5-uni">Previous</button>
+              <button type="button" class="next-btn" data-next="step7-uni">Next</button>
           </div>
         </div>
 
@@ -376,53 +345,51 @@
           <h2 class="contact-question"><span class="highlight">Contact</span> details:</h2>
 
           <div class="two-col">
-            <input class="text-input" placeholder="First name">
-            <input class="text-input" placeholder="Last name">
+              <input class="text-input" name="first_name" placeholder="First name" required>
+              <input class="text-input" name="last_name" placeholder="Last name" required>
           </div>
 
           <div class="two-col">
-            <select class="text-input">
-              <option>United Kingdom (+44)</option>
-              <option>Cameroon (+237)</option>
-              <option>United States (+1)</option>
-              <option>Europe (+33, +34, +39…)</option>
-            </select>
+              <select class="text-input">
+                  <option>United Kingdom (+44)</option>
+                  <option>Cameroon (+237)</option>
+                  <option>United States (+1)</option>
+                  <option>Europe (+33, +34, +39…)</option>
+              </select>
 
-            <input class="text-input" placeholder="Phone number">
+              <input class="text-input" name="phone" placeholder="Phone number" required>
           </div>
 
-          <input class="text-input" placeholder="Email">
+          <input class="text-input" name="email" placeholder="Email" required>
           <input class="text-input" placeholder="Confirm your email">
 
           <div class="btn-row">
-            <button type="button" class="previous-btn" data-prev="step6-uni">Previous</button>
-            <button type="button" class="next-btn" data-next="step8-uni">Next</button>
+              <button type="button" class="previous-btn" data-prev="step6-uni">Previous</button>
+              <button type="button" class="next-btn" data-next="step8-uni">Next</button>
           </div>
         </div>
 
-        <!-- STEP 8 UNI – ADDRESS MAP -->
+        <!-- STEP 8 UNI -->
         <div class="form-step" id="step8-uni">
           <h2 class="contact-question">
-            Your <span class="highlight">address</span>:
+              Your <span class="highlight">address</span>:
           </h2>
 
           <p class="muted mb-sm">Search or click the map to place a pin.</p>
 
-          <input id="address-input-uni" 
-                class="text-input mb-sm" 
+          <input id="address-input-uni"
+                class="text-input mb-sm"
                 placeholder="Search address">
 
-          <div id="map-uni" 
-              style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;">
-          </div>
+          <div id="map-uni" style="height: 350px; width: 100%; border-radius: 10px; margin-bottom: 1rem;"></div>
 
           <input type="hidden" name="address_uni" id="addressFieldUni">
           <input type="hidden" name="lat_uni" id="latFieldUni">
           <input type="hidden" name="lng_uni" id="lngFieldUni">
 
           <div class="btn-row">
-            <button type="button" class="previous-btn" data-prev="step7-uni">Previous</button>
-            <button class="submit-btn">Submit</button>
+              <button type="button" class="previous-btn" data-prev="step7-uni">Previous</button>
+              <button class="submit-btn">Submit</button>
           </div>
         </div>
 
@@ -461,18 +428,30 @@ document.addEventListener("DOMContentLoaded", () => {
     const progressBar = document.getElementById("progressBar");
 
     function showStep(stepId) {
-        steps.forEach(step => step.classList.remove("active"));
-        document.getElementById(stepId).classList.add("active");
+
+        // Disable inputs in ALL steps
+        steps.forEach(step => {
+            step.classList.remove("active");
+            step.querySelectorAll("input, textarea, select").forEach(el => {
+                el.disabled = true;
+            });
+        });
+
+        // Enable ONLY active step
+        const activeStep = document.getElementById(stepId);
+        activeStep.classList.add("active");
+        activeStep.querySelectorAll("input, textarea, select").forEach(el => {
+            el.disabled = false;
+        });
+
+        // Update progress bar
         updateProgress(stepId);
 
+        // Resize map
         if (stepId === "step7-standard" || stepId === "step8-uni") {
             setTimeout(() => {
-                if (window.standardMap) {
-                    window.standardMap.invalidateSize();
-                }
-                if (window.uniMap) {
-                    window.uniMap.invalidateSize();
-                }
+                if (window.standardMap) window.standardMap.invalidateSize();
+                if (window.uniMap) window.uniMap.invalidateSize();
             }, 300);
         }
     }
@@ -733,6 +712,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+
+// Handle hour selection and save to hidden field
+document.querySelectorAll('.hour-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.getElementById('hoursField').value = btn.dataset.value;
+    });
+});
+
+// Show subject OTHER input
+document.getElementById("subjectStandardSelect")?.addEventListener("change", function() {
+    document.getElementById("subjectStandardOther").style.display =
+        this.value === "Other" ? "block" : "none";
+});
+
+document.getElementById("subjectUniSelect")?.addEventListener("change", function() {
+    document.getElementById("subjectUniOther").style.display =
+        this.value === "Other" ? "block" : "none";
+});
+</script>
 
 <style>
 
