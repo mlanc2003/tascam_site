@@ -506,6 +506,14 @@ def consultancy_job_application(request):
             availability=request.POST.get("availability"),
             rates=request.POST.get("rates"),
             experience_years=request.POST.get("experience_years"),
+
+            authorized=request.POST.get("authorized", ""),
+            convicted=request.POST.get("convicted", ""),
+            conviction_explanation=request.POST.get("conviction_explanation", ""),
+            desired_salary=request.POST.get("desired_salary", ""),
+            teaching_mode=request.POST.get("teaching_mode", ""),
+            notice_period=request.POST.get("notice_period", ""),
+            additional_comments=request.POST.get("additional_comments", ""),
         )
 
         return redirect("consultancy_application_success")
@@ -546,6 +554,20 @@ def submit_tutor_request(request):
         email = request.POST.get("email", "")
         details = request.POST.get("details", "")
 
+        address_standard = request.POST.get("address_standard", "")
+        lat_standard = request.POST.get("lat_standard") or None
+        lng_standard = request.POST.get("lng_standard") or None
+
+        address_uni = request.POST.get("address_uni", "")
+        lat_uni = request.POST.get("lat_uni") or None
+        lng_uni = request.POST.get("lng_uni") or None
+
+        subject_standard_other = request.POST.get("subject_standard_other", "")
+        subject_uni_other = request.POST.get("subject_uni_other", "")
+
+        university = request.POST.get("university", "")
+        university_other = request.POST.get("university_other", "")
+
         TutorRequest.objects.create(
             subject=subject,
             hours_needed=hours,
@@ -553,7 +575,18 @@ def submit_tutor_request(request):
             last_name=last,
             phone=phone,
             email=email,
-            details=details
+            details=details,
+
+            address_standard=address_standard,
+            lat_standard=lat_standard,
+            lng_standard=lng_standard,
+            address_uni=address_uni,
+            lat_uni=lat_uni,
+            lng_uni=lng_uni,
+            subject_standard_other=subject_standard_other,
+            subject_uni_other=subject_uni_other,
+            university=university,
+            university_other=university_other,
         )
 
         message_body = f"""
