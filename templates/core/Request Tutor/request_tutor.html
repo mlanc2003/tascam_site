@@ -637,77 +637,98 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 
 <script>
-function setupLeafletMap(mapId, searchId, addrFieldId, latFieldId, lngFieldId) {
+  function initAddressMap(mapId, inputId, addressFieldId, latFieldId, lngFieldId) {
+    let map;
+
     if (mapId === "map-standard") {
-    window.standardMap = L.map(mapId).setView([3.848, 11.502], 13);
-    var map = window.standardMap;
+        window.standardMap = L.map(mapId).setView([3.848, 11.502], 13);
+        map = window.standardMap;
     } else {
         window.uniMap = L.map(mapId).setView([3.848, 11.502], 13);
-        var map = window.uniMap;
+        map = window.uniMap;
     }
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
     }).addTo(map);
 
-    let marker;
+    let marker = null;
 
-    // Click to drop pin
+    // Reverse geocode on click
+    function fetchAddress(lat, lng) {
+        const url = `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`;
+
+        fetch(url)
+            .then(res => res.json())
+            .then(data => {
+                let address = data.display_name || "Unknown location";
+
+                // Fill visible input
+                document.getElementById(inputId).value =
+                `${address} (Lat: ${lat.toFixed(6)}, Lng: ${lng.toFixed(6)})`;
+
+                // Fill hidden fields
+                document.getElementById(addressFieldId).value = address;
+                document.getElementById(latFieldId).value = lat;
+                document.getElementById(lngFieldId).value = lng;
+            });
+    }
+
     map.on("click", (e) => {
-        if (marker) map.removeLayer(marker);
-        marker = L.marker(e.latlng).addTo(map);
+    const lat = e.latlng.lat;
+    const lng = e.latlng.lng;
 
-        document.getElementById(latFieldId).value = e.latlng.lat;
-        document.getElementById(lngFieldId).value = e.latlng.lng;
-        document.getElementById(addrFieldId).value =
-            `Lat: ${e.latlng.lat}, Lng: ${e.latlng.lng}`;
+    if (marker) marker.remove();
+    marker = L.marker([lat, lng]).addTo(map);
+
+    fetchAddress(lat, lng, inputId, addressFieldId, latFieldId, lngFieldId);
+  });
+
+    // Search → move map + fill fields
+    document.getElementById(inputId).addEventListener("change", function () {
+        const query = this.value.trim();
+        if (!query) return;
+
+        fetch(`https://nominatim.openstreetmap.org/search?q=${query}&format=json&limit=1`)
+            .then(res => res.json())
+            .then(data => {
+                if (!data.length) return;
+
+                const lat = data[0].lat;
+                const lng = data[0].lon;
+
+                map.setView([lat, lng], 16);
+
+                if (marker) marker.remove();
+                marker = L.marker([lat, lng]).addTo(map);
+
+                document.getElementById(addressFieldId).value = query;
+                document.getElementById(latFieldId).value = lat;
+                document.getElementById(lngFieldId).value = lng;
+            });
     });
 
-    // SEARCH field (free)
-    const input = document.getElementById(searchId);
-    input.addEventListener("keydown", async (e) => {
-        if (e.key !== "Enter") return;
-        e.preventDefault();
+    // Fix for hidden-map rendering
+    setTimeout(() => map.invalidateSize(), 400);
+  }
 
-        const q = input.value;
-        const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(q)}`;
+  document.addEventListener("DOMContentLoaded", () => {
+      initAddressMap(
+          "map-standard",
+          "address-input-standard",
+          "addressFieldStandard",
+          "latFieldStandard",
+          "lngFieldStandard"
+      );
 
-        const res = await fetch(url);
-        const data = await res.json();
-        if (!data.features.length) return;
-
-        const place = data.features[0];
-        const [lng, lat] = place.geometry.coordinates;
-
-        map.setView([lat, lng], 16);
-
-        if (marker) map.removeLayer(marker);
-        marker = L.marker([lat, lng]).addTo(map);
-
-        document.getElementById(latFieldId).value = lat;
-        document.getElementById(lngFieldId).value = lng;
-        document.getElementById(addrFieldId).value =
-            place.properties.name || input.value;
-    });
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    setupLeafletMap(
-        "map-standard",
-        "address-input-standard",
-        "addressFieldStandard",
-        "latFieldStandard",
-        "lngFieldStandard"
-    );
-
-    setupLeafletMap(
-        "map-uni",
-        "address-input-uni",
-        "addressFieldUni",
-        "latFieldUni",
-        "lngFieldUni"
-    );
-});
+      initAddressMap(
+          "map-uni",
+          "address-input-uni",
+          "addressFieldUni",
+          "latFieldUni",
+          "lngFieldUni"
+      );
+  });
 </script>
 
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
