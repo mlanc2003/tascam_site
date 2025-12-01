@@ -73,213 +73,446 @@ def maths_tutors(request):
 
 def subjects(request):
     return render(request, "core/Tutoring/subjects.html")
+
+COMMON_CONTEXT = {
+    "button_text": "Request Tutor"
+}
+
+# ----------------------------
+# UNIVERSITY SUBJECT TUTOR PAGES
+# ----------------------------
+
 def university_tutors(request):
-    return render(request, "core/Tutoring/university_tutors.html")
+    return render(request, "core/Tutoring/university_tutors.html", COMMON_CONTEXT)
+
 def biology_tutors(request):
-    return render(request, "core/Tutoring/biology_tutors.html")
+    return render(request, "core/Tutoring/biology_tutors.html", COMMON_CONTEXT)
+
 def chemistry_tutors(request):
-    return render(request, "core/Tutoring/chemistry_tutors.html")
+    return render(request, "core/Tutoring/chemistry_tutors.html", COMMON_CONTEXT)
+
 def computer_science_tutors(request):
-    return render(request, "core/Tutoring/computer_science_tutors.html")
+    return render(request, "core/Tutoring/computer_science_tutors.html", COMMON_CONTEXT)
+
 def economics_tutors(request):
-    return render(request, "core/Tutoring/economics_tutors.html")
+    return render(request, "core/Tutoring/economics_tutors.html", COMMON_CONTEXT)
+
 def engineering_tutors(request):
-    return render(request, "core/Tutoring/engineering_tutors.html")
+    return render(request, "core/Tutoring/engineering_tutors.html", COMMON_CONTEXT)
+
 def finance_tutors(request):
-    return render(request, "core/Tutoring/finance_tutors.html")
+    return render(request, "core/Tutoring/finance_tutors.html", COMMON_CONTEXT)
+
 def law_tutors(request):
-    return render(request, "core/Tutoring/law_tutors.html")
+    return render(request, "core/Tutoring/law_tutors.html", COMMON_CONTEXT)
+
 def physics_tutors(request):
-    return render(request, "core/Tutoring/physics_tutors.html")
+    return render(request, "core/Tutoring/physics_tutors.html", COMMON_CONTEXT)
+
 def politics_tutors(request):
-    return render(request, "core/Tutoring/politics_tutors.html")
+    return render(request, "core/Tutoring/politics_tutors.html", COMMON_CONTEXT)
+
 def psychology_tutors(request):
-    return render(request, "core/Tutoring/psychology_tutors.html")
+    return render(request, "core/Tutoring/psychology_tutors.html", COMMON_CONTEXT)
 
 def dissertation_tutors(request):
-    return render(request, "core/Tutoring/dissertation_tutors.html")
+    return render(request, "core/Tutoring/dissertation_tutors.html", COMMON_CONTEXT)
+
 def academic_writing_tutors(request):
-    return render(request, "core/Tutoring/academic_writing_tutors.html")
+    return render(request, "core/Tutoring/academic_writing_tutors.html", COMMON_CONTEXT)
+
 def english_tutors(request):
-    return render(request, "core/Tutoring/english_tutors.html")
+    return render(request, "core/Tutoring/english_tutors.html", COMMON_CONTEXT)
+
 def essay_tutors(request):
-    return render(request, "core/Tutoring/essay_tutors.html")
+    return render(request, "core/Tutoring/essay_tutors.html", COMMON_CONTEXT)
+
 def research_methods_tutors(request):
-    return render(request, "core/Tutoring/research_methods_tutors.html")
+    return render(request, "core/Tutoring/research_methods_tutors.html", COMMON_CONTEXT)
+
 def study_skills_tutors(request):
-    return render(request, "core/Tutoring/study_skills_tutors.html")
+    return render(request, "core/Tutoring/study_skills_tutors.html", COMMON_CONTEXT)
+
 def writing_tutors(request):
-    return render(request, "core/Tutoring/writing_tutors.html")
+    return render(request, "core/Tutoring/writing_tutors.html", COMMON_CONTEXT)
+
 def london_dissertation_tutors(request):
-    return render(request, "core/Tutoring/london_dissertation_tutors.html")
+    return render(request, "core/Tutoring/london_dissertation_tutors.html", COMMON_CONTEXT)
+
 def cambridge_dissertation_tutors(request):
-    return render(request, "core/Tutoring/cambridge_dissertation_tutors.html")
+    return render(request, "core/Tutoring/cambridge_dissertation_tutors.html", COMMON_CONTEXT)
+
 def oxford_dissertation_tutors(request):
-    return render(request, "core/Tutoring/oxford_dissertation_tutors.html")
+    return render(request, "core/Tutoring/oxford_dissertation_tutors.html", COMMON_CONTEXT)
+
 def manchester_dissertation_tutors(request):
-    return render(request, "core/Tutoring/manchester_dissertation_tutors.html")
+    return render(request, "core/Tutoring/manchester_dissertation_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# A-LEVEL TUTORS
+# ----------------------------
 
 def a_level_tutors(request):
-    return render(request, "core/Tutoring/a_level_tutors.html")
+    return render(request, "core/Tutoring/a_level_tutors.html", COMMON_CONTEXT)
+
 def a_level_accounting_tutors(request):
-    return render(request, "core/Tutoring/a_level_accounting_tutors.html")
+    return render(request, "core/Tutoring/a_level_accounting_tutors.html", COMMON_CONTEXT)
+
 def a_level_biology_tutors(request):
-    return render(request, "core/Tutoring/a_level_biology_tutors.html")
+    return render(request, "core/Tutoring/a_level_biology_tutors.html", COMMON_CONTEXT)
+
 def a_level_chemistry_tutors(request):
-    return render(request, "core/Tutoring/a_level_chemistry_tutors.html")
+    return render(request, "core/Tutoring/a_level_chemistry_tutors.html", COMMON_CONTEXT)
+
 def a_level_economics_tutors(request):
-    return render(request, "core/Tutoring/a_level_economics_tutors.html")
+    return render(request, "core/Tutoring/a_level_economics_tutors.html", COMMON_CONTEXT)
+
 def a_level_english_tutors(request):
-    return render(request, "core/Tutoring/a_level_english_tutors.html")
+    return render(request, "core/Tutoring/a_level_english_tutors.html", COMMON_CONTEXT)
+
 def a_level_further_maths_tutors(request):
-    return render(request, "core/Tutoring/a_level_further_maths_tutors.html")
+    return render(request, "core/Tutoring/a_level_further_maths_tutors.html", COMMON_CONTEXT)
+
 def a_level_history_tutors(request):
-    return render(request, "core/Tutoring/a_level_history_tutors.html")
+    return render(request, "core/Tutoring/a_level_history_tutors.html", COMMON_CONTEXT)
+
 def a_level_maths_tutors(request):
-    return render(request, "core/Tutoring/a_level_maths_tutors.html")
+    return render(request, "core/Tutoring/a_level_maths_tutors.html", COMMON_CONTEXT)
+
 def a_level_physics_tutors(request):
-    return render(request, "core/Tutoring/a_level_physics_tutors.html")
+    return render(request, "core/Tutoring/a_level_physics_tutors.html", COMMON_CONTEXT)
+
 def a_level_psychology_tutors(request):
-    return render(request, "core/Tutoring/a_level_psychology_tutors.html")
+    return render(request, "core/Tutoring/a_level_psychology_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# GCSE TUTORS
+# ----------------------------
 
 def gcse_tutors(request):
-    return render(request, "core/Tutoring/gcse_tutors.html")
+    return render(request, "core/Tutoring/gcse_tutors.html", COMMON_CONTEXT)
+
 def gcse_biology_tutors(request):
-    return render(request, "core/Tutoring/gcse_biology_tutors.html")
+    return render(request, "core/Tutoring/gcse_biology_tutors.html", COMMON_CONTEXT)
+
 def gcse_chemistry_tutors(request):
-    return render(request, "core/Tutoring/gcse_chemistry_tutors.html")
+    return render(request, "core/Tutoring/gcse_chemistry_tutors.html", COMMON_CONTEXT)
+
 def gcse_computer_science_tutors(request):
-    return render(request, "core/Tutoring/gcse_computer_science_tutors.html")
+    return render(request, "core/Tutoring/gcse_computer_science_tutors.html", COMMON_CONTEXT)
+
 def gcse_english_language_tutors(request):
-    return render(request, "core/Tutoring/gcse_english_language_tutors.html")
+    return render(request, "core/Tutoring/gcse_english_language_tutors.html", COMMON_CONTEXT)
+
 def gcse_geography_tutors(request):
-    return render(request, "core/Tutoring/gcse_geography_tutors.html")
+    return render(request, "core/Tutoring/gcse_geography_tutors.html", COMMON_CONTEXT)
+
 def gcse_history_tutors(request):
-    return render(request, "core/Tutoring/gcse_history_tutors.html")
+    return render(request, "core/Tutoring/gcse_history_tutors.html", COMMON_CONTEXT)
+
 def gcse_maths_tutors(request):
-    return render(request, "core/Tutoring/gcse_maths_tutors.html")
+    return render(request, "core/Tutoring/gcse_maths_tutors.html", COMMON_CONTEXT)
+
 def gcse_physics_tutors(request):
-    return render(request, "core/Tutoring/gcse_physics_tutors.html")
+    return render(request, "core/Tutoring/gcse_physics_tutors.html", COMMON_CONTEXT)
+
 def gcse_science_tutors(request):
-    return render(request, "core/Tutoring/gcse_science_tutors.html")
+    return render(request, "core/Tutoring/gcse_science_tutors.html", COMMON_CONTEXT)
+
 def gcse_spanish_tutors(request):
-    return render(request, "core/Tutoring/gcse_spanish_tutors.html")
+    return render(request, "core/Tutoring/gcse_spanish_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# IB TUTORS
+# ----------------------------
 
 def ib_tutors(request):
-    return render(request, "core/Tutoring/ib_tutors.html")
+    return render(request, "core/Tutoring/ib_tutors.html", COMMON_CONTEXT)
+
 def ib_biology_tutors(request):
-    return render(request, "core/Tutoring/ib_biology_tutors.html")
+    return render(request, "core/Tutoring/ib_biology_tutors.html", COMMON_CONTEXT)
+
 def ib_chemistry_tutors(request):
-    return render(request, "core/Tutoring/ib_chemistry_tutors.html")
+    return render(request, "core/Tutoring/ib_chemistry_tutors.html", COMMON_CONTEXT)
+
 def ib_economics_tutors(request):
-    return render(request, "core/Tutoring/ib_economics_tutors.html")
+    return render(request, "core/Tutoring/ib_economics_tutors.html", COMMON_CONTEXT)
+
 def ib_english_language_tutors(request):
-    return render(request, "core/Tutoring/ib_english_language_tutors.html")
+    return render(request, "core/Tutoring/ib_english_language_tutors.html", COMMON_CONTEXT)
+
 def ib_maths_tutors(request):
-    return render(request, "core/Tutoring/ib_maths_tutors.html")
+    return render(request, "core/Tutoring/ib_maths_tutors.html", COMMON_CONTEXT)
+
 def ib_physics_tutors(request):
-    return render(request, "core/Tutoring/ib_physics_tutors.html")
+    return render(request, "core/Tutoring/ib_physics_tutors.html", COMMON_CONTEXT)
+
 def london_ib_tutors(request):
-    return render(request, "core/Tutoring/london_ib_tutors.html")
+    return render(request, "core/Tutoring/london_ib_tutors.html", COMMON_CONTEXT)
+
 def cambridge_ib_tutors(request):
-    return render(request, "core/Tutoring/cambridge_ib_tutors.html")
+    return render(request, "core/Tutoring/cambridge_ib_tutors.html", COMMON_CONTEXT)
+
 def oxford_ib_tutors(request):
-    return render(request, "core/Tutoring/oxford_ib_tutors.html")
+    return render(request, "core/Tutoring/oxford_ib_tutors.html", COMMON_CONTEXT)
+
 def manchester_ib_tutors(request):
-    return render(request, "core/Tutoring/manchester_ib_tutors.html")
+    return render(request, "core/Tutoring/manchester_ib_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# ONLINE + SPECIALITY SUBJECTS
+# ----------------------------
 
 def online_tutors(request):
-    return render(request, "core/Tutoring/online_tutors.html")
+    return render(request, "core/Tutoring/online_tutors.html", COMMON_CONTEXT)
+
 def aca_tutors(request):
-    return render(request, "core/Tutoring/aca_tutors.html")
+    return render(request, "core/Tutoring/aca_tutors.html", COMMON_CONTEXT)
+
 def acca_tutors(request):
-    return render(request, "core/Tutoring/acca_tutors.html")
+    return render(request, "core/Tutoring/acca_tutors.html", COMMON_CONTEXT)
+
 def accounting_tutors(request):
-    return render(request, "core/Tutoring/accounting_tutors.html")
+    return render(request, "core/Tutoring/accounting_tutors.html", COMMON_CONTEXT)
+
 def architecture_tutors(request):
-    return render(request, "core/Tutoring/architecture_tutors.html")
+    return render(request, "core/Tutoring/architecture_tutors.html", COMMON_CONTEXT)
+
 def econometrics_tutors(request):
-    return render(request, "core/Tutoring/econometrics_tutors.html")
+    return render(request, "core/Tutoring/econometrics_tutors.html", COMMON_CONTEXT)
+
 def online_engineering_tutors(request):
-    return render(request, "core/Tutoring/online_engineering_tutors.html")
+    return render(request, "core/Tutoring/online_engineering_tutors.html", COMMON_CONTEXT)
+
 def r_tutors(request):
-    return render(request, "core/Tutoring/r_tutors.html")
+    return render(request, "core/Tutoring/r_tutors.html", COMMON_CONTEXT)
+
 def spss_tutors(request):
-    return render(request, "core/Tutoring/spss_tutors.html")
+    return render(request, "core/Tutoring/spss_tutors.html", COMMON_CONTEXT)
+
 def stata_tutors(request):
-    return render(request, "core/Tutoring/stata_tutors.html")
+    return render(request, "core/Tutoring/stata_tutors.html", COMMON_CONTEXT)
+
 def statistics_tutors(request):
-    return render(request, "core/Tutoring/statistics_tutors.html")
+    return render(request, "core/Tutoring/statistics_tutors.html", COMMON_CONTEXT)
 
-# University Admissions Pages
-def admissions_tutors(request): return render(request, "core/University Admissions/admissions_tutors.html")
-def eleven_plus_tutors(request): return render(request, "core/University Admissions/11_plus_tutors.html")
-def common_entrance_tutors(request): return render(request, "core/University Admissions/common_entrance_tutors.html")
-def admission_test_tutors(request): return render(request, "core/University Admissions/admission_test_tutors.html")
-def ucas_tutors(request): return render(request, "core/University Admissions/ucas_tutors.html")
-def personal_statement_tutors(request): return render(request, "core/University Admissions/personal_statement_tutors.html")
-def university_admission(request): return render(request, "core/University Admissions/university_admission.html")
-def cambridge_admission_tutors(request): return render(request, "core/University Admissions/cambridge_admission_tutors.html")
-def edinburgh_admission_tutors(request): return render(request, "core/University Admissions/edinburgh_admission_tutors.html")
-def oxford_admission_tutors(request): return render(request, "core/University Admissions/oxford_admission_tutors.html")
-def ucl_admission_tutors(request): return render(request, "core/University Admissions/ucl_admission_tutors.html")
 
-def oxbridge_admissions(request): return render(request, "core/University Admissions/oxbridge_admissions.html")
-def ahaa_tutors(request): return render(request, "core/University Admissions/ahaa_tutors.html")
-def bmat_tutors(request): return render(request, "core/University Admissions/bmat_tutors.html")
-def cat_tutors(request): return render(request, "core/University Admissions/cat_tutors.html")
-def ctmua_tutors(request): return render(request, "core/University Admissions/ctmua_tutors.html")
-def elat_tutors(request): return render(request, "core/University Admissions/elat_tutors.html")
-def engaa_tutors(request): return render(request, "core/University Admissions/engaa_tutors.html")
-def gat_tutors(request): return render(request, "core/University Admissions/gat_tutors.html")
-def hat_tutors(request): return render(request, "core/University Admissions/hat_tutors.html")
-def hspsaa_tutors(request): return render(request, "core/University Admissions/hspsaa_tutors.html")
-def lnat_tutors(request): return render(request, "core/University Admissions/lnat_tutors.html")
-def mat_tutors(request): return render(request, "core/University Admissions/mat_tutors.html")
-def mlat_tutors(request): return render(request, "core/University Admissions/mlat_tutors.html")
-def pat_tutors(request): return render(request, "core/University Admissions/pat_tutors.html")
-def step_tutors(request): return render(request, "core/University Admissions/step_tutors.html")
-def tsa_tutors(request): return render(request, "core/University Admissions/tsa_tutors.html")
+# ----------------------------
+# UNIVERSITY ADMISSIONS
+# ----------------------------
 
-def undergraduate_admissions(request): return render(request, "core/University Admissions/undergraduate_admissions.html")
-def cambridge_admissions_tutors(request): return render(request, "core/University Admissions/cambridge_admissions_tutors.html")
-def durham_admissions_tutors(request): return render(request, "core/University Admissions/durham_admissions_tutors.html")
-def edinburgh_admissions_tutors(request): return render(request, "core/University Admissions/edinburgh_admissions_tutors.html")
-def imperial_admissions_tutors(request): return render(request, "core/University Admissions/imperial_admissions_tutors.html")
-def kings_college_admissions_tutors(request): return render(request, "core/University Admissions/kings_college_admissions_tutors.html")
-def lse_admissions_tutors(request): return render(request, "core/University Admissions/lse_admissions_tutors.html")
-def oxford_admissions_tutors(request): return render(request, "core/University Admissions/oxford_admissions_tutors.html")
-def st_andrews_admissions_tutors(request): return render(request, "core/University Admissions/st_andrews_admissions_tutors.html")
-def ucl_admissions_tutors(request): return render(request, "core/University Admissions/ucl_admissions_tutors.html")
-def warwick_admissions_tutors(request): return render(request, "core/University Admissions/warwick_admissions_tutors.html")
+def admissions_tutors(request): 
+    return render(request, "core/University Admissions/admissions_tutors.html", COMMON_CONTEXT)
 
-def postgraduate_admissions(request): return render(request, "core/University Admissions/postgraduate_admissions.html")
-def bcl_tutors(request): return render(request, "core/University Admissions/bcl_tutors.html")
-def business_school_admissions_tutors(request): return render(request, "core/University Admissions/business_school_admissions_tutors.html")
-def emba_tutors(request): return render(request, "core/University Admissions/emba_tutors.html")
-def gdl_tutors(request): return render(request, "core/University Admissions/gdl_tutors.html")
-def gmat_tutors(request): return render(request, "core/University Admissions/gmat_tutors.html")
-def law_school_admissions_tutors(request): return render(request, "core/University Admissions/law_school_admissions_tutors.html")
-def masters_tutors(request): return render(request, "core/University Admissions/masters_tutors.html")
-def mba_admissions_tutors(request): return render(request, "core/University Admissions/mba_admissions_tutors.html")
+def eleven_plus_tutors(request): 
+    return render(request, "core/University Admissions/11_plus_tutors.html", COMMON_CONTEXT)
 
-def medical_admissions(request): return render(request, "core/University Admissions/medical_admissions.html")
-def bmsat_tutors(request): return render(request, "core/University Admissions/bmsat_tutors.html")
-def gamsat_tutors(request): return render(request, "core/University Admissions/gamsat_tutors.html")
-def hpat_tutors(request): return render(request, "core/University Admissions/hpat_tutors.html")
-def imat_tutors(request): return render(request, "core/University Admissions/imat_tutors.html")
-def mcat_tutors(request): return render(request, "core/University Admissions/mcat_tutors.html")
-def ucat_tutors(request): return render(request, "core/University Admissions/ucat_tutors.html")
+def common_entrance_tutors(request): 
+    return render(request, "core/University Admissions/common_entrance_tutors.html", COMMON_CONTEXT)
 
-def us_admissions(request): return render(request, "core/University Admissions/us_admissions.html")
-def act_tutors(request): return render(request, "core/University Admissions/act_tutors.html")
-def ap_tutors(request): return render(request, "core/University Admissions/ap_tutors.html")
-def college_application_tutors(request): return render(request, "core/University Admissions/college_application_tutors.html")
-def gre_tutors(request): return render(request, "core/University Admissions/gre_tutors.html")
-def isee_tutors(request): return render(request, "core/University Admissions/isee_tutors.html")
-def lsat_tutors(request): return render(request, "core/University Admissions/lsat_tutors.html")
-def sat_tutors(request): return render(request, "core/University Admissions/sat_tutors.html")
-def ssat_tutors(request): return render(request, "core/University Admissions/ssat_tutors.html")
+def admission_test_tutors(request):
+    return render(request, "core/University Admissions/admission_test_tutors.html", COMMON_CONTEXT)
+
+def ucas_tutors(request): 
+    return render(request, "core/University Admissions/ucas_tutors.html", COMMON_CONTEXT)
+
+def personal_statement_tutors(request): 
+    return render(request, "core/University Admissions/personal_statement_tutors.html", COMMON_CONTEXT)
+
+def university_admission(request): 
+    return render(request, "core/University Admissions/university_admission.html", COMMON_CONTEXT)
+
+def cambridge_admission_tutors(request):
+    return render(request, "core/University Admissions/cambridge_admission_tutors.html", COMMON_CONTEXT)
+
+def edinburgh_admission_tutors(request): 
+    return render(request, "core/University Admissions/edinburgh_admission_tutors.html", COMMON_CONTEXT)
+
+def oxford_admission_tutors(request): 
+    return render(request, "core/University Admissions/oxford_admission_tutors.html", COMMON_CONTEXT)
+
+def ucl_admission_tutors(request): 
+    return render(request, "core/University Admissions/ucl_admission_tutors.html", COMMON_CONTEXT)
+
+def oxbridge_admissions(request): 
+    return render(request, "core/University Admissions/oxbridge_admissions.html", COMMON_CONTEXT)
+
+def ahaa_tutors(request): 
+    return render(request, "core/University Admissions/ahaa_tutors.html", COMMON_CONTEXT)
+
+def bmat_tutors(request):
+    return render(request, "core/University Admissions/bmat_tutors.html", COMMON_CONTEXT)
+
+def cat_tutors(request):
+    return render(request, "core/University Admissions/cat_tutors.html", COMMON_CONTEXT)
+
+def ctmua_tutors(request):
+    return render(request, "core/University Admissions/ctmua_tutors.html", COMMON_CONTEXT)
+
+def elat_tutors(request): 
+    return render(request, "core/University Admissions/elat_tutors.html", COMMON_CONTEXT)
+
+def engaa_tutors(request): 
+    return render(request, "core/University Admissions/engaa_tutors.html", COMMON_CONTEXT)
+
+def gat_tutors(request):
+    return render(request, "core/University Admissions/gat_tutors.html", COMMON_CONTEXT)
+
+def hat_tutors(request):
+    return render(request, "core/University Admissions/hat_tutors.html", COMMON_CONTEXT)
+
+def hspsaa_tutors(request): 
+    return render(request, "core/University Admissions/hspsaa_tutors.html", COMMON_CONTEXT)
+
+def lnat_tutors(request): 
+    return render(request, "core/University Admissions/lnat_tutors.html", COMMON_CONTEXT)
+
+def mat_tutors(request): 
+    return render(request, "core/University Admissions/mat_tutors.html", COMMON_CONTEXT)
+
+def mlat_tutors(request):
+    return render(request, "core/University Admissions/mlat_tutors.html", COMMON_CONTEXT)
+
+def pat_tutors(request):
+    return render(request, "core/University Admissions/pat_tutors.html", COMMON_CONTEXT)
+
+def step_tutors(request): 
+    return render(request, "core/University Admissions/step_tutors.html", COMMON_CONTEXT)
+
+def tsa_tutors(request): 
+    return render(request, "core/University Admissions/tsa_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# UNDERGRADUATE ADMISSIONS
+# ----------------------------
+
+def undergraduate_admissions(request):
+    return render(request, "core/University Admissions/undergraduate_admissions.html", COMMON_CONTEXT)
+
+def cambridge_admissions_tutors(request): 
+    return render(request, "core/University Admissions/cambridge_admissions_tutors.html", COMMON_CONTEXT)
+
+def durham_admissions_tutors(request): 
+    return render(request, "core/University Admissions/durham_admissions_tutors.html", COMMON_CONTEXT)
+
+def edinburgh_admissions_tutors(request): 
+    return render(request, "core/University Admissions/edinburgh_admissions_tutors.html", COMMON_CONTEXT)
+
+def imperial_admissions_tutors(request):
+    return render(request, "core/University Admissions/imperial_admissions_tutors.html", COMMON_CONTEXT)
+
+def kings_college_admissions_tutors(request):
+    return render(request, "core/University Admissions/kings_college_admissions_tutors.html", COMMON_CONTEXT)
+
+def lse_admissions_tutors(request):
+    return render(request, "core/University Admissions/lse_admissions_tutors.html", COMMON_CONTEXT)
+
+def oxford_admissions_tutors(request):
+    return render(request, "core/University Admissions/oxford_admissions_tutors.html", COMMON_CONTEXT)
+
+def st_andrews_admissions_tutors(request):
+    return render(request, "core/University Admissions/st_andrews_admissions_tutors.html", COMMON_CONTEXT)
+
+def ucl_admissions_tutors(request):
+    return render(request, "core/University Admissions/ucl_admissions_tutors.html", COMMON_CONTEXT)
+
+def warwick_admissions_tutors(request):
+    return render(request, "core/University Admissions/warwick_admissions_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# POSTGRADUATE ADMISSIONS
+# ----------------------------
+
+def postgraduate_admissions(request):
+    return render(request, "core/University Admissions/postgraduate_admissions.html", COMMON_CONTEXT)
+
+def bcl_tutors(request):
+    return render(request, "core/University Admissions/bcl_tutors.html", COMMON_CONTEXT)
+
+def business_school_admissions_tutors(request):
+    return render(request, "core/University Admissions/business_school_admissions_tutors.html", COMMON_CONTEXT)
+
+def emba_tutors(request):
+    return render(request, "core/University Admissions/emba_tutors.html", COMMON_CONTEXT)
+
+def gdl_tutors(request):
+    return render(request, "core/University Admissions/gdl_tutors.html", COMMON_CONTEXT)
+
+def gmat_tutors(request):
+    return render(request, "core/University Admissions/gmat_tutors.html", COMMON_CONTEXT)
+
+def law_school_admissions_tutors(request):
+    return render(request, "core/University Admissions/law_school_admissions_tutors.html", COMMON_CONTEXT)
+
+def masters_tutors(request):
+    return render(request, "core/University Admissions/masters_tutors.html", COMMON_CONTEXT)
+
+def mba_admissions_tutors(request):
+    return render(request, "core/University Admissions/mba_admissions_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# MEDICAL ADMISSIONS
+# ----------------------------
+
+def medical_admissions(request):
+    return render(request, "core/University Admissions/medical_admissions.html", COMMON_CONTEXT)
+
+def bmsat_tutors(request):
+    return render(request, "core/University Admissions/bmsat_tutors.html", COMMON_CONTEXT)
+
+def gamsat_tutors(request):
+    return render(request, "core/University Admissions/gamsat_tutors.html", COMMON_CONTEXT)
+
+def hpat_tutors(request):
+    return render(request, "core/University Admissions/hpat_tutors.html", COMMON_CONTEXT)
+
+def imat_tutors(request):
+    return render(request, "core/University Admissions/imat_tutors.html", COMMON_CONTEXT)
+
+def mcat_tutors(request):
+    return render(request, "core/University Admissions/mcat_tutors.html", COMMON_CONTEXT)
+
+def ucat_tutors(request):
+    return render(request, "core/University Admissions/ucat_tutors.html", COMMON_CONTEXT)
+
+
+# ----------------------------
+# US ADMISSIONS
+# ----------------------------
+
+def us_admissions(request):
+    return render(request, "core/University Admissions/us_admissions.html", COMMON_CONTEXT)
+
+def act_tutors(request):
+    return render(request, "core/University Admissions/act_tutors.html", COMMON_CONTEXT)
+
+def ap_tutors(request):
+    return render(request, "core/University Admissions/ap_tutors.html", COMMON_CONTEXT)
+
+def college_application_tutors(request):
+    return render(request, "core/University Admissions/college_application_tutors.html", COMMON_CONTEXT)
+
+def gre_tutors(request):
+    return render(request, "core/University Admissions/gre_tutors.html", COMMON_CONTEXT)
+
+def isee_tutors(request):
+    return render(request, "core/University Admissions/isee_tutors.html", COMMON_CONTEXT)
+
+def lsat_tutors(request):
+    return render(request, "core/University Admissions/lsat_tutors.html", COMMON_CONTEXT)
+
+def sat_tutors(request):
+    return render(request, "core/University Admissions/sat_tutors.html", COMMON_CONTEXT)
+
+def ssat_tutors(request):
+    return render(request, "core/University Admissions/ssat_tutors.html", COMMON_CONTEXT)
 
 # Resources
 def resources(request):
